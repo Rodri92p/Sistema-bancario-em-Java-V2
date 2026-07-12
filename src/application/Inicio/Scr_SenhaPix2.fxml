@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="274.0" prefWidth="403.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="274.0" layoutX="-4.0" stroke="#1b1a1a" strokeLineCap="ROUND" strokeType="OUTSIDE" width="406.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1b1a1a" height="83.0" layoutX="-1.0" stroke="BLACK" strokeLineCap="BUTT" strokeType="INSIDE" width="403.0" />
+      <ImageView fitHeight="109.0" fitWidth="149.0" layoutX="-22.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/INTERKAIK(Apenas%20brasão).png" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="104.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INSIRA A SUA NOVA CHAVE PIX">
+         <font>
+            <Font name="Caladea Bold" size="18.0" />
+         </font>
+      </Text>
+      <Button fx:id="btn_ok" layoutX="36.0" layoutY="222.0" mnemonicParsing="false" onMousePressed="#alteracaopix" prefHeight="32.0" prefWidth="149.0" style="-fx-background-color: #ffffff; -fx-border-color: #1b1a1a; -fx-border-radius: 10;" text="CONFIRMAR" textFill="#1b1a1a">
+         <font>
+            <Font name="Caladea Bold" size="19.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Button>
+      <Label fx:id="chave_pixTXT" layoutX="26.0" layoutY="109.0" text="CHAVE:" textFill="#1b1a1a">
+         <font>
+            <Font name="Caladea Bold" size="17.0" />
+         </font>
+      </Label>
+      <TextField fx:id="field_chavepix" alignment="CENTER_RIGHT" layoutX="89.0" layoutY="100.0" prefHeight="38.0" prefWidth="296.0" style="-fx-background-color: #ffffff00; -fx-text-fill: #1b1a1a;">
+         <font>
+            <Font name="Caladea Regular" size="17.0" />
+         </font>
+      </TextField>
+      <Line fx:id="barra_9" endX="245.0" endY="-1.0" layoutX="129.0" layoutY="131.0" startX="-103.0" startY="-1.0" stroke="#1b1a1a" strokeWidth="2.0" />
+      <Label fx:id="confirme_pixTXT" layoutX="27.0" layoutY="159.0" text="CONFIRME:" textFill="#1b1a1a">
+         <font>
+            <Font name="Caladea Bold" size="17.0" />
+         </font>
+      </Label>
+      <TextField fx:id="field_confirmechave" alignment="CENTER_RIGHT" layoutX="119.0" layoutY="150.0" prefHeight="38.0" prefWidth="267.0" style="-fx-background-color: #ffffff00; -fx-text-fill: #1b1a1a;">
+         <font>
+            <Font name="Caladea Regular" size="17.0" />
+         </font>
+      </TextField>
+      <Line fx:id="barra_10" endX="245.0" endY="-1.0" layoutX="130.0" layoutY="181.0" startX="-103.0" startY="-1.0" stroke="#1b1a1a" strokeWidth="2.0" />
+      <Label fx:id="erro_senhapix1" layoutX="27.0" layoutY="130.0" prefHeight="14.0" prefWidth="350.0" text="SENHA INFORMADA ESTÁ INCORRETA." textFill="RED" visible="false">
+         <font>
+            <Font name="Caladea Regular" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="erro_senhapix2" layoutX="27.0" layoutY="186.0" prefHeight="14.0" prefWidth="350.0" text="SENHAS INFORMADAS NÃO CONFEREM." textFill="RED" visible="false">
+         <font>
+            <Font name="Caladea Regular" size="12.0" />
+         </font>
+      </Label>
+      <Button fx:id="btn_sairok" layoutX="212.0" layoutY="222.0" mnemonicParsing="false" onMousePressed="#Sair_NaoSair" prefHeight="32.0" prefWidth="149.0" style="-fx-background-color: #ffffff; -fx-border-color: #1b1a1a; -fx-border-radius: 10;" text="SAIR" textFill="#1b1a1a">
+         <font>
+            <Font name="Caladea Bold" size="19.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Button>
+      <Label fx:id="erro_senhapixvazia" layoutX="27.0" layoutY="130.0" prefHeight="14.0" prefWidth="350.0" text="INSIRA A SENHA NO CAMPO ACIMA." textFill="RED" visible="false">
+         <font>
+            <Font name="Caladea Regular" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="erro_confirmarsenhavazio" layoutX="27.0" layoutY="186.0" prefHeight="14.0" prefWidth="350.0" text="INSIRA A CONFIRMAÇÃO DA SENHA ACIMA." textFill="RED" visible="false">
+         <font>
+            <Font name="Caladea Regular" size="12.0" />
+         </font>
+      </Label>
+      <Text fx:id="erro_alterarpix1" fill="RED" layoutX="36.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="POR FAVOR, PREENCHA CORRETAMENTE OS CAMPOS ACIMA." textAlignment="CENTER" visible="false">
+         <font>
+            <Font name="Caladea Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text fx:id="erro_alterarpix2" fill="RED" layoutX="29.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AS CHAVES INSERIDAS NÃO CONDIZEM, POR FAVOR VERIFIQUE." textAlignment="CENTER" visible="false">
+         <font>
+            <Font name="Caladea Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text fx:id="erro_alterarpix3" fill="RED" layoutX="89.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="POR FAVOR, INSIRA SOMENTE NUMEROS." textAlignment="CENTER" visible="false">
+         <font>
+            <Font name="Caladea Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text fx:id="erro_alterarpix4" fill="RED" layoutX="39.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="O NUMERO DE TELEFONE DEVE TER 11 DIGITOS, COM O DDD." textAlignment="CENTER" visible="false">
+         <font>
+            <Font name="Caladea Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text fx:id="erro_alterarpix5" fill="RED" layoutX="39.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="O EMAIL INSERIDO É INVALIDO, POR FAVOR TENTE DENOVO" textAlignment="CENTER" visible="false">
+         <font>
+            <Font name="Caladea Bold" size="12.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

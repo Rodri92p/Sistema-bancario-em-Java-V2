@@ -47,6 +47,7 @@ String cpftexto;
 String nometexto;
 String chavetexto;
 int tipo;
+int PIX_OP;
 
 //--------------------------------------------------------------------------------------------------
 //VARIAVEIS
@@ -70,7 +71,9 @@ int tipo;
 @FXML private Text erroalterar_1;             @FXML private Text erroalterar_2;             @FXML private Text erroalterar_3;
 @FXML private Text erroalterar_4;             @FXML private Text erroalterar_5;             @FXML private Text erroalterar_6;
 @FXML private Text txt_data_nova;             @FXML private Text txt_senhanova1;            @FXML private Text txt_senhanova2;
-@FXML private Text txt_senhanova3;
+@FXML private Text txt_senhanova3;            @FXML private Text erro_alterarpix1;          @FXML private Text erro_alterarpix2;
+@FXML private Text erro_alterarpix3;          @FXML private Text erro_alterarpix4;          @FXML private Text erro_alterarpix5;
+@FXML private Text chave_pixTXT;
 
 //BUTTON
 @FXML private Button btn_sair;                @FXML private Button btn_investirBR;          @FXML private Button btn_resgatarBR;
@@ -87,12 +90,17 @@ int tipo;
 @FXML private Button btn_favoritarpix;        @FXML private Button btn_confirmarpix; 		@FXML private Button btn_areaextrato; 
 @FXML private Button btn_areacofrinho;        @FXML private Button btn_trabalho;     		@FXML private Button btn_sobrenos;
 @FXML private Button btn_atendimento;         @FXML private Button btn_favadd3;             @FXML private Button btn_confirmar_excluirconta;
+@FXML private Button btn_adcpix_cpf;          @FXML private Button btn_adcpix_celular;      @FXML private Button btn_adcpix_email;
+@FXML private Button btn_adcpix_aleatoria;    @FXML private Button btn_editarpix_cpf;       @FXML private Button btn_editarpix_celular;
+@FXML private Button btn_editarpix_email;     @FXML private Button btn_editarpix_aleatorio; @FXML private Button btn_apagarpix_cpf;
+@FXML private Button btn_apagarpix_celular;   @FXML private Button btn_apagarpix_email;     @FXML private Button btn_apagarpix_aleatoria;
 
 //TEXTFIELD + PASSWORDFIELD
 @FXML private TextField cpf_login;            @FXML private TextField cpf_registro;         @FXML private TextField email_registro;
 @FXML private TextField nome_registro;        @FXML private TextField sobrenome_registro;   @FXML private TextField field_valorpix; 
 @FXML private TextField field_senhapix;       @FXML private TextField field_inserirpix;     @FXML private TextField field_confirmesenhapix;
 @FXML private TextField field_confirmarnova;  @FXML private TextField field_senhaantiga;    @FXML private TextField field_senhanova;
+@FXML private TextField field_chavepix;       @FXML private TextField field_confirmechave;    
 @FXML private PasswordField senha_login;      @FXML private PasswordField senha_registro;   @FXML private PasswordField confirme_registro;
 
 //LABEL
@@ -124,7 +132,8 @@ int tipo;
 @FXML private RadioButton radio_telefonepix;            @FXML private RadioButton radio_cpfpix;                 @FXML private RadioButton btn_ciente_senhanova;
 @FXML private javafx.scene.shape.Rectangle quadrado_1;  @FXML private javafx.scene.shape.Rectangle quadrado_2;  @FXML private javafx.scene.shape.Rectangle quadrado_3;
 @FXML private javafx.scene.shape.Rectangle retangulo_1; @FXML private javafx.scene.shape.Rectangle retangulo_2; @FXML private javafx.scene.shape.Rectangle retangulo_3;
-//-------------------------------------------------------------------------------------------------
+
+//--------------------------------------------------------------------------------------------------
 	
 //UTILIDADES, TRANSIÇÕES E PASSAGEM DE DADOS
 
@@ -1498,6 +1507,127 @@ public void alterarsenha() {
   confirmaralteração();
   
 }
+
+public void chamaralteracaopix() {
+	try {
+		FXMLLoader loader = new FXMLLoader(
+		getClass().getResource("/application/Inicio/Scr_SenhaPix2.fxml")
+		);
+		loader.setController(this);
+		Parent root = loader.load();
+	
+		Stage novaJanela = new Stage();
+		novaJanela.initModality(Modality.APPLICATION_MODAL);
+		
+		novaJanela.setScene(new Scene(root));
+		novaJanela.showAndWait();
+	} catch (Exception e) {
+		e.printStackTrace();
+	}	
+}
+
+public void transicaopix() {
+ if(btn_adcpix_cpf.isPressed()) {
+	 chamaralteracaopix();
+	 PIX_OP = 1;
+ }
+ 
+ if(btn_adcpix_celular.isPressed()) {
+	 chamaralteracaopix();
+	 PIX_OP = 2;
+ }
+ 
+}
+
+public void alteracaopix() {
+
+  DAO<Client> dao = new DAO<>(Client.class);
+	
+  //CAMPOS VAZIOS	
+  if (field_chavepix.getText().isEmpty() || field_confirmechave.getText().isEmpty()) {
+	  erro_alterarpix1.setVisible(true);
+	  tremer(field_chavepix);
+	  tremer(chave_pixTXT);
+	  tremer(barra_9);
+      erro_alterarpix2.setVisible(false); erro_alterarpix3.setVisible(false); erro_alterarpix4.setVisible(false); 
+	  erro_alterarpix5.setVisible(false);      
+      return; }
+  else { erro_alterarpix1.setVisible(false); } 
+ 	 
+ //1 É O CELULAR
+ if(PIX_OP == 1) {
+	 
+   // LETRA NO CPF
+   if (field_chavepix.getText().matches("[0-9]+")) {
+	   erro_alterarpix3.setVisible(true);
+	   tremer(cpf_registro);
+	   tremer(cpf_registroTXT);
+	   tremer(barra_1);
+	   erro_alterarpix2.setVisible(false); erro_alterarpix1.setVisible(false); erro_alterarpix4.setVisible(false); 
+	   erro_alterarpix5.setVisible(false);
+	   return; }
+	  else { erro_alterarpix3.setVisible(false); } 
+   
+   // NUMERO COM MENOS OU MAIS DE 11 DIGITOS
+   if (field_chavepix.getText().length() != 11) {
+	   erro_alterarpix4.setVisible(true);
+	   tremer(cpf_registro);
+	   tremer(cpf_registroTXT);
+	   tremer(barra_1);
+	   erro_alterarpix2.setVisible(false); erro_alterarpix3.setVisible(false); erro_alterarpix1.setVisible(false); 
+	   erro_alterarpix5.setVisible(false);
+	   return; }
+	  else { erro_alterarpix4.setVisible(false); } 
+   
+   //CHAVES NÃO CONDIZEM	
+   if (!field_chavepix.getText().equals(field_confirmechave.getText())) {
+  	  erro_alterarpix2.setVisible(true);
+  	  tremer(field_chavepix);
+  	  tremer(chave_pixTXT);
+  	  tremer(barra_9);
+  	  erro_alterarpix1.setVisible(false); erro_alterarpix3.setVisible(false); erro_alterarpix4.setVisible(false); 
+  	  erro_alterarpix5.setVisible(false);	
+  	  return; }
+   else { erro_alterarpix2.setVisible(false); } 
+   
+   cliente.setPix_celular(field_chavepix.getText());
+   
+   dao.abrir().atualizar(cliente).fechar();
+}
+ 
+ //2 É O EMAIL
+ if(PIX_OP == 2) {
+	 // EMAIL INVALIDO
+	 if (field_chavepix.getText().matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$")) {
+		 erro_alterarpix5.setVisible(true);
+		 tremer(cpf_registro);
+		 tremer(cpf_registroTXT);
+		 tremer(barra_1);
+		 erro_alterarpix2.setVisible(false); erro_alterarpix3.setVisible(false); erro_alterarpix1.setVisible(false); 
+		 erro_alterarpix4.setVisible(false); 
+		 return; }
+	 else { erro_alterarpix5.setVisible(false); } 
+	 
+	 //CHAVES NÃO CONDIZEM	
+	 if (!field_chavepix.getText().equals(field_confirmechave.getText())) {
+		  erro_alterarpix2.setVisible(true);
+		  tremer(field_chavepix);
+		  tremer(chave_pixTXT);
+		  tremer(barra_9);
+		  erro_alterarpix1.setVisible(false); erro_alterarpix3.setVisible(false); erro_alterarpix4.setVisible(false); 
+		  erro_alterarpix5.setVisible(false);	
+		  return; }
+	 else { erro_alterarpix2.setVisible(false); }
+	 
+	 cliente.setPix_email(field_chavepix.getText());
+	   
+	 dao.abrir().atualizar(cliente).fechar();
+	 
+ }
+  
+}
+
+
 
 public void alterarpix() {
 	
