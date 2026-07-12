@@ -47,7 +47,7 @@ String cpftexto;
 String nometexto;
 String chavetexto;
 int tipo;
-int PIX_OP;
+int PIX_OP = 0;
 
 //--------------------------------------------------------------------------------------------------
 //VARIAVEIS
@@ -73,7 +73,9 @@ int PIX_OP;
 @FXML private Text txt_data_nova;             @FXML private Text txt_senhanova1;            @FXML private Text txt_senhanova2;
 @FXML private Text txt_senhanova3;            @FXML private Text erro_alterarpix1;          @FXML private Text erro_alterarpix2;
 @FXML private Text erro_alterarpix3;          @FXML private Text erro_alterarpix4;          @FXML private Text erro_alterarpix5;
-@FXML private Text chave_pixTXT;
+@FXML private Text TXT_chavecpf;
+@FXML private Text TXT_chavecelular;          @FXML private Text TXT_chaveemail;            @FXML private Text TXT_chavealeatoria;
+
 
 //BUTTON
 @FXML private Button btn_sair;                @FXML private Button btn_investirBR;          @FXML private Button btn_resgatarBR;
@@ -113,6 +115,7 @@ int PIX_OP;
 @FXML private Label erro_sobrenome;           @FXML private Label erro_confirma;            @FXML private Label erro_email;
 @FXML private Label confirme_pixTXT;          @FXML private Label senha_pixTXT;             @FXML private Label erro_senhapixvazia;
 @FXML private Label erro_confirmarsenhavazio; @FXML private Label erro_senhapix1;           @FXML private Label erro_senhapix2;
+@FXML private Label chave_pixTXT;             @FXML private Label confirmar_pixTXT;
 
 //LINE
 @FXML private Line barra_1;                   @FXML private Line fav_barra7;
@@ -142,6 +145,7 @@ public void PassarDados(Client cliente) {
 	atualizarFavoritos();
 	cambioTela();
 	investimentoTela();
+	atualizarchaves();
 	txt_cliente.setText(cliente.getNome().toUpperCase()+" "+cliente.getSobrenome().toUpperCase());
     txt_saldo.setText("R$ " + cliente.getSaldo());
 }
@@ -280,6 +284,31 @@ private void atualizarFavoritos() {
             barras[i].setVisible(false);
         }
     }
+}
+
+private void atualizarchaves() {
+
+    if (TXT_chavecpf == null) return;
+
+    TXT_chavecpf.setText(
+        cliente.getPix_cpf() == null
+            ? "NENHUMA CHAVE INFORMADA"
+            : cliente.getChavePixPrincipal(1));
+
+    TXT_chavecelular.setText(
+        cliente.getPix_celular() == null
+            ? "NENHUMA CHAVE INFORMADA"
+            : cliente.getChavePixPrincipal(3));
+
+    TXT_chaveemail.setText(
+        cliente.getPix_email() == null
+            ? "NENHUMA CHAVE INFORMADA"
+            : cliente.getChavePixPrincipal(2));
+
+    TXT_chavealeatoria.setText(
+        cliente.getPix_aleatorio() == null
+            ? "NENHUMA CHAVE INFORMADA"
+            : cliente.getChavePixPrincipal(4));
 }
 
 @SuppressWarnings("deprecation")
@@ -1526,17 +1555,14 @@ public void chamaralteracaopix() {
 	}	
 }
 
-public void transicaopix() {
- if(btn_adcpix_cpf.isPressed()) {
-	 chamaralteracaopix();
-	 PIX_OP = 1;
- }
- 
- if(btn_adcpix_celular.isPressed()) {
-	 chamaralteracaopix();
+public void transicaopix_celular() {
+    PIX_OP = 1;
+	chamaralteracaopix();
+}
+
+public void transicaopix_email() {
 	 PIX_OP = 2;
- }
- 
+	 chamaralteracaopix();
 }
 
 public void alteracaopix() {
@@ -1556,13 +1582,12 @@ public void alteracaopix() {
  	 
  //1 É O CELULAR
  if(PIX_OP == 1) {
-	 
    // LETRA NO CPF
-   if (field_chavepix.getText().matches("[0-9]+")) {
+   if (!field_chavepix.getText().matches("[0-9]+")) {
 	   erro_alterarpix3.setVisible(true);
-	   tremer(cpf_registro);
-	   tremer(cpf_registroTXT);
-	   tremer(barra_1);
+	   tremer(field_chavepix);
+	   tremer(chave_pixTXT);
+	   tremer(barra_9);
 	   erro_alterarpix2.setVisible(false); erro_alterarpix1.setVisible(false); erro_alterarpix4.setVisible(false); 
 	   erro_alterarpix5.setVisible(false);
 	   return; }
@@ -1571,9 +1596,9 @@ public void alteracaopix() {
    // NUMERO COM MENOS OU MAIS DE 11 DIGITOS
    if (field_chavepix.getText().length() != 11) {
 	   erro_alterarpix4.setVisible(true);
-	   tremer(cpf_registro);
-	   tremer(cpf_registroTXT);
-	   tremer(barra_1);
+	   tremer(field_chavepix);
+	   tremer(chave_pixTXT);
+	   tremer(barra_9);
 	   erro_alterarpix2.setVisible(false); erro_alterarpix3.setVisible(false); erro_alterarpix1.setVisible(false); 
 	   erro_alterarpix5.setVisible(false);
 	   return; }
@@ -1582,9 +1607,12 @@ public void alteracaopix() {
    //CHAVES NÃO CONDIZEM	
    if (!field_chavepix.getText().equals(field_confirmechave.getText())) {
   	  erro_alterarpix2.setVisible(true);
-  	  tremer(field_chavepix);
-  	  tremer(chave_pixTXT);
-  	  tremer(barra_9);
+	  tremer(field_chavepix);
+	  tremer(chave_pixTXT);
+	  tremer(barra_9);
+	  tremer(field_confirmechave);
+	  tremer(confirmar_pixTXT);
+	  tremer(barra_10);
   	  erro_alterarpix1.setVisible(false); erro_alterarpix3.setVisible(false); erro_alterarpix4.setVisible(false); 
   	  erro_alterarpix5.setVisible(false);	
   	  return; }
@@ -1593,16 +1621,19 @@ public void alteracaopix() {
    cliente.setPix_celular(field_chavepix.getText());
    
    dao.abrir().atualizar(cliente).fechar();
+   
+   Stage stage = (Stage) btn_sairok.getScene().getWindow();
+   stage.close();
 }
  
  //2 É O EMAIL
  if(PIX_OP == 2) {
 	 // EMAIL INVALIDO
-	 if (field_chavepix.getText().matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$")) {
+	 if (!field_chavepix.getText().matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$")) {
 		 erro_alterarpix5.setVisible(true);
-		 tremer(cpf_registro);
-		 tremer(cpf_registroTXT);
-		 tremer(barra_1);
+		 tremer(field_confirmechave);
+		 tremer(confirmar_pixTXT);
+		 tremer(barra_10);
 		 erro_alterarpix2.setVisible(false); erro_alterarpix3.setVisible(false); erro_alterarpix1.setVisible(false); 
 		 erro_alterarpix4.setVisible(false); 
 		 return; }
@@ -1611,9 +1642,9 @@ public void alteracaopix() {
 	 //CHAVES NÃO CONDIZEM	
 	 if (!field_chavepix.getText().equals(field_confirmechave.getText())) {
 		  erro_alterarpix2.setVisible(true);
-		  tremer(field_chavepix);
-		  tremer(chave_pixTXT);
-		  tremer(barra_9);
+		  tremer(field_confirmechave);
+		  tremer(confirmar_pixTXT);
+		  tremer(barra_10);
 		  erro_alterarpix1.setVisible(false); erro_alterarpix3.setVisible(false); erro_alterarpix4.setVisible(false); 
 		  erro_alterarpix5.setVisible(false);	
 		  return; }
@@ -1623,14 +1654,13 @@ public void alteracaopix() {
 	   
 	 dao.abrir().atualizar(cliente).fechar();
 	 
+     Stage stage = (Stage) btn_sairok.getScene().getWindow();
+     stage.close();
+     
+     
+	 
  }
   
-}
-
-
-
-public void alterarpix() {
-	
 }
 
 public void ExcluirConta() {
