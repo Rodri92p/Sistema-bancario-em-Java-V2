@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="755.0" prefWidth="1119.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Controller">
+  <children>
+      <VBox layoutX="261.0" layoutY="573.0" opacity="0.58" prefHeight="182.0" prefWidth="308.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="REGRAS PARA CRIAÇÃO DA SENHA" wrappingWidth="307.1300048828125">
+               <font>
+                  <Font name="Caladea Regular" size="16.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="  • Senha deve conter pelo menos 6 digitos;" wrappingWidth="305.1300048828125">
+               <font>
+                  <Font name="Caladea Regular" size="11.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="  • Senha deve conter um numero;" wrappingWidth="305.1300048828125">
+               <font>
+                  <Font name="Caladea Regular" size="11.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="  • Senha deve conter uma letra maiuscula;" wrappingWidth="305.1300048828125">
+               <font>
+                  <Font name="Caladea Regular" size="11.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="  • Senha deve conter uma letra minuscula;" wrappingWidth="305.1300048828125">
+               <font>
+                  <Font name="Caladea Regular" size="11.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="  • Senha deve conter um caractere especial." wrappingWidth="305.1300048828125">
+               <font>
+                  <Font name="Caladea Regular" size="11.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="305.1300048828125">
+               <font>
+                  <Font name="Caladea Regular" size="15.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="  • Exemplos: @, #, %, &amp;, $." wrappingWidth="305.1300048828125">
+               <font>
+                  <Font name="Caladea Regular" size="11.0" />
+               </font>
+            </Text>
+         </children>
+      </VBox>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="762.0" layoutX="-3.0" layoutY="-6.0" opacity="0.19" strokeType="INSIDE" strokeWidth="0.0" width="1128.0">
+         <stroke>
+            <LinearGradient endX="0.11904761904761905" endY="1.0" startX="0.24285714285714285" startY="0.6142857142857143">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.34210526943206787" green="0.3341861665248871" blue="0.3341861665248871" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9800000190734863" green="0.5716666579246521" opacity="0.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </stroke>
+         <fill>
+            <LinearGradient endX="0.5" endY="0.7904761904761904">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.949999988079071" green="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006711409395973154">
+                     <color>
+                        <Color red="0.0035649999044835567" green="9.999999747378752E-5" blue="0.009999999776482582" opacity="0.9961685538291931" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.3947368562221527" green="0.3840765058994293" blue="0.3691520392894745" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1b1a1a" height="76.0" layoutX="225.0" layoutY="-3.0" strokeType="INSIDE" strokeWidth="0.0" width="896.0">
+         <stroke>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.34210526943206787" green="0.3341861665248871" blue="0.3341861665248871" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9800000190734863" green="0.5716666579246521" opacity="0.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </stroke>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1b1a1a" height="762.0" layoutX="-18.0" layoutY="-6.0" strokeType="INSIDE" strokeWidth="0.0" width="258.0">
+         <stroke>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.34210526943206787" green="0.3341861665248871" blue="0.3341861665248871" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9800000190734863" green="0.5716666579246521" opacity="0.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </stroke>
+      </Rectangle>
+      <ImageView fitHeight="180.0" fitWidth="270.0" layoutX="-19.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/INTERKAIK(Apenas%20brasão).png" />
+         </image>
+      </ImageView>
+      
+      <Button fx:id="btn_sair" layoutX="33.0" layoutY="699.0" mnemonicParsing="false" onMousePressed="#FecharPrograma" prefHeight="37.0" prefWidth="158.0" style="-fx-background-color: #ffffff;" text="SAIR">
+         <font>
+            <Font name="Caladea Bold" size="20.0" />
+         </font>
+      </Button>
+      
+      
+      <Text fx:id="txt_cliente" fill="WHITE" layoutX="246.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="{NOME DO CLIENTE}" wrappingWidth="315.0">
+         <font>
+            <Font name="Caladea Regular" size="22.0" />
+         </font>
+      </Text>
+      
+      
+      <VBox layoutX="558.0" layoutY="-77.0" prefHeight="70.0" prefWidth="231.0" rotate="-90.0">
+         <children>
+            <Line endX="100.0" startX="-100.0" stroke="WHITE" strokeWidth="2.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Line endX="100.0" startX="-100.0" stroke="WHITE" strokeWidth="2.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Line endX="100.0" startX="-100.0" stroke="WHITE" strokeWidth="2.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Line endX="100.0" startX="-100.0" stroke="WHITE" strokeWidth="2.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Line endX="100.0" startX="-100.0" stroke="WHITE" strokeWidth="2.0" />
+         </children>
+      </VBox>
+      
+      
+      <Text fx:id="txt_saldo" fill="WHITE" layoutX="797.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="{SALDO DA CONTA}" textAlignment="RIGHT" wrappingWidth="315.0">
+         <font>
+            <Font name="Caladea Regular" size="22.0" />
+         </font>
+      </Text>
+      <Line endX="224.0" layoutX="361.0" layoutY="714.0" startX="-100.0" />
+      <Line endX="223.0" layoutX="873.0" layoutY="713.0" startX="-114.0" />
+      <Text layoutX="618.0" layoutY="720.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INTERKAIK" textAlignment="CENTER" wrappingWidth="110.0">
+         <font>
+            <Font name="Caladea Regular" size="22.0" />
+         </font>
+      </Text>
+   
+      <Text fx:id="txt_pix" fill="WHITE" layoutX="41.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TRANSFERENCIA PIX" wrappingWidth="150.1300048828125">
+         <font>
+            <Font name="Caladea Regular" size="16.0" />
+         </font>
+      </Text>
+    
+      <Line endX="-63.0" layoutX="93.0" layoutY="317.0" startX="-110.0" stroke="WHITE" strokeLineCap="ROUND" strokeWidth="3.0" />
+    
+      <Text fx:id="txt_cofrinho" fill="WHITE" layoutX="42.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" text="COFRINHO" wrappingWidth="74.1300048828125">
+         <font>
+            <Font name="Caladea Regular" size="16.0" />
+         </font>
+      </Text>
+    
+      <Line endX="-63.0" layoutX="91.0" layoutY="385.0" startX="-110.0" stroke="WHITE" strokeLineCap="ROUND" strokeWidth="3.0" />
+      <Line endX="143.0" layoutX="95.0" layoutY="349.0" startX="-100.0" stroke="#00000025" />
+      <Line endX="135.0" layoutX="108.0" layoutY="416.0" startX="-110.0" stroke="#00000025" />
+      <Line endX="-63.0" layoutX="93.0" layoutY="452.0" startX="-110.0" stroke="WHITE" strokeLineCap="ROUND" strokeWidth="3.0" />
+  
+      <Text fx:id="txt_extrato" fill="WHITE" layoutX="42.0" layoutY="458.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EXTRATO" wrappingWidth="74.1300048828125">
+         <font>
+            <Font name="Caladea Regular" size="16.0" />
+         </font>
+      </Text>
+    
+      <Line endX="136.0" layoutX="98.0" layoutY="484.0" startX="-100.0" stroke="#00000025" />
+      <Line endX="-63.0" layoutX="91.0" layoutY="519.0" startX="-110.0" stroke="WHITE" strokeLineCap="ROUND" strokeWidth="3.0" />
+     
+      <Text id="txt_conta" fill="WHITE" layoutX="42.0" layoutY="525.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CONTA" wrappingWidth="49.99999999999994">
+         <font>
+            <Font name="Caladea Regular" size="16.0" />
+         </font>
+      </Text>
+    
+      <Line endX="143.0" layoutX="96.0" layoutY="551.0" startX="-100.0" stroke="#00000025" />
+      <Line endX="-63.0" layoutX="91.0" layoutY="582.0" startX="-110.0" stroke="WHITE" strokeLineCap="ROUND" strokeWidth="3.0" />
+    
+      <Text fx:id="txt_ferramentas" fill="WHITE" layoutX="42.0" layoutY="587.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FERRAMENTAS" wrappingWidth="109.99999999999994">
+         <font>
+            <Font name="Caladea Regular" size="16.0" />
+         </font>
+      </Text>
+      <Line endX="-63.0" layoutX="93.0" layoutY="254.0" startX="-110.0" stroke="WHITE" strokeLineCap="ROUND" strokeWidth="3.0" />
+      <Line endX="143.0" layoutX="96.0" layoutY="283.0" startX="-100.0" stroke="#00000025" />
+    
+      <Text fx:id="txt_inicio" fill="WHITE" layoutX="42.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INICIO" wrappingWidth="74.1300048828125">
+         <font>
+            <Font name="Caladea Regular" size="16.0" />
+         </font>
+      </Text>
+      
+      
+      <Button fx:id="btn_inicio" layoutX="-1.0" layoutY="227.0" mnemonicParsing="false" onMousePressed="#Transicao" prefHeight="58.0" prefWidth="237.0" style="-fx-background-color: #ffffff00;">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor></Button>
+      <Button fx:id="btn_pix" layoutX="2.0" layoutY="286.0" mnemonicParsing="false" onMousePressed="#Transicao" prefHeight="58.0" prefWidth="237.0" style="-fx-background-color: #ffffff00;">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor></Button>
+      <Button fx:id="btn_cofrinho" layoutX="2.0" layoutY="355.0" mnemonicParsing="false" onMousePressed="#Transicao" prefHeight="58.0" prefWidth="237.0" style="-fx-background-color: #ffffff00;">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor></Button>
+      <Button fx:id="btn_extrato" layoutX="2.0" layoutY="423.0" mnemonicParsing="false" onMousePressed="#Transicao" prefHeight="58.0" prefWidth="237.0" style="-fx-background-color: #ffffff00;">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor></Button>
+      <Button fx:id="btn_conta" layoutX="2.0" layoutY="490.0" mnemonicParsing="false" onMousePressed="#Transicao" prefHeight="58.0" prefWidth="237.0" style="-fx-background-color: #ffffff00;">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor></Button>
+      <Button fx:id="btn_ferramentas" layoutX="2.0" layoutY="553.0" mnemonicParsing="false" onMousePressed="#Transicao" prefHeight="58.0" prefWidth="237.0" style="-fx-background-color: #ffffff00;">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor></Button>
+      <RadioButton fx:id="btn_ciente_senhanova" layoutX="347.0" layoutY="486.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="689.0" text="AO MARCAR ESTA OPÇÃO, VOCÊ ESTARÁ CIENTE QUE ALTERAR A SENHA CADASTRADA, IMPLICARÁ NA EXCLUSÃO DA SENHA ANTERIOR." textFill="#1b1a1a">
+         <font>
+            <Font name="Caladea Regular" size="11.0" />
+         </font>
+      </RadioButton>
+      <Text layoutX="530.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ALTERAÇÃO DE SENHA">
+         <font>
+            <Font name="Caladea Regular" size="30.0" />
+         </font>
+      </Text>
+      <Button fx:id="btn_confirmar_altsenha" layoutX="555.0" layoutY="524.0" mnemonicParsing="false" onMousePressed="#alterarsenha" prefHeight="58.0" prefWidth="237.0" style="-fx-background-color: #ffffff; -fx-border-color: #1b1a1a; -fx-border-radius: 20; -fx-background-radius: 20;" text="CONFIRMAR" textFill="#1b1a1a">
+         <font>
+            <Font name="Caladea Regular" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Button>
+         <AnchorPane fx:id="loadingPane" prefHeight="755" prefWidth="1119" style="-fx-background-color: rgba(0,0,0,0.6);" visible="false">
+         <children>
+            <HBox alignment="CENTER" layoutX="500" layoutY="350" spacing="10">
+               <children>
+                  <Circle fx:id="dot1" fill="WHITE" radius="8" />
+                  <Circle fx:id="dot2" fill="WHITE" radius="8" />
+                  <Circle fx:id="dot3" fill="WHITE" radius="8" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <Rectangle fx:id="retangulo_1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="68.0" layoutX="333.0" layoutY="248.0" stroke="#1b1a1a" strokeType="INSIDE" strokeWidth="2.0" width="689.0" />
+      <Line fx:id="barra_senha1" endX="-34.5" layoutX="483.0" layoutY="282.0" rotate="90.0" startX="-100.0" stroke="#1b1a1a" strokeWidth="2.0" />
+      <ImageView fx:id="emoji_1" fitHeight="58.0" fitWidth="50.0" layoutX="350.0" layoutY="258.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/eraser.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="txt_senhanova1" fill="#1b1a1a" layoutX="424.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INSIRA A SUA SENHA ATUAL:" wrappingWidth="204.0">
+         <font>
+            <Font name="Caladea Regular" size="16.0" />
+         </font>
+      </Text>
+         
+         
+
+      <TextField fx:id="field_senhaantiga" layoutX="411.0" layoutY="270.0" prefHeight="39.0" prefWidth="699.0" promptText="..." style="-fx-background-color: #ffffff00;">
+         <font>
+            <Font name="Caladea Regular" size="22.0" />
+         </font>
+      </TextField>
+      <Rectangle fx:id="retangulo_2" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="68.0" layoutX="333.0" layoutY="330.0" stroke="#1b1a1a" strokeType="INSIDE" strokeWidth="2.0" width="689.0" />
+      <Line fx:id="barra_senha2" endX="-34.5" layoutX="483.0" layoutY="364.0" rotate="90.0" startX="-100.0" stroke="#1b1a1a" strokeWidth="2.0" />
+      <ImageView fx:id="emoji_2" fitHeight="58.0" fitWidth="50.0" layoutX="349.0" layoutY="339.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/pass.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="txt_senhanova2" fill="#1b1a1a" layoutX="424.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INSIRA A NOVA SENHA:" wrappingWidth="204.0">
+         <font>
+            <Font name="Caladea Regular" size="16.0" />
+         </font>
+      </Text>
+      <TextField fx:id="field_senhanova" layoutX="411.0" layoutY="352.0" prefHeight="39.0" prefWidth="699.0" promptText="..." style="-fx-background-color: #ffffff00;">
+         <font>
+            <Font name="Caladea Regular" size="22.0" />
+         </font>
+      </TextField>
+      <Rectangle fx:id="retangulo_3" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="68.0" layoutX="333.0" layoutY="410.0" stroke="#1b1a1a" strokeType="INSIDE" strokeWidth="2.0" width="689.0" />
+      <Line fx:id="barra_senha3" endX="-34.5" layoutX="483.0" layoutY="444.0" rotate="90.0" startX="-100.0" stroke="#1b1a1a" strokeWidth="2.0" />
+      <ImageView fx:id="emoji_3" fitHeight="58.0" fitWidth="50.0" layoutX="350.0" layoutY="423.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/confirm.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="txt_senhanova3" fill="#1b1a1a" layoutX="424.0" layoutY="433.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CONFIRME A NOVA SENHA:" wrappingWidth="204.0">
+         <font>
+            <Font name="Caladea Regular" size="16.0" />
+         </font>
+      </Text>
+      <TextField fx:id="field_confirmarnova" layoutX="411.0" layoutY="432.0" prefHeight="39.0" prefWidth="699.0" promptText="..." style="-fx-background-color: #ffffff00;">
+         <font>
+            <Font name="Caladea Regular" size="22.0" />
+         </font>
+      </TextField>
+      <Text fx:id="erroalterar_1" fill="RED" layoutX="450.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PREENCHA TODOS OS CAMPOS ABAIXO COM OS DADOS SOLICITADOS." textAlignment="CENTER" visible="false" wrappingWidth="446.0">
+         <font>
+            <Font name="Caladea Regular" size="15.0" />
+         </font>
+      </Text>
+      <Text fx:id="erroalterar_2" fill="RED" layoutX="399.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A SENHA INSERIDA É IGUAL A SENHA SENHA ATUAL, NÃO É POSSIVEL ALTERA-LA." textAlignment="CENTER" visible="false" wrappingWidth="558.0">
+         <font>
+            <Font name="Caladea Regular" size="15.0" />
+         </font>
+      </Text>
+      <Text fx:id="erroalterar_3" fill="RED" layoutX="399.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A SENHA ATUAL INSERIDA ESTÁ INCORRETA, POR FAVOR VERIFIQUE E TENTE DENOVO" textAlignment="CENTER" visible="false" wrappingWidth="558.0">
+         <font>
+            <Font name="Caladea Regular" size="15.0" />
+         </font>
+      </Text>
+      <Text fx:id="erroalterar_4" fill="RED" layoutX="399.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SUA SENHA NOVA NÃO SEGUE OS PADRÕES NECESSARIOS PARA CRIAÇÃO DE SENHA." textAlignment="CENTER" visible="false" wrappingWidth="558.0">
+         <font>
+            <Font name="Caladea Regular" size="15.0" />
+         </font>
+      </Text>
+      <Text fx:id="erroalterar_5" fill="RED" layoutX="399.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A SENHAS INFORMADAS NÃO CONDIZEM, POR FAVOR VERIFIQUE E TENTE DENOVO." textAlignment="CENTER" visible="false" wrappingWidth="558.0">
+         <font>
+            <Font name="Caladea Regular" size="15.0" />
+         </font>
+      </Text>
+      <Text fx:id="erroalterar_6" fill="RED" layoutX="399.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="POR FAVOR MARQUE A OPÇÃO DE CONFIRMAÇÃO QUE ESTÁ CIENTE DA ALTERAÇÃO" textAlignment="CENTER" visible="false" wrappingWidth="558.0">
+         <font>
+            <Font name="Caladea Regular" size="15.0" />
+         </font>
+      </Text>
+      
+   </children>
+</AnchorPane>

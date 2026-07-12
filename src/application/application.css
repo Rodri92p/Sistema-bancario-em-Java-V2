@@ -1,0 +1,12 @@
+.menu-button {
+    -fx-background-color: transparent;
+    -fx-text-fill:#ffffff00;
+    -fx-cursor: hand;
+    -fx-translate-y: 0;
+    -fx-effect: null;
+}
+
+.menu-button:hover {
+    -fx-translate-y: -5; /* levanta */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 10, 0.3, 0, 4);
+}

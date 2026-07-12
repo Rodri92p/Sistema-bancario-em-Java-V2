@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="755.0" prefWidth="1119.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Controller">
+  <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="762.0" layoutX="-3.0" layoutY="-6.0" opacity="0.19" strokeType="INSIDE" strokeWidth="0.0" width="1128.0">
+         <stroke>
+            <LinearGradient endX="0.11904761904761905" endY="1.0" startX="0.24285714285714285" startY="0.6142857142857143">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.34210526943206787" green="0.3341861665248871" blue="0.3341861665248871" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9800000190734863" green="0.5716666579246521" opacity="0.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </stroke>
+         <fill>
+            <LinearGradient endX="0.5" endY="0.7904761904761904">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.949999988079071" green="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006711409395973154">
+                     <color>
+                        <Color red="0.0035649999044835567" green="9.999999747378752E-5" blue="0.009999999776482582" opacity="0.9961685538291931" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.3947368562221527" green="0.3840765058994293" blue="0.3691520392894745" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1b1a1a" height="76.0" layoutX="225.0" layoutY="-3.0" strokeType="INSIDE" strokeWidth="0.0" width="896.0">
+         <stroke>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.34210526943206787" green="0.3341861665248871" blue="0.3341861665248871" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9800000190734863" green="0.5716666579246521" opacity="0.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </stroke>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1b1a1a" height="762.0" layoutX="-18.0" layoutY="-6.0" strokeType="INSIDE" strokeWidth="0.0" width="258.0">
+         <stroke>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.34210526943206787" green="0.3341861665248871" blue="0.3341861665248871" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9800000190734863" green="0.5716666579246521" opacity="0.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </stroke>
+      </Rectangle>
+      <ImageView fitHeight="180.0" fitWidth="270.0" layoutX="-19.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/INTERKAIK(Apenas%20brasão).png" />
+         </image>
+      </ImageView>
+      
+      <Button fx:id="btn_sair" layoutX="33.0" layoutY="699.0" mnemonicParsing="false" onMousePressed="#FecharPrograma" prefHeight="37.0" prefWidth="158.0" style="-fx-background-color: #ffffff;" text="SAIR">
+         <font>
+            <Font name="Caladea Bold" size="20.0" />
+         </font>
+      </Button>
+      
+      
+      <Text fx:id="txt_cliente" fill="WHITE" layoutX="246.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="{NOME DO CLIENTE}" wrappingWidth="315.0">
+         <font>
+            <Font name="Caladea Regular" size="22.0" />
+         </font>
+      </Text>
+      
+      
+      <VBox layoutX="558.0" layoutY="-77.0" prefHeight="70.0" prefWidth="231.0" rotate="-90.0">
+         <children>
+            <Line endX="100.0" startX="-100.0" stroke="WHITE" strokeWidth="2.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Line endX="100.0" startX="-100.0" stroke="WHITE" strokeWidth="2.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Line endX="100.0" startX="-100.0" stroke="WHITE" strokeWidth="2.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Line endX="100.0" startX="-100.0" stroke="WHITE" strokeWidth="2.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Line endX="100.0" startX="-100.0" stroke="WHITE" strokeWidth="2.0" />
+         </children>
+      </VBox>
+      
+      
+      <Text fx:id="txt_saldo" fill="WHITE" layoutX="797.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="{SALDO DA CONTA}" textAlignment="RIGHT" wrappingWidth="315.0">
+         <font>
+            <Font name="Caladea Regular" size="22.0" />
+         </font>
+      </Text>
+      <Line endX="224.0" layoutX="361.0" layoutY="714.0" startX="-100.0" />
+      <Line endX="223.0" layoutX="873.0" layoutY="713.0" startX="-114.0" />
+      <Text layoutX="618.0" layoutY="720.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INTERKAIK" textAlignment="CENTER" wrappingWidth="110.0">
+         <font>
+            <Font name="Caladea Regular" size="22.0" />
+         </font>
+      </Text>
+   
+      <Text fx:id="txt_pix" fill="WHITE" layoutX="41.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TRANSFERENCIA PIX" wrappingWidth="150.1300048828125">
+         <font>
+            <Font name="Caladea Regular" size="16.0" />
+         </font>
+      </Text>
+    
+      <Line endX="-63.0" layoutX="93.0" layoutY="317.0" startX="-110.0" stroke="WHITE" strokeLineCap="ROUND" strokeWidth="3.0" />
+    
+      <Text fx:id="txt_cofrinho" fill="WHITE" layoutX="42.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" text="COFRINHO" wrappingWidth="74.1300048828125">
+         <font>
+            <Font name="Caladea Regular" size="16.0" />
+         </font>
+      </Text>
+    
+      <Line endX="-63.0" layoutX="91.0" layoutY="385.0" startX="-110.0" stroke="WHITE" strokeLineCap="ROUND" strokeWidth="3.0" />
+      <Line endX="143.0" layoutX="95.0" layoutY="349.0" startX="-100.0" stroke="#00000025" />
+      <Line endX="135.0" layoutX="108.0" layoutY="416.0" startX="-110.0" stroke="#00000025" />
+      <Line endX="-63.0" layoutX="93.0" layoutY="452.0" startX="-110.0" stroke="WHITE" strokeLineCap="ROUND" strokeWidth="3.0" />
+  
+      <Text fx:id="txt_extrato" fill="WHITE" layoutX="42.0" layoutY="458.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EXTRATO" wrappingWidth="74.1300048828125">
+         <font>
+            <Font name="Caladea Regular" size="16.0" />
+         </font>
+      </Text>
+    
+      <Line endX="136.0" layoutX="98.0" layoutY="484.0" startX="-100.0" stroke="#00000025" />
+      <Line endX="-63.0" layoutX="91.0" layoutY="519.0" startX="-110.0" stroke="WHITE" strokeLineCap="ROUND" strokeWidth="3.0" />
+     
+      <Text id="txt_conta" fill="WHITE" layoutX="42.0" layoutY="525.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CONTA" wrappingWidth="49.99999999999994">
+         <font>
+            <Font name="Caladea Regular" size="16.0" />
+         </font>
+      </Text>
+    
+      <Line endX="143.0" layoutX="96.0" layoutY="551.0" startX="-100.0" stroke="#00000025" />
+      <Line endX="-63.0" layoutX="91.0" layoutY="582.0" startX="-110.0" stroke="WHITE" strokeLineCap="ROUND" strokeWidth="3.0" />
+    
+      <Text fx:id="txt_ferramentas" fill="WHITE" layoutX="42.0" layoutY="587.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FERRAMENTAS" wrappingWidth="109.99999999999994">
+         <font>
+            <Font name="Caladea Regular" size="16.0" />
+         </font>
+      </Text>
+      <Line endX="-63.0" layoutX="93.0" layoutY="254.0" startX="-110.0" stroke="WHITE" strokeLineCap="ROUND" strokeWidth="3.0" />
+      <Line endX="143.0" layoutX="96.0" layoutY="283.0" startX="-100.0" stroke="#00000025" />
+    
+      <Text fx:id="txt_inicio" fill="WHITE" layoutX="42.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INICIO" wrappingWidth="74.1300048828125">
+         <font>
+            <Font name="Caladea Regular" size="16.0" />
+         </font>
+      </Text>
+      
+      
+      <Button fx:id="btn_inicio" layoutX="-1.0" layoutY="227.0" mnemonicParsing="false" onMousePressed="#Transicao" prefHeight="58.0" prefWidth="237.0" style="-fx-background-color: #ffffff00;">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor></Button>
+      <Button fx:id="btn_pix" layoutX="2.0" layoutY="286.0" mnemonicParsing="false" onMousePressed="#Transicao" prefHeight="58.0" prefWidth="237.0" style="-fx-background-color: #ffffff00;">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor></Button>
+      <Button fx:id="btn_cofrinho" layoutX="2.0" layoutY="355.0" mnemonicParsing="false" onMousePressed="#Transicao" prefHeight="58.0" prefWidth="237.0" style="-fx-background-color: #ffffff00;">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor></Button>
+      <Button fx:id="btn_extrato" layoutX="2.0" layoutY="423.0" mnemonicParsing="false" onMousePressed="#Transicao" prefHeight="58.0" prefWidth="237.0" style="-fx-background-color: #ffffff00;">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor></Button>
+      <Button fx:id="btn_conta" layoutX="2.0" layoutY="490.0" mnemonicParsing="false" onMousePressed="#Transicao" prefHeight="58.0" prefWidth="237.0" style="-fx-background-color: #ffffff00;">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor></Button>
+      <Button fx:id="btn_ferramentas" layoutX="2.0" layoutY="553.0" mnemonicParsing="false" onMousePressed="#Transicao" prefHeight="58.0" prefWidth="237.0" style="-fx-background-color: #ffffff00;">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor></Button>
+     
+      <Text fill="#1b1a1a" layoutX="499.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QUANTO DESEJA INVESTIR?">
+         <font>
+            <Font name="Caladea Regular" size="30.0" />
+         </font>
+      </Text>
+      <Button id="btn_confirmarBR" layoutX="588.0" layoutY="635.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="175.0" style="-fx-background-color: #ffffff; -fx-border-color: #1b1a1a; -fx-border-radius: 20; -fx-background-radius: 20;" text="CONFIRMAR" textFill="#1b1a1a">
+         <font>
+            <Font name="Caladea Regular" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Button>
+      <TextField id="field_valorinvestBR" layoutX="375.0" layoutY="205.0" prefHeight="38.0" prefWidth="602.0" promptText="DIGITE O VALOR" style="-fx-background-color: #ffffff00;">
+         <font>
+            <Font name="Caladea Bold" size="20.0" />
+         </font>
+      </TextField>
+      <Line endX="489.5" layoutX="486.0" layoutY="240.0" startX="-100.0" stroke="#1b1a1a" strokeWidth="2.0" />
+      <RadioButton layoutX="407.0" layoutY="592.0" mnemonicParsing="false" text="CONCORDO COM O TEXTO ACIMA E AFIRMO QUE ESTOU CIENTE DO CONTEÚDO INFORMADO.">
+         <font>
+            <Font name="Caladea Regular" size="13.0" />
+         </font>
+      </RadioButton>
+      <ScrollPane layoutX="385.0" layoutY="265.0" prefHeight="314.0" prefWidth="582.0" style="-fx-border-color: #1b1a1a;" vbarPolicy="ALWAYS">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1360.0" prefWidth="564.0" style="-fx-border-color: 1b1a1a;">
+               <children>
+                  <Text fill="#1b1a1a" layoutX="82.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TERMO DE INVESTIMENTO EM REAL - BRL" textAlignment="CENTER">
+                     <font>
+                        <Font name="Caladea Regular" size="22.0" />
+                     </font>
+                  </Text>
+                  <VBox layoutX="36.0" layoutY="65.0" prefHeight="795.0" prefWidth="511.0">
+                     <children>
+                        <Text fill="#1b1a1a" strokeType="OUTSIDE" strokeWidth="0.0" text="O presente Termo estabelece as condições para adesão ao serviço de investimento denominado “Cofrinho”, disponibilizado pelo sistema InterKaik, com aplicações realizadas em moeda corrente nacional (Real - BRL)." wrappingWidth="498.4019775390625">
+                           <font>
+                              <Font name="Caladea Regular" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#1b1a1a" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="510.4019775390625">
+                           <font>
+                              <Font name="Caladea Regular" size="18.0" />
+                           </font>
+                        </Text>
+                        <Line endX="401.5" startX="-100.0" stroke="#1b1a1a" />
+                        <Text fill="#1b1a1a" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="510.4019775390625">
+                           <font>
+                              <Font name="Caladea Regular" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#1b1a1a" strokeType="OUTSIDE" strokeWidth="0.0" text="1. OBJETO.">
+                           <font>
+                              <Font name="Caladea Regular" size="22.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#1b1a1a" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="510.4019775390625">
+                           <font>
+                              <Font name="Caladea Regular" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#1b1a1a" strokeType="OUTSIDE" strokeWidth="0.0" text="O Cofrinho consiste em uma funcionalidade que permite ao usuário reservar valores monetários com a finalidade de organização financeira, podendo ou não haver rendimento associado, conforme regras internas do sistema." wrappingWidth="510.4019775390625">
+                           <font>
+                              <Font name="Caladea Regular" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text id="ciente_investBR" fill="#1b1a1a" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="510.4019775390625">
+                           <font>
+                              <Font name="Caladea Regular" size="18.0" />
+                           </font>
+                        </Text>
+                        <Line endX="401.5" startX="-100.0" stroke="#1b1a1a" />
+                        <Text fill="#1b1a1a" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="510.4019775390625">
+                           <font>
+                              <Font name="Caladea Regular" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#1b1a1a" strokeType="OUTSIDE" strokeWidth="0.0" text="2. FUNCIONAMENTO">
+                           <font>
+                              <Font name="Caladea Regular" size="22.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#1b1a1a" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="510.4019775390625">
+                           <font>
+                              <Font name="Caladea Regular" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#1b1a1a" strokeType="OUTSIDE" strokeWidth="0.0" text="Os valores destinados ao Cofrinho serão segregados do saldo principal da conta, permanecendo disponíveis para consulta e eventual resgate pelo titular.O sistema poderá aplicar regras automáticas de arredondamento, depósitos recorrentes ou aportes manuais, conforme configurado pelo usuário." wrappingWidth="510.4019775390625">
+                           <font>
+                              <Font name="Caladea Regular" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#1b1a1a" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="510.4019775390625">
+                           <font>
+                              <Font name="Caladea Regular" size="18.0" />
+                           </font>
+                        </Text>
+                        <Line endX="401.5" startX="-100.0" stroke="#1b1a1a" />
+                        <Text fill="#1b1a1a" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="510.4019775390625">
+                           <font>
+                              <Font name="Caladea Regular" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#1b1a1a" strokeType="OUTSIDE" strokeWidth="0.0" text="3. RENTABILIDADE">
+                           <font>
+                              <Font name="Caladea Regular" size="22.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#1b1a1a" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="510.4019775390625">
+                           <font>
+                              <Font name="Caladea Regular" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#1b1a1a" strokeType="OUTSIDE" strokeWidth="0.0" text="A existência de rentabilidade não é garantida, podendo variar conforme critérios definidos pelo sistema InterKaik.Caso haja rendimento, este será apresentado de forma transparente ao usuário, sendo passível de alteração sem aviso prévio." wrappingWidth="510.4019775390625">
+                           <font>
+                              <Font name="Caladea Regular" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#1b1a1a" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="510.4019775390625">
+                           <font>
+                              <Font name="Caladea Regular" size="18.0" />
+                           </font>
+                        </Text>
+                        <Line endX="401.5" startX="-100.0" stroke="#1b1a1a" />
+                        <Text fill="#1b1a1a" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="510.4019775390625">
+                           <font>
+                              <Font name="Caladea Regular" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#1b1a1a" strokeType="OUTSIDE" strokeWidth="0.0" text="4. LIQUIDEZ">
+                           <font>
+                              <Font name="Caladea Regular" size="22.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#1b1a1a" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="510.4019775390625">
+                           <font>
+                              <Font name="Caladea Regular" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#1b1a1a" strokeType="OUTSIDE" strokeWidth="0.0" text="Os valores aplicados no Cofrinho poderão ser resgatados a qualquer momento, respeitando eventuais regras operacionais do sistema.O resgate implicará a transferência do saldo para a conta principal do usuário." wrappingWidth="510.4019775390625">
+                           <font>
+                              <Font name="Caladea Regular" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#1b1a1a" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="510.4019775390625">
+                           <font>
+                              <Font name="Caladea Regular" size="18.0" />
+                           </font>
+                        </Text>
+                        <Line endX="401.5" startX="-100.0" stroke="#1b1a1a" />
+                        <Text fill="#1b1a1a" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="510.4019775390625">
+                           <font>
+                              <Font name="Caladea Regular" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#1b1a1a" strokeType="OUTSIDE" strokeWidth="0.0" text="5. RISCOS">
+                           <font>
+                              <Font name="Caladea Regular" size="22.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#1b1a1a" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="510.4019775390625">
+                           <font>
+                              <Font name="Caladea Regular" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#1b1a1a" strokeType="OUTSIDE" strokeWidth="0.0" text="O usuário declara estar ciente de que, ainda que o Cofrinho tenha caráter conservador, podem existir variações, indisponibilidades temporárias ou alterações nas regras de funcionamento." wrappingWidth="510.4019775390625">
+                           <font>
+                              <Font name="Caladea Regular" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#1b1a1a" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="510.4019775390625">
+                           <font>
+                              <Font name="Caladea Regular" size="18.0" />
+                           </font>
+                        </Text>
+                        <Line endX="401.5" startX="-100.0" stroke="#1b1a1a" />
+                        <Text fill="#1b1a1a" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="510.4019775390625">
+                           <font>
+                              <Font name="Caladea Regular" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#1b1a1a" strokeType="OUTSIDE" strokeWidth="0.0" text="6. DISPOSIÇÕES GERAIS">
+                           <font>
+                              <Font name="Caladea Regular" size="22.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#1b1a1a" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="510.4019775390625">
+                           <font>
+                              <Font name="Caladea Regular" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#1b1a1a" strokeType="OUTSIDE" strokeWidth="0.0" text="A adesão a este serviço implica na aceitação integral dos termos aqui descritos.O InterKaik reserva-se o direito de modificar, suspender ou encerrar a funcionalidade a qualquer momento, mediante comunicação prévia quando aplicável." wrappingWidth="510.4019775390625">
+                           <font>
+                              <Font name="Caladea Regular" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#1b1a1a" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="510.4019775390625">
+                           <font>
+                              <Font name="Caladea Regular" size="18.0" />
+                           </font>
+                        </Text>
+                        <Line endX="401.5" startX="-100.0" stroke="#1b1a1a" />
+                        <Text fill="#1b1a1a" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="510.4019775390625">
+                           <font>
+                              <Font name="Caladea Regular" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#1b1a1a" strokeType="OUTSIDE" strokeWidth="0.0" text="7. CONFIRMAÇÃO">
+                           <font>
+                              <Font name="Caladea Regular" size="22.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#1b1a1a" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="510.4019775390625">
+                           <font>
+                              <Font name="Caladea Regular" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#1b1a1a" strokeType="OUTSIDE" strokeWidth="0.0" text="Ao utilizar o Cofrinho em Real (BRL), o usuário declara estar de acordo com todas as condições estabelecidas neste Termo." wrappingWidth="510.4019775390625">
+                           <font>
+                              <Font name="Caladea Regular" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#1b1a1a" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="510.4019775390625">
+                           <font>
+                              <Font name="Caladea Regular" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#1b1a1a" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="510.4019775390625">
+                           <font>
+                              <Font name="Caladea Regular" size="18.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+      <ImageView fitHeight="38.0" fitWidth="35.0" layoutX="940.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/brasil.png" />
+         </image>
+      </ImageView>
+       <AnchorPane fx:id="loadingPane" prefHeight="755" prefWidth="1119" style="-fx-background-color: rgba(0,0,0,0.6);" visible="false">
+         <children>
+            <HBox alignment="CENTER" layoutX="500" layoutY="350" spacing="10">
+               <children>
+                  <Circle fx:id="dot1" fill="WHITE" radius="8" />
+                  <Circle fx:id="dot2" fill="WHITE" radius="8" />
+                  <Circle fx:id="dot3" fill="WHITE" radius="8" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <Text fill="#1b1a1a" layoutX="346.0" layoutY="234.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$">
+         <font>
+            <Font name="Caladea Regular" size="30.0" />
+         </font>
+      </Text>
+      
+   </children>
+</AnchorPane>

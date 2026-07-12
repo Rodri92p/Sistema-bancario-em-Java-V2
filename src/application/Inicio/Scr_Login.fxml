@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="755.0" prefWidth="1119.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Controller">
+   <children>
+      <Text layoutX="34.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="283.28271484375">
+         <font>
+            <Font name="Noto Sans Regular" size="13.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5f5f2a6" height="755.0" layoutX="489.0" layoutY="-4.0" strokeType="INSIDE" width="631.0">
+         <stroke>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.34210526943206787" green="0.3341861665248871" blue="0.3341861665248871" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9399999976158142" green="0.9399999976158142" blue="0.9399999976158142" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </stroke>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1b1a1a" height="762.0" layoutX="-11.0" layoutY="-3.0" strokeType="INSIDE" strokeWidth="0.0" width="503.0">
+         <stroke>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.34210526943206787" green="0.3341861665248871" blue="0.3341861665248871" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9800000190734863" green="0.5716666579246521" opacity="0.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </stroke>
+      </Rectangle>
+      <Text fill="WHITE" layoutX="94.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BEM VINDO" wrappingWidth="305.1300048828125">
+         <font>
+            <Font name="Caladea Regular" size="60.0" />
+         </font>
+      </Text>
+      <Text layoutX="651.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOVO AQUI?" wrappingWidth="331.1300048828125">
+         <font>
+            <Font name="Caladea Regular" size="60.0" />
+         </font>
+      </Text>
+      <Label fx:id="sobrenome_registroTXT" layoutX="616.0" layoutY="331.0" text="Sobrenome:">
+         <font>
+            <Font name="Caladea Bold" size="20.0" />
+         </font>
+      </Label>
+      
+
+      
+      <VBox layoutX="509.0" layoutY="618.0" opacity="0.58" prefHeight="182.0" prefWidth="308.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="REGRAS PARA CRIAÇÃO DA SENHA" wrappingWidth="307.1300048828125">
+               <font>
+                  <Font name="Caladea Regular" size="16.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="  • Senha deve conter pelo menos 6 digitos;" wrappingWidth="305.1300048828125">
+               <font>
+                  <Font name="Caladea Regular" size="11.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="  • Senha deve conter um numero;" wrappingWidth="305.1300048828125">
+               <font>
+                  <Font name="Caladea Regular" size="11.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="  • Senha deve conter uma letra maiuscula;" wrappingWidth="305.1300048828125">
+               <font>
+                  <Font name="Caladea Regular" size="11.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="  • Senha deve conter uma letra minuscula;" wrappingWidth="305.1300048828125">
+               <font>
+                  <Font name="Caladea Regular" size="11.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="  • Senha deve conter um caractere especial." wrappingWidth="305.1300048828125">
+               <font>
+                  <Font name="Caladea Regular" size="11.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="305.1300048828125">
+               <font>
+                  <Font name="Caladea Regular" size="15.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="  • Exemplos: @, #, %, &amp;, $." wrappingWidth="305.1300048828125">
+               <font>
+                  <Font name="Caladea Regular" size="11.0" />
+               </font>
+            </Text>
+         </children>
+      </VBox>
+      <Label fx:id="cpf_registroTXT" layoutX="616.0" layoutY="221.0" text="CPF:">
+         <font>
+            <Font name="Caladea Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="senha_registroTXT" layoutX="616.0" layoutY="436.0" text="Senha:">
+         <font>
+            <Font name="Caladea Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="confirme_registroTXT" layoutX="614.0" layoutY="491.0" text="Confirme:">
+         <font>
+            <Font name="Caladea Bold" size="20.0" />
+         </font>
+      </Label>
+      
+      
+      
+      <Label fx:id="cpf_loginTXT" layoutX="73.0" layoutY="331.0" text="CPF:" textFill="WHITE">
+         <font>
+            <Font name="Caladea Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="senha_loginTXT" layoutX="71.0" layoutY="404.0" text="Senha:" textFill="WHITE">
+         <font>
+            <Font name="Caladea Bold" size="20.0" />
+         </font>
+      </Label>
+      
+     
+     
+     
+          
+      <TextField fx:id="cpf_login" alignment="CENTER_RIGHT" layoutX="124.0" layoutY="324.0" prefHeight="38.0" prefWidth="308.0" style="-fx-background-color: #ffffff00; -fx-text-fill: #ffffff;">
+         <font>
+            <Font name="Caladea Regular" size="20.0" />
+         </font>
+      </TextField>
+      
+      
+      <PasswordField fx:id="senha_login" alignment="CENTER_RIGHT" layoutX="149.0" layoutY="397.0" prefHeight="23.0" prefWidth="283.0" style="-fx-background-color: #ffffff00; -fx-text-fill: #ffffff;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <font>
+            <Font name="Caladea Regular" size="20.0" />
+         </font></PasswordField>
+         
+      <Button fx:id="btn_login" layoutX="163.0" layoutY="485.0" mnemonicParsing="false" onAction="#FazerLogin" prefHeight="35.0" prefWidth="166.0" text="LOGIN" textAlignment="CENTER">
+         <font>
+            <Font name="Caladea Bold" size="17.0" />
+         </font>
+      </Button>
+      
+      <Text fx:id="btn_esqueceu" fill="#0586c3" layoutX="270.0" layoutY="474.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CLIQUE AQUI!" wrappingWidth="90.0">
+         <font>
+            <Font name="Caladea Regular" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Text>
+  
+         
+         
+      <ImageView fitHeight="149.0" fitWidth="263.0" layoutX="-46.0" layoutY="-9.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/INTERKAIK(Apenas%20brasão).png" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="19.0" layoutY="738.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TODOS OS DIREITOS RESERVADOS A KAIK RODRIGUES ©, O USO INVEDIDO DA MARCA NÃO É PERMITIDO." wrappingWidth="453.1300048828125">
+         <font>
+            <Font name="Caladea Regular" size="10.0" />
+         </font>
+      </Text>
+      <Text cache="true" layoutX="745.0" layoutY="381.0" rotate="-90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="• MAKE YOUR BANK • MAKE YOUR BANK • MAKE YOUR BANK • MAKE YOUR BANK • MAKE YOUR BANK • MAKE YOUR BANK • MAKE YOUR BANK • MAKE YOUR BANK •" wrappingWidth="726.0">
+         <font>
+            <Font name="Caladea Regular" size="10.0" />
+         </font>
+      </Text>
+      <Text cache="true" fill="WHITE" layoutX="126.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="• YOU CAN • YOU CAN •  YOU CAN •  YOU CAN •  YOU CAN •  YOU CAN •  YOU CAN • " wrappingWidth="356.0">
+         <font>
+            <Font name="Caladea Regular" size="10.0" />
+         </font>
+      </Text>
+      
+      
+
+      
+
+      
+      <Label fx:id="nome_registroTXT" layoutX="616.0" layoutY="276.0" text="Nome:">
+         <font>
+            <Font name="Caladea Bold" size="20.0" />
+         </font>
+      </Label>
+      <Line fx:id="barra_7" endX="245.0" endY="-1.0" layoutX="176.0" layoutY="355.0" startX="-103.0" startY="-1.0" stroke="WHITE" strokeWidth="2.0" />
+      <Line fx:id="barra_8" endX="245.0" endY="-1.0" layoutX="175.0" layoutY="430.0" startX="-103.0" startY="-1.0" stroke="WHITE" strokeWidth="2.0" />
+      <Line fx:id="barra_2" endX="276.0" endY="-1.0" layoutX="720.0" layoutY="301.0" startX="-103.0" startY="-1.0" stroke="#868686" strokeWidth="2.0" />
+      <Line fx:id="barra_1" endX="276.0" endY="-1.0" layoutX="721.0" layoutY="246.0" startX="-103.0" startY="-1.0" stroke="#868686" strokeWidth="2.0" />
+      <Line fx:id="barra_3" endX="276.0" endY="-1.0" layoutX="720.0" layoutY="355.0" startX="-103.0" startY="-1.0" stroke="#868686" strokeWidth="2.0" />
+      <Line fx:id="barra_5" endX="276.0" endY="-1.0" layoutX="720.0" layoutY="460.0" startX="-103.0" startY="-1.0" stroke="#868686" strokeWidth="2.0" />
+      <Line fx:id="barra_6" endX="276.0" endY="-1.0" layoutX="719.0" layoutY="514.0" startX="-103.0" startY="-1.0" stroke="#868686" strokeWidth="2.0" />
+      
+      
+      
+      
+      
+      
+      
+      
+      <TextField fx:id="cpf_registro" alignment="CENTER_RIGHT" layoutX="670.0" layoutY="212.0" prefHeight="29.0" prefWidth="339.0" style="-fx-background-color: #ffffff00;">
+         <font>
+            <Font name="Caladea Regular" size="20.0" />
+         </font>
+      </TextField>
+      
+      <TextField fx:id="nome_registro" alignment="CENTER_RIGHT" layoutX="685.0" layoutY="268.0" prefHeight="38.0" prefWidth="324.0" style="-fx-background-color: #ffffff00;">
+         <font>
+            <Font name="Caladea Regular" size="20.0" />
+         </font>
+      </TextField>
+      
+      <TextField fx:id="sobrenome_registro" alignment="CENTER_RIGHT" layoutX="735.0" layoutY="322.0" prefHeight="38.0" prefWidth="274.0" style="-fx-background-color: #ffffff00;">
+         <font>
+            <Font name="Caladea Regular" size="20.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="email_registro" alignment="CENTER_RIGHT" layoutX="685.0" layoutY="374.0" prefHeight="38.0" prefWidth="324.0" style="-fx-background-color: #ffffff00;">
+         <font>
+            <Font name="Caladea Regular" size="20.0" />
+         </font>
+      </TextField>
+
+      <PasswordField fx:id="senha_registro" alignment="CENTER_RIGHT" layoutX="687.0" layoutY="427.0" prefHeight="38.0" prefWidth="324.0" style="-fx-background-color: #ffffff00;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <font>
+            <Font name="Caladea Regular" size="20.0" />
+         </font>
+      </PasswordField>
+      
+      <PasswordField fx:id="confirme_registro" alignment="CENTER_RIGHT" layoutX="714.0" layoutY="481.0" prefHeight="38.0" prefWidth="296.0" style="-fx-background-color: #ffffff00;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <font>
+            <Font name="Caladea Regular" size="20.0" />
+         </font>
+      </PasswordField>
+      
+      <Button fx:id="btn_registro" layoutX="722.0" layoutY="545.0" mnemonicParsing="false" onAction="#FazerRegistro" prefHeight="35.0" prefWidth="166.0" text="REGISTRO">
+         <font>
+            <Font name="Caladea Bold" size="17.0" />
+         </font>
+      </Button>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+     
+      <Text fill="WHITE" layoutX="131.0" layoutY="474.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ESQUECEU A SENHA?" wrappingWidth="231.1300048828125">
+         <font>
+            <Font name="Caladea Regular" size="15.0" />
+         </font>
+      </Text>
+      <Button layoutX="270.0" layoutY="457.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="90.0" style="-fx-background-color: #ffffff00;">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Button>
+      <Label fx:id="email_registroTXT" layoutX="616.0" layoutY="383.0" text="Email:">
+         <font>
+            <Font name="Caladea Bold" size="20.0" />
+         </font>
+      </Label>
+      <Line fx:id="barra_4" endX="276.0" endY="-1.0" layoutX="720.0" layoutY="407.0" startX="-103.0" startY="-1.0" stroke="#868686" strokeWidth="2.0" />
+      <Label fx:id="erro_cpf1" layoutX="617.0" layoutY="248.0" prefHeight="14.0" prefWidth="381.0" text="O CPF DEVE CONTER PELO MENOS 11 DIGITOS." textFill="RED" visible="false">
+         <font>
+            <Font name="Caladea Regular" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="erro_cpf2" layoutX="617.0" layoutY="248.0" prefHeight="14.0" prefWidth="381.0" text="O CPF DEVE CONTER SOMENTE NUMEROS." textFill="RED" visible="false">
+         <font>
+            <Font name="Caladea Regular" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="erro_nome" layoutX="617.0" layoutY="304.0" prefHeight="14.0" prefWidth="381.0" text="O NOME DEVE CONTER SOMENTE LETRAS." textFill="RED" visible="false">
+         <font>
+            <Font name="Caladea Regular" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="erro_sobrenome" layoutX="617.0" layoutY="360.0" prefHeight="14.0" prefWidth="381.0" text="O SOBRENOME DEVE CONTER SOMENTE LETRAS." textFill="RED" visible="false">
+         <font>
+            <Font name="Caladea Regular" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="erro_senha" layoutX="617.0" layoutY="462.0" prefHeight="14.0" prefWidth="381.0" text="SUA SENHA NÃO CUMPRE AS REGRAS PARA CRIAÇÃO." textFill="RED" visible="false">
+         <font>
+            <Font name="Caladea Regular" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="erro_confirma" layoutX="615.0" layoutY="516.0" prefHeight="14.0" prefWidth="381.0" text="AS SENHAS INSERIDAS NÃO CONFEREM." textFill="RED" visible="false">
+         <font>
+            <Font name="Caladea Regular" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="erro_email" layoutX="616.0" layoutY="409.0" prefHeight="14.0" prefWidth="381.0" text="POR FAVOR, INSIIRA UM EMAIL VALIDO." textFill="RED" visible="false">
+         <font>
+            <Font name="Caladea Regular" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="erro_cpflogin1" layoutX="73.0" layoutY="360.0" prefHeight="14.0" prefWidth="381.0" text="POR FAVOR, INSIRA O CPF." textFill="RED" visible="false">
+         <font>
+            <Font name="Caladea Regular" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="erro_senhalogin1" layoutX="73.0" layoutY="435.0" prefHeight="14.0" prefWidth="381.0" text="POR FAVOR, INSIRA A SENHA." textFill="RED" visible="false">
+         <font>
+            <Font name="Caladea Regular" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="erro_cpflogin2" layoutX="73.0" layoutY="360.0" prefHeight="14.0" prefWidth="381.0" text="NENHUM CLIENTE FOI ENCONTRADO, TENTE NOVAMENTE." textFill="RED" visible="false">
+         <font>
+            <Font name="Caladea Regular" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="erro_senhalogin2" layoutX="73.0" layoutY="435.0" prefHeight="14.0" prefWidth="381.0" text="SENHA INCORRETA, POR FAVOR TENTE NOVAMENTE." textFill="RED" visible="false">
+         <font>
+            <Font name="Caladea Regular" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="erro_cpf3" layoutX="616.0" layoutY="248.0" prefHeight="14.0" prefWidth="381.0" text="POR FAVOR, PREENCHA TODOS OS CAMPOS." textFill="RED" visible="false">
+         <font>
+            <Font name="Caladea Regular" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="erro_cpf4" layoutX="617.0" layoutY="250.0" prefHeight="14.0" prefWidth="381.0" text="ESTA CONTA JÁ EXISTE, POR FAVOR TENTE ENTRAR NO SISTEMA." textFill="RED" visible="false">
+         <font>
+            <Font name="Caladea Regular" size="12.0" />
+         </font>
+      </Label>
+    <AnchorPane fx:id="loadingPane" prefHeight="755" prefWidth="1119" style="-fx-background-color: rgba(0,0,0,0.6);" visible="false">
+         <children>
+            <HBox alignment="CENTER" layoutX="500" layoutY="350" spacing="10">
+               <children>
+                  <Circle fx:id="dot1" fill="WHITE" radius="8" />
+                  <Circle fx:id="dot2" fill="WHITE" radius="8" />
+                  <Circle fx:id="dot3" fill="WHITE" radius="8" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+
+</AnchorPane>

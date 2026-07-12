@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="755.0" prefWidth="1119.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Controller">
+  <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="762.0" layoutX="-3.0" layoutY="-6.0" opacity="0.19" strokeType="INSIDE" strokeWidth="0.0" width="1128.0">
+         <stroke>
+            <LinearGradient endX="0.11904761904761905" endY="1.0" startX="0.24285714285714285" startY="0.6142857142857143">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.34210526943206787" green="0.3341861665248871" blue="0.3341861665248871" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9800000190734863" green="0.5716666579246521" opacity="0.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </stroke>
+         <fill>
+            <LinearGradient endX="0.5" endY="0.7904761904761904">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.949999988079071" green="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006711409395973154">
+                     <color>
+                        <Color red="0.0035649999044835567" green="9.999999747378752E-5" blue="0.009999999776482582" opacity="0.9961685538291931" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.3947368562221527" green="0.3840765058994293" blue="0.3691520392894745" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1b1a1a" height="76.0" layoutX="225.0" layoutY="-3.0" strokeType="INSIDE" strokeWidth="0.0" width="896.0">
+         <stroke>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.34210526943206787" green="0.3341861665248871" blue="0.3341861665248871" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9800000190734863" green="0.5716666579246521" opacity="0.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </stroke>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1b1a1a" height="762.0" layoutX="-18.0" layoutY="-6.0" strokeType="INSIDE" strokeWidth="0.0" width="258.0">
+         <stroke>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.34210526943206787" green="0.3341861665248871" blue="0.3341861665248871" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9800000190734863" green="0.5716666579246521" opacity="0.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </stroke>
+      </Rectangle>
+      <ImageView fitHeight="180.0" fitWidth="270.0" layoutX="-19.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/INTERKAIK(Apenas%20brasão).png" />
+         </image>
+      </ImageView>
+      
+      <Button fx:id="btn_sair" layoutX="33.0" layoutY="699.0" mnemonicParsing="false" onMousePressed="#FecharPrograma" prefHeight="37.0" prefWidth="158.0" style="-fx-background-color: #ffffff;" text="SAIR">
+         <font>
+            <Font name="Caladea Bold" size="20.0" />
+         </font>
+      </Button>
+      
+      
+      <Text fx:id="txt_cliente" fill="WHITE" layoutX="246.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="{NOME DO CLIENTE}" wrappingWidth="315.0">
+         <font>
+            <Font name="Caladea Regular" size="22.0" />
+         </font>
+      </Text>
+      
+      
+      <VBox layoutX="558.0" layoutY="-77.0" prefHeight="70.0" prefWidth="231.0" rotate="-90.0">
+         <children>
+            <Line endX="100.0" startX="-100.0" stroke="WHITE" strokeWidth="2.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Line endX="100.0" startX="-100.0" stroke="WHITE" strokeWidth="2.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Line endX="100.0" startX="-100.0" stroke="WHITE" strokeWidth="2.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Line endX="100.0" startX="-100.0" stroke="WHITE" strokeWidth="2.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Line endX="100.0" startX="-100.0" stroke="WHITE" strokeWidth="2.0" />
+         </children>
+      </VBox>
+      
+      
+      <Text fx:id="txt_saldo" fill="WHITE" layoutX="797.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="{SALDO DA CONTA}" textAlignment="RIGHT" wrappingWidth="315.0">
+         <font>
+            <Font name="Caladea Regular" size="22.0" />
+         </font>
+      </Text>
+      <Line endX="224.0" layoutX="361.0" layoutY="714.0" startX="-100.0" />
+      <Line endX="223.0" layoutX="873.0" layoutY="713.0" startX="-114.0" />
+      <Text layoutX="618.0" layoutY="720.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INTERKAIK" textAlignment="CENTER" wrappingWidth="110.0">
+         <font>
+            <Font name="Caladea Regular" size="22.0" />
+         </font>
+      </Text>
+   
+      <Text fx:id="txt_pix" fill="WHITE" layoutX="41.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TRANSFERENCIA PIX" wrappingWidth="150.1300048828125">
+         <font>
+            <Font name="Caladea Regular" size="16.0" />
+         </font>
+      </Text>
+    
+      <Line endX="-63.0" layoutX="93.0" layoutY="317.0" startX="-110.0" stroke="WHITE" strokeLineCap="ROUND" strokeWidth="3.0" />
+    
+      <Text fx:id="txt_cofrinho" fill="WHITE" layoutX="42.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" text="COFRINHO" wrappingWidth="74.1300048828125">
+         <font>
+            <Font name="Caladea Regular" size="16.0" />
+         </font>
+      </Text>
+    
+      <Line endX="-63.0" layoutX="91.0" layoutY="385.0" startX="-110.0" stroke="WHITE" strokeLineCap="ROUND" strokeWidth="3.0" />
+      <Line endX="143.0" layoutX="95.0" layoutY="349.0" startX="-100.0" stroke="#00000025" />
+      <Line endX="135.0" layoutX="108.0" layoutY="416.0" startX="-110.0" stroke="#00000025" />
+      <Line endX="-63.0" layoutX="93.0" layoutY="452.0" startX="-110.0" stroke="WHITE" strokeLineCap="ROUND" strokeWidth="3.0" />
+  
+      <Text fx:id="txt_extrato" fill="WHITE" layoutX="42.0" layoutY="458.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EXTRATO" wrappingWidth="74.1300048828125">
+         <font>
+            <Font name="Caladea Regular" size="16.0" />
+         </font>
+      </Text>
+    
+      <Line endX="136.0" layoutX="98.0" layoutY="484.0" startX="-100.0" stroke="#00000025" />
+      <Line endX="-63.0" layoutX="91.0" layoutY="519.0" startX="-110.0" stroke="WHITE" strokeLineCap="ROUND" strokeWidth="3.0" />
+     
+      <Text id="txt_conta" fill="WHITE" layoutX="42.0" layoutY="525.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CONTA" wrappingWidth="49.99999999999994">
+         <font>
+            <Font name="Caladea Regular" size="16.0" />
+         </font>
+      </Text>
+    
+      <Line endX="143.0" layoutX="96.0" layoutY="551.0" startX="-100.0" stroke="#00000025" />
+      <Line endX="-63.0" layoutX="91.0" layoutY="582.0" startX="-110.0" stroke="WHITE" strokeLineCap="ROUND" strokeWidth="3.0" />
+    
+      <Text fx:id="txt_ferramentas" fill="WHITE" layoutX="42.0" layoutY="587.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FERRAMENTAS" wrappingWidth="109.99999999999994">
+         <font>
+            <Font name="Caladea Regular" size="16.0" />
+         </font>
+      </Text>
+      <Line endX="-63.0" layoutX="93.0" layoutY="254.0" startX="-110.0" stroke="WHITE" strokeLineCap="ROUND" strokeWidth="3.0" />
+      <Line endX="143.0" layoutX="96.0" layoutY="283.0" startX="-100.0" stroke="#00000025" />
+    
+      <Text fx:id="txt_inicio" fill="WHITE" layoutX="42.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INICIO" wrappingWidth="74.1300048828125">
+         <font>
+            <Font name="Caladea Regular" size="16.0" />
+         </font>
+      </Text>
+      
+      
+      <Button fx:id="btn_inicio" layoutX="-1.0" layoutY="227.0" mnemonicParsing="false" onMousePressed="#Transicao" prefHeight="58.0" prefWidth="237.0" style="-fx-background-color: #ffffff00;">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor></Button>
+      <Button fx:id="btn_pix" layoutX="2.0" layoutY="286.0" mnemonicParsing="false" onMousePressed="#Transicao" prefHeight="58.0" prefWidth="237.0" style="-fx-background-color: #ffffff00;">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor></Button>
+      <Button fx:id="btn_cofrinho" layoutX="2.0" layoutY="355.0" mnemonicParsing="false" onMousePressed="#Transicao" prefHeight="58.0" prefWidth="237.0" style="-fx-background-color: #ffffff00;">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor></Button>
+      <Button fx:id="btn_extrato" layoutX="2.0" layoutY="423.0" mnemonicParsing="false" onMousePressed="#Transicao" prefHeight="58.0" prefWidth="237.0" style="-fx-background-color: #ffffff00;">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor></Button>
+      <Button fx:id="btn_conta" layoutX="2.0" layoutY="490.0" mnemonicParsing="false" onMousePressed="#Transicao" prefHeight="58.0" prefWidth="237.0" style="-fx-background-color: #ffffff00;">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor></Button>
+      <Button fx:id="btn_ferramentas" layoutX="2.0" layoutY="553.0" mnemonicParsing="false" onMousePressed="#Transicao" prefHeight="58.0" prefWidth="237.0" style="-fx-background-color: #ffffff00;">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor></Button>
+         
+         
+   
+      <Text fill="#1b1a1a" layoutX="292.0" layoutY="361.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$" wrappingWidth="58.0">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Text fill="#1b1a1a" layoutX="293.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL INVESTIDO">
+         <font>
+            <Font name="Caladea Regular" size="30.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="62.0" fitWidth="58.0" layoutX="564.0" layoutY="308.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/brasil.png" />
+         </image>
+      </ImageView>
+      <Text id="lbl_valorBR" fill="#1b1a1a" layoutX="341.0" layoutY="361.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00" wrappingWidth="299.1328125">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Line endX="232.5" layoutX="394.0" layoutY="388.0" startX="-100.0" stroke="#1b1a1a" strokeWidth="2.0" />
+      <Button fx:id="btn_investirBR" layoutX="279.0" layoutY="531.0" mnemonicParsing="false" onMousePressed="#Transicao" prefHeight="50.0" prefWidth="175.0" style="-fx-background-color: #ffffff; -fx-border-color: #1b1a1a; -fx-border-radius: 20; -fx-background-radius: 20;" text="INVESTIR" textFill="#1b1a1a">
+         <font>
+            <Font name="Caladea Regular" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Button>
+      <Text fill="#1b1a1a" layoutX="292.0" layoutY="441.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VALOR RENDIDO">
+         <font>
+            <Font name="Caladea Regular" size="30.0" />
+         </font>
+      </Text>
+      <Text fill="#1b1a1a" layoutX="293.0" layoutY="492.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$" wrappingWidth="58.0">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Text id="lbl_redimentoBR" fill="#1b1a1a" layoutX="341.0" layoutY="492.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00" wrappingWidth="299.1328125">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="62.0" fitWidth="58.0" layoutX="564.0" layoutY="433.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/brasil.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" layoutX="293.0" layoutY="244.0" stroke="BLACK" strokeType="INSIDE" width="70.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" layoutX="375.0" layoutY="244.0" stroke="BLACK" strokeType="INSIDE" width="103.0" />
+      <Text fill="#1b1a1a" layoutX="299.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12% ao ANO" textAlignment="CENTER" wrappingWidth="58.0">
+         <font>
+            <Font name="Caladea Regular" size="10.0" />
+         </font>
+      </Text>
+      <Text fill="#1b1a1a" layoutX="381.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RESGATE IMEDIATO" textAlignment="CENTER" wrappingWidth="91.0">
+         <font>
+            <Font name="Caladea Regular" size="10.0" />
+         </font>
+      </Text>
+      <Button fx:id="btn_resgatarBR" layoutX="460.0" layoutY="531.0" mnemonicParsing="false" onMousePressed="#Transicao" prefHeight="50.0" prefWidth="175.0" style="-fx-background-color: #ffffff; -fx-border-color: #1b1a1a; -fx-border-radius: 20; -fx-background-radius: 20;" text="RESGATAR" textFill="#1b1a1a">
+         <font>
+            <Font name="Caladea Regular" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Button>
+      <Text fill="#1b1a1a" layoutX="717.0" layoutY="361.0" strokeType="OUTSIDE" strokeWidth="0.0" text="US$" wrappingWidth="70.0">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Text fill="#1b1a1a" layoutX="719.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL INVESTIDO">
+         <font>
+            <Font name="Caladea Regular" size="30.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="62.0" fitWidth="58.0" layoutX="990.0" layoutY="308.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/USA.png" />
+         </image>
+      </ImageView>
+      <Text id="lbl_valorUS" fill="#1b1a1a" layoutX="785.0" layoutY="361.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00" wrappingWidth="299.1328125">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Line endX="232.5" layoutX="820.0" layoutY="388.0" startX="-100.0" stroke="#1b1a1a" strokeWidth="2.0" />
+      <Button fx:id="btn_investirUS" layoutX="705.0" layoutY="532.0" mnemonicParsing="false" onMousePressed="#Transicao" prefHeight="50.0" prefWidth="175.0" style="-fx-background-color: #ffffff; -fx-border-color: #1b1a1a; -fx-border-radius: 20; -fx-background-radius: 20;" text="INVESTIR" textFill="#1b1a1a">
+         <font>
+            <Font name="Caladea Regular" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Button>
+      <Text fill="#1b1a1a" layoutX="718.0" layoutY="441.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VALOR RENDIDO">
+         <font>
+            <Font name="Caladea Regular" size="30.0" />
+         </font>
+      </Text>
+      <Text fill="#1b1a1a" layoutX="717.0" layoutY="490.0" strokeType="OUTSIDE" strokeWidth="0.0" text="US$" wrappingWidth="103.0">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Text id="lbl_redimentoUS" fill="#1b1a1a" layoutX="786.0" layoutY="491.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00" wrappingWidth="299.1328125">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="62.0" fitWidth="58.0" layoutX="990.0" layoutY="433.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/USA.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" layoutX="876.0" layoutY="244.0" stroke="BLACK" strokeType="INSIDE" width="70.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" layoutX="958.0" layoutY="244.0" stroke="BLACK" strokeType="INSIDE" width="103.0" />
+      <Text fill="#1b1a1a" layoutX="882.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3% ao ANO" textAlignment="CENTER" wrappingWidth="58.0">
+         <font>
+            <Font name="Caladea Regular" size="10.0" />
+         </font>
+      </Text>
+      <Text fill="#1b1a1a" layoutX="964.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VALOR EM DOLAR" textAlignment="CENTER" wrappingWidth="91.0">
+         <font>
+            <Font name="Caladea Regular" size="10.0" />
+         </font>
+      </Text>
+      <Button fx:id="btn_resgatarUS" layoutX="886.0" layoutY="532.0" mnemonicParsing="false" onMousePressed="#Transicao" prefHeight="50.0" prefWidth="175.0" style="-fx-background-color: #ffffff; -fx-border-color: #1b1a1a; -fx-border-radius: 20; -fx-background-radius: 20;" text="RESGATAR" textFill="#1b1a1a">
+         <font>
+            <Font name="Caladea Regular" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" layoutX="491.0" layoutY="244.0" stroke="BLACK" strokeType="INSIDE" width="74.0" />
+      <Text fill="#1b1a1a" layoutX="482.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MIN R$ 1,00" textAlignment="CENTER" wrappingWidth="91.0">
+         <font>
+            <Font name="Caladea Regular" size="10.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" layoutX="785.0" layoutY="244.0" stroke="BLACK" strokeType="INSIDE" width="74.0" />
+      <Text fill="#1b1a1a" layoutX="776.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MIN US$ 2,00" textAlignment="CENTER" wrappingWidth="91.0">
+         <font>
+            <Font name="Caladea Regular" size="10.0" />
+         </font>
+      </Text>
+      <AnchorPane fx:id="loadingPane" prefHeight="755" prefWidth="1119" style="-fx-background-color: rgba(0,0,0,0.6);" visible="false">
+         <children>
+            <HBox alignment="CENTER" layoutX="500" layoutY="350" spacing="10">
+               <children>
+                  <Circle fx:id="dot1" fill="WHITE" radius="8" />
+                  <Circle fx:id="dot2" fill="WHITE" radius="8" />
+                  <Circle fx:id="dot3" fill="WHITE" radius="8" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      
+   </children>
+</AnchorPane>

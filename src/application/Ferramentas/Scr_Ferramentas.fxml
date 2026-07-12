@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.QuadCurve?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="755.0" prefWidth="1119.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Controller">
+  <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="762.0" layoutX="-3.0" layoutY="-6.0" opacity="0.19" strokeType="INSIDE" strokeWidth="0.0" width="1128.0">
+         <stroke>
+            <LinearGradient endX="0.11904761904761905" endY="1.0" startX="0.24285714285714285" startY="0.6142857142857143">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.34210526943206787" green="0.3341861665248871" blue="0.3341861665248871" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9800000190734863" green="0.5716666579246521" opacity="0.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </stroke>
+         <fill>
+            <LinearGradient endX="0.5" endY="0.7904761904761904">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.949999988079071" green="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006711409395973154">
+                     <color>
+                        <Color red="0.0035649999044835567" green="9.999999747378752E-5" blue="0.009999999776482582" opacity="0.9961685538291931" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.3947368562221527" green="0.3840765058994293" blue="0.3691520392894745" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1b1a1a" height="76.0" layoutX="225.0" layoutY="-3.0" strokeType="INSIDE" strokeWidth="0.0" width="896.0">
+         <stroke>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.34210526943206787" green="0.3341861665248871" blue="0.3341861665248871" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9800000190734863" green="0.5716666579246521" opacity="0.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </stroke>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1b1a1a" height="762.0" layoutX="-18.0" layoutY="-6.0" strokeType="INSIDE" strokeWidth="0.0" width="258.0">
+         <stroke>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.34210526943206787" green="0.3341861665248871" blue="0.3341861665248871" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9800000190734863" green="0.5716666579246521" opacity="0.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </stroke>
+      </Rectangle>
+      <ImageView fitHeight="180.0" fitWidth="270.0" layoutX="-19.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/INTERKAIK(Apenas%20brasão).png" />
+         </image>
+      </ImageView>
+      
+      <Button fx:id="btn_sair" layoutX="33.0" layoutY="699.0" mnemonicParsing="false" onMousePressed="#FecharPrograma" prefHeight="37.0" prefWidth="158.0" style="-fx-background-color: #ffffff;" text="SAIR">
+         <font>
+            <Font name="Caladea Bold" size="20.0" />
+         </font>
+      </Button>
+      
+      
+      <Text fx:id="txt_cliente" fill="WHITE" layoutX="246.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="{NOME DO CLIENTE}" wrappingWidth="315.0">
+         <font>
+            <Font name="Caladea Regular" size="22.0" />
+         </font>
+      </Text>
+      
+      
+      <VBox layoutX="558.0" layoutY="-77.0" prefHeight="70.0" prefWidth="231.0" rotate="-90.0">
+         <children>
+            <Line endX="100.0" startX="-100.0" stroke="WHITE" strokeWidth="2.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Line endX="100.0" startX="-100.0" stroke="WHITE" strokeWidth="2.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Line endX="100.0" startX="-100.0" stroke="WHITE" strokeWidth="2.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Line endX="100.0" startX="-100.0" stroke="WHITE" strokeWidth="2.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Line endX="100.0" startX="-100.0" stroke="WHITE" strokeWidth="2.0" />
+         </children>
+      </VBox>
+      
+      
+      <Text fx:id="txt_saldo" fill="WHITE" layoutX="797.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="{SALDO DA CONTA}" textAlignment="RIGHT" wrappingWidth="315.0">
+         <font>
+            <Font name="Caladea Regular" size="22.0" />
+         </font>
+      </Text>
+      <Line endX="224.0" layoutX="361.0" layoutY="714.0" startX="-100.0" />
+      <Line endX="223.0" layoutX="873.0" layoutY="713.0" startX="-114.0" />
+      <Text layoutX="618.0" layoutY="720.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INTERKAIK" textAlignment="CENTER" wrappingWidth="110.0">
+         <font>
+            <Font name="Caladea Regular" size="22.0" />
+         </font>
+      </Text>
+   
+      <Text fx:id="txt_pix" fill="WHITE" layoutX="41.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TRANSFERENCIA PIX" wrappingWidth="150.1300048828125">
+         <font>
+            <Font name="Caladea Regular" size="16.0" />
+         </font>
+      </Text>
+    
+      <Line endX="-63.0" layoutX="93.0" layoutY="317.0" startX="-110.0" stroke="WHITE" strokeLineCap="ROUND" strokeWidth="3.0" />
+    
+      <Text fx:id="txt_cofrinho" fill="WHITE" layoutX="42.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" text="COFRINHO" wrappingWidth="74.1300048828125">
+         <font>
+            <Font name="Caladea Regular" size="16.0" />
+         </font>
+      </Text>
+    
+      <Line endX="-63.0" layoutX="91.0" layoutY="385.0" startX="-110.0" stroke="WHITE" strokeLineCap="ROUND" strokeWidth="3.0" />
+      <Line endX="143.0" layoutX="95.0" layoutY="349.0" startX="-100.0" stroke="#00000025" />
+      <Line endX="135.0" layoutX="108.0" layoutY="416.0" startX="-110.0" stroke="#00000025" />
+      <Line endX="-63.0" layoutX="93.0" layoutY="452.0" startX="-110.0" stroke="WHITE" strokeLineCap="ROUND" strokeWidth="3.0" />
+  
+      <Text fx:id="txt_extrato" fill="WHITE" layoutX="42.0" layoutY="458.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EXTRATO" wrappingWidth="74.1300048828125">
+         <font>
+            <Font name="Caladea Regular" size="16.0" />
+         </font>
+      </Text>
+    
+      <Line endX="136.0" layoutX="98.0" layoutY="484.0" startX="-100.0" stroke="#00000025" />
+      <Line endX="-63.0" layoutX="91.0" layoutY="519.0" startX="-110.0" stroke="WHITE" strokeLineCap="ROUND" strokeWidth="3.0" />
+     
+      <Text id="txt_conta" fill="WHITE" layoutX="42.0" layoutY="525.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CONTA" wrappingWidth="49.99999999999994">
+         <font>
+            <Font name="Caladea Regular" size="16.0" />
+         </font>
+      </Text>
+    
+      <Line endX="143.0" layoutX="96.0" layoutY="551.0" startX="-100.0" stroke="#00000025" />
+      <Line endX="-63.0" layoutX="91.0" layoutY="582.0" startX="-110.0" stroke="WHITE" strokeLineCap="ROUND" strokeWidth="3.0" />
+    
+      <Text fx:id="txt_ferramentas" fill="WHITE" layoutX="42.0" layoutY="587.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FERRAMENTAS" wrappingWidth="109.99999999999994">
+         <font>
+            <Font name="Caladea Regular" size="16.0" />
+         </font>
+      </Text>
+      <Line endX="-63.0" layoutX="93.0" layoutY="254.0" startX="-110.0" stroke="WHITE" strokeLineCap="ROUND" strokeWidth="3.0" />
+      <Line endX="143.0" layoutX="96.0" layoutY="283.0" startX="-100.0" stroke="#00000025" />
+    
+      <Text fx:id="txt_inicio" fill="WHITE" layoutX="42.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INICIO" wrappingWidth="74.1300048828125">
+         <font>
+            <Font name="Caladea Regular" size="16.0" />
+         </font>
+      </Text>
+      
+      
+      <Button fx:id="btn_inicio" layoutX="-1.0" layoutY="227.0" mnemonicParsing="false" onMousePressed="#Transicao" prefHeight="58.0" prefWidth="237.0" style="-fx-background-color: #ffffff00;">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor></Button>
+      <Button fx:id="btn_pix" layoutX="2.0" layoutY="286.0" mnemonicParsing="false" onMousePressed="#Transicao" prefHeight="58.0" prefWidth="237.0" style="-fx-background-color: #ffffff00;">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor></Button>
+      <Button fx:id="btn_cofrinho" layoutX="2.0" layoutY="355.0" mnemonicParsing="false" onMousePressed="#Transicao" prefHeight="58.0" prefWidth="237.0" style="-fx-background-color: #ffffff00;">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor></Button>
+      <Button fx:id="btn_extrato" layoutX="2.0" layoutY="423.0" mnemonicParsing="false" onMousePressed="#Transicao" prefHeight="58.0" prefWidth="237.0" style="-fx-background-color: #ffffff00;">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor></Button>
+      <Button fx:id="btn_conta" layoutX="2.0" layoutY="490.0" mnemonicParsing="false" onMousePressed="#Transicao" prefHeight="58.0" prefWidth="237.0" style="-fx-background-color: #ffffff00;">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor></Button>
+      <Button fx:id="btn_ferramentas" layoutX="2.0" layoutY="553.0" mnemonicParsing="false" onMousePressed="#Transicao" prefHeight="58.0" prefWidth="237.0" style="-fx-background-color: #ffffff00;">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor></Button>      
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="144.0" layoutX="308.0" layoutY="131.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="2.0" style="-fx-background-color: #000;" width="119.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1b1a1a" height="108.0" layoutX="322.0" layoutY="148.0" stroke="BLACK" strokeType="INSIDE" width="93.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" layoutX="329.0" layoutY="155.0" stroke="BLACK" strokeType="INSIDE" width="81.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="18.0" layoutX="328.0" layoutY="186.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="18.0" layoutX="345.0" layoutY="186.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="18.0" layoutX="396.0" layoutY="186.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="18.0" layoutX="328.0" layoutY="210.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="18.0" layoutX="345.0" layoutY="210.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="18.0" layoutX="362.0" layoutY="186.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="18.0" layoutX="362.0" layoutY="210.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="18.0" layoutX="328.0" layoutY="233.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="18.0" layoutX="345.0" layoutY="233.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="18.0" layoutX="362.0" layoutY="233.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="144.0" layoutX="520.0" layoutY="132.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="2.0" style="-fx-background-color: #000;" width="119.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="144.0" layoutX="731.0" layoutY="131.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="2.0" style="-fx-background-color: #000;" width="119.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1b1a1a" height="108.0" layoutX="533.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="93.0" />
+      <Line endX="10.0" layoutX="616.0" layoutY="168.0" startX="-83.0" stroke="WHITE" strokeWidth="2.0" />
+      <Line endX="0.5" layoutX="563.0" layoutY="151.0" rotate="90.0" startX="-13.5" stroke="WHITE" strokeLineCap="ROUND" strokeWidth="6.0" />
+      <Line endX="0.5" layoutX="611.0" layoutY="150.0" rotate="90.0" startX="-13.5" stroke="WHITE" strokeLineCap="ROUND" strokeWidth="6.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="18.0" layoutX="396.0" layoutY="210.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="18.0" layoutX="379.0" layoutY="186.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="18.0" layoutX="379.0" layoutY="210.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e4aa08" height="18.0" layoutX="380.0" layoutY="233.0" stroke="BLACK" strokeType="INSIDE" width="31.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#bc0303" height="12.0" layoutX="538.0" layoutY="186.0" stroke="BLACK" strokeType="INSIDE" width="12.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="12.0" layoutX="562.0" layoutY="186.0" stroke="BLACK" strokeType="INSIDE" width="12.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="12.0" layoutX="550.0" layoutY="186.0" stroke="BLACK" strokeType="INSIDE" width="12.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="12.0" layoutX="574.0" layoutY="186.0" stroke="BLACK" strokeType="INSIDE" width="12.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="12.0" layoutX="586.0" layoutY="186.0" stroke="BLACK" strokeType="INSIDE" width="12.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="12.0" layoutX="598.0" layoutY="186.0" stroke="BLACK" strokeType="INSIDE" width="12.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="12.0" layoutX="610.0" layoutY="186.0" stroke="BLACK" strokeType="INSIDE" width="12.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#bc0303" height="12.0" layoutX="538.0" layoutY="202.0" stroke="BLACK" strokeType="INSIDE" width="12.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="12.0" layoutX="562.0" layoutY="202.0" stroke="BLACK" strokeType="INSIDE" width="12.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="12.0" layoutX="550.0" layoutY="202.0" stroke="BLACK" strokeType="INSIDE" width="12.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="12.0" layoutX="574.0" layoutY="202.0" stroke="BLACK" strokeType="INSIDE" width="12.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="12.0" layoutX="586.0" layoutY="202.0" stroke="BLACK" strokeType="INSIDE" width="12.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="12.0" layoutX="598.0" layoutY="202.0" stroke="BLACK" strokeType="INSIDE" width="12.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="12.0" layoutX="610.0" layoutY="202.0" stroke="BLACK" strokeType="INSIDE" width="12.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#bc0303" height="12.0" layoutX="538.0" layoutY="219.0" stroke="BLACK" strokeType="INSIDE" width="12.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="12.0" layoutX="562.0" layoutY="219.0" stroke="BLACK" strokeType="INSIDE" width="12.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="12.0" layoutX="550.0" layoutY="219.0" stroke="BLACK" strokeType="INSIDE" width="12.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="12.0" layoutX="574.0" layoutY="219.0" stroke="BLACK" strokeType="INSIDE" width="12.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="12.0" layoutX="586.0" layoutY="219.0" stroke="BLACK" strokeType="INSIDE" width="12.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="12.0" layoutX="598.0" layoutY="219.0" stroke="BLACK" strokeType="INSIDE" width="12.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="12.0" layoutX="610.0" layoutY="219.0" stroke="BLACK" strokeType="INSIDE" width="12.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#bc0303" height="12.0" layoutX="538.0" layoutY="236.0" stroke="BLACK" strokeType="INSIDE" width="12.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="12.0" layoutX="562.0" layoutY="236.0" stroke="BLACK" strokeType="INSIDE" width="12.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="12.0" layoutX="550.0" layoutY="236.0" stroke="BLACK" strokeType="INSIDE" width="12.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="12.0" layoutX="574.0" layoutY="236.0" stroke="BLACK" strokeType="INSIDE" width="12.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="12.0" layoutX="586.0" layoutY="236.0" stroke="BLACK" strokeType="INSIDE" width="12.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="12.0" layoutX="598.0" layoutY="236.0" stroke="BLACK" strokeType="INSIDE" width="12.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="12.0" layoutX="610.0" layoutY="236.0" stroke="BLACK" strokeType="INSIDE" width="12.0" />
+      <QuadCurve controlX="-15.5" controlY="-69.5" endX="50.0" fill="#1b1a1a" layoutX="788.0" layoutY="260.0" startX="-42.5" stroke="BLACK" strokeType="INSIDE" />
+      <Line endX="-70.5" layoutX="880.0" layoutY="196.0" rotate="90.0" startX="-128.4742889404297" startY="0.01721048355102539" stroke="#1b1a1a" strokeWidth="3.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="25.0" layoutX="781.0" layoutY="165.0" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+      <Circle fill="#1b1a1a" layoutX="800.0" layoutY="178.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1b1a1a" height="4.0" layoutX="801.0" layoutY="171.0" smooth="false" stroke="#1b1a1a" strokeType="INSIDE" width="8.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="4.0" layoutX="794.0" layoutY="171.0" smooth="false" stroke="#1b1a1a" strokeType="INSIDE" strokeWidth="0.0" width="8.0" />
+      <Line endX="-35.0" endY="1.5" layoutX="849.0" layoutY="169.0" startX="-41.5" startY="1.5" strokeLineCap="ROUND" />
+      <Text id="lbl_cliente" layoutX="294.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CALCULADORA" textAlignment="CENTER" wrappingWidth="150.1300048828125">
+         <font>
+            <Font name="Caladea Regular" size="22.0" />
+         </font>
+      </Text>
+      <Text id="lbl_cliente" layoutX="505.0" layoutY="302.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CALENDÁRIO" textAlignment="CENTER" wrappingWidth="150.1300048828125">
+         <font>
+            <Font name="Caladea Regular" size="22.0" />
+         </font>
+      </Text>
+      <Text id="lbl_cliente" layoutX="712.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CAMPO MINADO" textAlignment="CENTER" wrappingWidth="162.0">
+         <font>
+            <Font name="Caladea Regular" size="22.0" />
+         </font>
+      </Text>
+      <Button fx:id="btn_calculadora" layoutX="285.0" layoutY="119.0" mnemonicParsing="false" prefHeight="193.0" prefWidth="168.0" style="-fx-background-color: #ffffff00;">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btn_calendario" layoutX="496.0" layoutY="118.0" mnemonicParsing="false" prefHeight="193.0" prefWidth="168.0" style="-fx-background-color: #ffffff00;">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btn_campo" layoutX="707.0" layoutY="119.0" mnemonicParsing="false" prefHeight="193.0" prefWidth="168.0" style="-fx-background-color: #ffffff00;">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Button>
+      
+         <AnchorPane fx:id="loadingPane" prefHeight="755" prefWidth="1119" style="-fx-background-color: rgba(0,0,0,0.6);" visible="false">
+         <children>
+            <HBox alignment="CENTER" layoutX="500" layoutY="350" spacing="10">
+               <children>
+                  <Circle fx:id="dot1" fill="WHITE" radius="8" />
+                  <Circle fx:id="dot2" fill="WHITE" radius="8" />
+                  <Circle fx:id="dot3" fill="WHITE" radius="8" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      
+   </children>
+</AnchorPane>

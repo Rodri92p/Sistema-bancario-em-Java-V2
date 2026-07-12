@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="755.0" prefWidth="1119.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Controller">
+  <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="762.0" layoutX="1.0" layoutY="-3.0" opacity="0.19" strokeType="INSIDE" strokeWidth="0.0" width="1128.0">
+         <stroke>
+            <LinearGradient endX="0.11904761904761905" endY="1.0" startX="0.24285714285714285" startY="0.6142857142857143">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.34210526943206787" green="0.3341861665248871" blue="0.3341861665248871" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9800000190734863" green="0.5716666579246521" opacity="0.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </stroke>
+         <fill>
+            <LinearGradient endX="0.5" endY="0.7904761904761904">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.949999988079071" green="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006711409395973154">
+                     <color>
+                        <Color red="0.0035649999044835567" green="9.999999747378752E-5" blue="0.009999999776482582" opacity="0.9961685538291931" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.3947368562221527" green="0.3840765058994293" blue="0.3691520392894745" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1b1a1a" height="76.0" layoutX="225.0" layoutY="-3.0" strokeType="INSIDE" strokeWidth="0.0" width="896.0">
+         <stroke>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.34210526943206787" green="0.3341861665248871" blue="0.3341861665248871" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9800000190734863" green="0.5716666579246521" opacity="0.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </stroke>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1b1a1a" height="762.0" layoutX="-18.0" layoutY="-6.0" strokeType="INSIDE" strokeWidth="0.0" width="258.0">
+         <stroke>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.34210526943206787" green="0.3341861665248871" blue="0.3341861665248871" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9800000190734863" green="0.5716666579246521" opacity="0.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </stroke>
+      </Rectangle>
+      <ImageView fitHeight="180.0" fitWidth="270.0" layoutX="-19.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/INTERKAIK(Apenas%20brasão).png" />
+         </image>
+      </ImageView>
+      
+      <Button fx:id="btn_sair" layoutX="33.0" layoutY="699.0" mnemonicParsing="false" onMousePressed="#FecharPrograma" prefHeight="37.0" prefWidth="158.0" style="-fx-background-color: #ffffff;" text="SAIR">
+         <font>
+            <Font name="Caladea Bold" size="20.0" />
+         </font>
+      </Button>
+      
+      
+      <Text fx:id="txt_cliente" fill="WHITE" layoutX="246.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="{NOME DO CLIENTE}" wrappingWidth="315.0">
+         <font>
+            <Font name="Caladea Regular" size="22.0" />
+         </font>
+      </Text>
+      
+      
+      <VBox layoutX="558.0" layoutY="-77.0" prefHeight="70.0" prefWidth="231.0" rotate="-90.0">
+         <children>
+            <Line endX="100.0" startX="-100.0" stroke="WHITE" strokeWidth="2.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Line endX="100.0" startX="-100.0" stroke="WHITE" strokeWidth="2.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Line endX="100.0" startX="-100.0" stroke="WHITE" strokeWidth="2.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Line endX="100.0" startX="-100.0" stroke="WHITE" strokeWidth="2.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Line endX="100.0" startX="-100.0" stroke="WHITE" strokeWidth="2.0" />
+         </children>
+      </VBox>
+      
+      
+      <Text fx:id="txt_saldo" fill="WHITE" layoutX="797.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="{SALDO DA CONTA}" textAlignment="RIGHT" wrappingWidth="315.0">
+         <font>
+            <Font name="Caladea Regular" size="22.0" />
+         </font>
+      </Text>
+      <Line endX="224.0" layoutX="361.0" layoutY="714.0" startX="-100.0" />
+      <Line endX="223.0" layoutX="873.0" layoutY="713.0" startX="-114.0" />
+      <Text layoutX="618.0" layoutY="720.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INTERKAIK" textAlignment="CENTER" wrappingWidth="110.0">
+         <font>
+            <Font name="Caladea Regular" size="22.0" />
+         </font>
+      </Text>
+   
+      <Text fx:id="txt_pix" fill="WHITE" layoutX="41.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TRANSFERENCIA PIX" wrappingWidth="150.1300048828125">
+         <font>
+            <Font name="Caladea Regular" size="16.0" />
+         </font>
+      </Text>
+    
+      <Line endX="-63.0" layoutX="93.0" layoutY="317.0" startX="-110.0" stroke="WHITE" strokeLineCap="ROUND" strokeWidth="3.0" />
+    
+      <Text fx:id="txt_cofrinho" fill="WHITE" layoutX="42.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" text="COFRINHO" wrappingWidth="74.1300048828125">
+         <font>
+            <Font name="Caladea Regular" size="16.0" />
+         </font>
+      </Text>
+    
+      <Line endX="-63.0" layoutX="91.0" layoutY="385.0" startX="-110.0" stroke="WHITE" strokeLineCap="ROUND" strokeWidth="3.0" />
+      <Line endX="143.0" layoutX="95.0" layoutY="349.0" startX="-100.0" stroke="#00000025" />
+      <Line endX="135.0" layoutX="108.0" layoutY="416.0" startX="-110.0" stroke="#00000025" />
+      <Line endX="-63.0" layoutX="93.0" layoutY="452.0" startX="-110.0" stroke="WHITE" strokeLineCap="ROUND" strokeWidth="3.0" />
+  
+      <Text fx:id="txt_extrato" fill="WHITE" layoutX="42.0" layoutY="458.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EXTRATO" wrappingWidth="74.1300048828125">
+         <font>
+            <Font name="Caladea Regular" size="16.0" />
+         </font>
+      </Text>
+    
+      <Line endX="136.0" layoutX="98.0" layoutY="484.0" startX="-100.0" stroke="#00000025" />
+      <Line endX="-63.0" layoutX="91.0" layoutY="519.0" startX="-110.0" stroke="WHITE" strokeLineCap="ROUND" strokeWidth="3.0" />
+     
+      <Text id="txt_conta" fill="WHITE" layoutX="42.0" layoutY="525.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CONTA" wrappingWidth="49.99999999999994">
+         <font>
+            <Font name="Caladea Regular" size="16.0" />
+         </font>
+      </Text>
+    
+      <Line endX="143.0" layoutX="96.0" layoutY="551.0" startX="-100.0" stroke="#00000025" />
+      <Line endX="-63.0" layoutX="91.0" layoutY="582.0" startX="-110.0" stroke="WHITE" strokeLineCap="ROUND" strokeWidth="3.0" />
+    
+      <Text fx:id="txt_ferramentas" fill="WHITE" layoutX="42.0" layoutY="587.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FERRAMENTAS" wrappingWidth="109.99999999999994">
+         <font>
+            <Font name="Caladea Regular" size="16.0" />
+         </font>
+      </Text>
+      <Line endX="-63.0" layoutX="93.0" layoutY="254.0" startX="-110.0" stroke="WHITE" strokeLineCap="ROUND" strokeWidth="3.0" />
+      <Line endX="143.0" layoutX="96.0" layoutY="283.0" startX="-100.0" stroke="#00000025" />
+    
+      <Text fx:id="txt_inicio" fill="WHITE" layoutX="42.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INICIO" wrappingWidth="74.1300048828125">
+         <font>
+            <Font name="Caladea Regular" size="16.0" />
+         </font>
+      </Text>
+      
+      
+      <Button fx:id="btn_inicio" layoutX="-1.0" layoutY="227.0" mnemonicParsing="false" onMousePressed="#Transicao" prefHeight="58.0" prefWidth="237.0" style="-fx-background-color: #ffffff00;">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor></Button>
+      <Button fx:id="btn_pix" layoutX="2.0" layoutY="286.0" mnemonicParsing="false" onMousePressed="#Transicao" prefHeight="58.0" prefWidth="237.0" style="-fx-background-color: #ffffff00;">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor></Button>
+      <Button fx:id="btn_cofrinho" layoutX="2.0" layoutY="355.0" mnemonicParsing="false" onMousePressed="#Transicao" prefHeight="58.0" prefWidth="237.0" style="-fx-background-color: #ffffff00;">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor></Button>
+      <Button fx:id="btn_extrato" layoutX="2.0" layoutY="423.0" mnemonicParsing="false" onMousePressed="#Transicao" prefHeight="58.0" prefWidth="237.0" style="-fx-background-color: #ffffff00;">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor></Button>
+      <Button fx:id="btn_conta" layoutX="2.0" layoutY="490.0" mnemonicParsing="false" onMousePressed="#Transicao" prefHeight="58.0" prefWidth="237.0" style="-fx-background-color: #ffffff00;">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor></Button>
+      <Button fx:id="btn_ferramentas" layoutX="2.0" layoutY="553.0" mnemonicParsing="false" onMousePressed="#Transicao" prefHeight="58.0" prefWidth="237.0" style="-fx-background-color: #ffffff00;">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor></Button>
+      <Text layoutX="293.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PARA QUEM VOCÊ QUER PAGAR?" wrappingWidth="315.0">
+         <font>
+            <Font name="Caladea Regular" size="22.0" />
+         </font>
+      </Text>
+      <TextField fx:id="field_inserirpix" layoutX="291.0" layoutY="196.0" prefHeight="38.0" prefWidth="447.0" promptText="Insira a chave pix.">
+         <font>
+            <Font name="Caladea Bold" size="13.0" />
+         </font>
+      </TextField>
+      <VBox layoutX="295.0" layoutY="309.0" prefHeight="367.0" prefWidth="552.0">
+         <children>
+            <Text fx:id="fav_1" strokeType="OUTSIDE" strokeWidth="0.0" text="{FAV 1}" wrappingWidth="545.0">
+               <font>
+                  <Font name="Caladea Regular" size="20.0" />
+               </font>
+            </Text>
+            <Line fx:id="fav_barra1" endX="450.5" startX="-100.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" " />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" " />
+            <Text fx:id="fav_2" strokeType="OUTSIDE" strokeWidth="0.0" text="{FAV 2}" wrappingWidth="545.0">
+               <font>
+                  <Font name="Caladea Regular" size="20.0" />
+               </font>
+            </Text>
+            <Line fx:id="fav_barra2" endX="450.5" startX="-100.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" " />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" " />
+            <Text fx:id="fav_3" strokeType="OUTSIDE" strokeWidth="0.0" text="{FAV 3}" wrappingWidth="544.0">
+               <font>
+                  <Font name="Caladea Regular" size="20.0" />
+               </font>
+            </Text>
+            <Line fx:id="fav_barra3" endX="450.5" startX="-100.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" " />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" " />
+            <Text fx:id="fav_4" strokeType="OUTSIDE" strokeWidth="0.0" text="{FAV 4}" wrappingWidth="545.0">
+               <font>
+                  <Font name="Caladea Regular" size="20.0" />
+               </font>
+            </Text>
+            <Line fx:id="fav_barra4" endX="450.5" startX="-100.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" " />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" " />
+            <Text fx:id="fav_5" strokeType="OUTSIDE" strokeWidth="0.0" text="{FAV 5}" wrappingWidth="548.0">
+               <font>
+                  <Font name="Caladea Regular" size="20.0" />
+               </font>
+            </Text>
+            <Line fx:id="fav_barra5" endX="450.5" startX="-100.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" " />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" " />
+            <Text fx:id="fav_6" strokeType="OUTSIDE" strokeWidth="0.0" text="{FAV 6}" wrappingWidth="546.0">
+               <font>
+                  <Font name="Caladea Regular" size="20.0" />
+               </font>
+            </Text>
+            <Line fx:id="fav_barra6" endX="450.5" startX="-100.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" " />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" " />
+            <Text fx:id="fav_7" strokeType="OUTSIDE" strokeWidth="0.0" text="{FAV 7}" wrappingWidth="546.0">
+               <font>
+                  <Font name="Caladea Regular" size="20.0" />
+               </font>
+            </Text>
+            <Line fx:id="fav_barra7" endX="450.5" startX="-100.0" />
+         </children>
+      </VBox>
+      <Button fx:id="btn_favoritarpix" layoutX="292.0" layoutY="239.0" mnemonicParsing="false" onMousePressed="#Favoritar" prefHeight="32.0" prefWidth="110.0" style="-fx-background-color: #1b1a1a;" text="FAVORITAR" textFill="WHITE">
+         <font>
+            <Font name="Caladea Regular" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Button>
+      <fx:define>
+          <ToggleGroup fx:id="grupoPix" />
+      </fx:define>
+      <RadioButton fx:id="radio_cpfpix" layoutX="419.0" layoutY="247.0" mnemonicParsing="false" text="CPF">
+         <font>
+            <Font name="Caladea Regular" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+         <toggleGroup>
+            <ToggleGroup fx:id="grupoPix" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="radio_telefonepix" layoutX="472.0" layoutY="247.0" mnemonicParsing="false" text="TELEFONE" toggleGroup="$grupoPix">
+         <font>
+            <Font name="Caladea Regular" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </RadioButton>
+      <RadioButton fx:id="radio_emailpix" layoutX="565.0" layoutY="247.0" mnemonicParsing="false" text="EMAIL" toggleGroup="$grupoPix">
+         <font>
+            <Font name="Caladea Regular" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </RadioButton>
+      <RadioButton fx:id="radio_aleatoriapix" layoutX="635.0" layoutY="247.0" mnemonicParsing="false" text="ALEATORIA" toggleGroup="$grupoPix">
+         <font>
+            <Font name="Caladea Regular" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </RadioButton>
+      <Text fx:id="nenhum_TXT" layoutX="368.0" layoutY="566.0" opacity="0.16" strokeType="OUTSIDE" strokeWidth="0.0" text="VOCÊ AINDA NÃO TEM NENHUM FAVORITO" textAlignment="CENTER" wrappingWidth="610.0000000000001">
+         <font>
+            <Font name="Caladea Regular" size="32.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="sad_facepix" fitHeight="180.0" fitWidth="270.0" layoutX="571.0" layoutY="336.0" opacity="0.1" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/sad-face.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btn_confirmardestino" layoutX="743.0" layoutY="196.0" mnemonicParsing="false" onMousePressed="#Validarpix" prefHeight="36.0" prefWidth="90.0" style="-fx-background-color: #1b1a1a;" text="CONFIRMAR" textFill="WHITE">
+         <font>
+            <Font name="Caladea Regular" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btn_favadd1" layoutX="859.0" layoutY="296.0" mnemonicParsing="false" onMousePressed="#Pixfavorito" prefHeight="38.0" prefWidth="90.0" style="-fx-background-color: #1b1a1a;" text="CONFIRMAR" textFill="WHITE">
+         <font>
+            <Font name="Caladea Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btn_favadd2" layoutX="859.0" layoutY="351.0" mnemonicParsing="false" onMousePressed="#Pixfavorito" prefHeight="38.0" prefWidth="90.0" style="-fx-background-color: #1b1a1a;" text="CONFIRMAR" textFill="WHITE">
+         <font>
+            <Font name="Caladea Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btn_favadd3" layoutX="859.0" layoutY="406.0" mnemonicParsing="false" onMousePressed="#Pixfavorito" prefHeight="38.0" prefWidth="90.0" style="-fx-background-color: #1b1a1a;" text="CONFIRMAR" textFill="WHITE">
+         <font>
+            <Font name="Caladea Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btn_favadd4" layoutX="859.0" layoutY="459.0" mnemonicParsing="false" onMousePressed="#Pixfavorito" prefHeight="38.0" prefWidth="89.0" style="-fx-background-color: #1b1a1a;" text="CONFIRMAR" textFill="WHITE">
+         <font>
+            <Font name="Caladea Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btn_favadd5" layoutX="859.0" layoutY="515.0" mnemonicParsing="false" onMousePressed="#Pixfavorito" prefHeight="38.0" prefWidth="90.0" style="-fx-background-color: #1b1a1a;" text="CONFIRMAR" textFill="WHITE">
+         <font>
+            <Font name="Caladea Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btn_favadd6" layoutX="859.0" layoutY="568.0" mnemonicParsing="false" onMousePressed="#Pixfavorito" prefHeight="38.0" prefWidth="90.0" style="-fx-background-color: #1b1a1a;" text="CONFIRMAR" textFill="WHITE">
+         <font>
+            <Font name="Caladea Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btn_favadd7" layoutX="859.0" layoutY="621.0" mnemonicParsing="false" onMousePressed="#Pixfavorito" prefHeight="38.0" prefWidth="90.0" style="-fx-background-color: #1b1a1a;" text="CONFIRMAR" textFill="WHITE">
+         <font>
+            <Font name="Caladea Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btn_favdelete2" layoutX="960.0" layoutY="351.0" mnemonicParsing="false" onMousePressed="#deletarFavoritos" prefHeight="38.0" prefWidth="90.0" style="-fx-background-color: #1b1a1a;" text="DELETAR" textFill="WHITE">
+         <font>
+            <Font name="Caladea Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btn_favdelete1" layoutX="960.0" layoutY="296.0" mnemonicParsing="false" onMousePressed="#deletarFavoritos" prefHeight="38.0" prefWidth="90.0" style="-fx-background-color: #1b1a1a;" text="DELETAR" textFill="WHITE">
+         <font>
+            <Font name="Caladea Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btn_favdelete6" layoutX="960.0" layoutY="568.0" mnemonicParsing="false" onMousePressed="#deletarFavoritos" prefHeight="38.0" prefWidth="90.0" style="-fx-background-color: #1b1a1a;" text="DELETAR" textFill="WHITE">
+         <font>
+            <Font name="Caladea Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btn_favdelete5" layoutX="960.0" layoutY="513.0" mnemonicParsing="false" onMousePressed="#deletarFavoritos" prefHeight="38.0" prefWidth="90.0" style="-fx-background-color: #1b1a1a;" text="DELETAR" textFill="WHITE">
+         <font>
+            <Font name="Caladea Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btn_favdelete4" layoutX="960.0" layoutY="459.0" mnemonicParsing="false" onMousePressed="#deletarFavoritos" prefHeight="38.0" prefWidth="90.0" style="-fx-background-color: #1b1a1a;" text="DELETAR" textFill="WHITE">
+         <font>
+            <Font name="Caladea Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btn_favdelete3" layoutX="960.0" layoutY="406.0" mnemonicParsing="false" onMousePressed="#deletarFavoritos" prefHeight="38.0" prefWidth="90.0" style="-fx-background-color: #1b1a1a;" text="DELETAR" textFill="WHITE">
+         <font>
+            <Font name="Caladea Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btn_favdelete7" layoutX="960.0" layoutY="621.0" mnemonicParsing="false" onMousePressed="#deletarFavoritos" prefHeight="38.0" prefWidth="90.0" style="-fx-background-color: #1b1a1a;" text="DELETAR" textFill="WHITE">
+         <font>
+            <Font name="Caladea Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Button>
+      <Text fx:id="erro_opcaovazia" fill="RED" layoutX="293.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="POR FAVOR, SELECIONE UMA DAS OPÇÕES DE PIX." visible="false" wrappingWidth="315.0">
+         <font>
+            <Font name="Caladea Regular" size="12.0" />
+         </font>
+      </Text>
+      <Text fx:id="erro_pixvazio" fill="RED" layoutX="293.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="POR FAVOR, INSIRA A CHAVE PIX." visible="false" wrappingWidth="315.0">
+         <font>
+            <Font name="Caladea Regular" size="12.0" />
+         </font>
+      </Text>
+      <Text fx:id="erro_pixinexistente" fill="RED" layoutX="293.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A CHAVE PIX INSERIDA NÃO FOI ENCONTRADA." visible="false" wrappingWidth="315.0">
+         <font>
+            <Font name="Caladea Regular" size="12.0" />
+         </font>
+      </Text>
+      <Text fx:id="erro_pixparasi" fill="RED" layoutX="291.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="POR FAVOR, NÃO É POSSIVEL FAVORITAR OU ENVIAR UM PIX PARA A MESMA CONTA." visible="false" wrappingWidth="447.0">
+         <font>
+            <Font name="Caladea Regular" size="12.0" />
+         </font>
+      </Text>
+      <Text fx:id="erro_emailinvalido" fill="RED" layoutX="291.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EMAIL INVALIDO, POR FAVOR VERIFIQUE E TENTE NOVAMENTE." visible="false" wrappingWidth="447.0">
+         <font>
+            <Font name="Caladea Regular" size="12.0" />
+         </font>
+      </Text>
+
+               <AnchorPane fx:id="loadingPane" prefHeight="755" prefWidth="1119" style="-fx-background-color: rgba(0,0,0,0.6);" visible="false">
+         <children>
+            <HBox alignment="CENTER" layoutX="500" layoutY="350" spacing="10">
+               <children>
+                  <Circle fx:id="dot1" fill="WHITE" radius="8" />
+                  <Circle fx:id="dot2" fill="WHITE" radius="8" />
+                  <Circle fx:id="dot3" fill="WHITE" radius="8" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
