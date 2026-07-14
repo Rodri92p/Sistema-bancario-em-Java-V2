@@ -313,6 +313,7 @@ private void atualizarchaves() {
 	
 @SuppressWarnings("deprecation")
 public void cambioTela() {
+	    
 		if(cambioAtual == null) {
 	
 		    CambioAPI api = new CambioAPI();
@@ -1070,7 +1071,7 @@ public void Validarpix()  throws IOException {
 	  }
 	}
 	
-	public void Pixfavorito() throws IOException {
+public void Pixfavorito() throws IOException {
 	 if(btn_favadd1.isPressed()) {
 		 DAO<Client> dao = new DAO<>(Client.class);
 	
@@ -1261,10 +1262,7 @@ public void Favoritar() {
 		  
 		  atualizarFavoritos();
 	  }
-	  
-	  
-	  
-	}
+}
 	
 @FXML
 private void RealizarPix() {
@@ -1697,7 +1695,7 @@ DAO<Client> dao = new DAO<>(Client.class);
 			  return; }
 		 else { erro_alterarpix2.setVisible(false); }
 		 
-		 cliente.setPix_email(field_chavepix.getText());
+		 cliente.setPix_email(field_chavepix.getText().toUpperCase());
 		   
 		 dao.abrir().atualizar(cliente).fechar();
 		 atualizarchaves();
@@ -1705,6 +1703,33 @@ DAO<Client> dao = new DAO<>(Client.class);
 	     Stage stage = (Stage) btn_sairok.getScene().getWindow();
 	     stage.close();
 	 }  
+}
+
+public void Deletarpix() {
+
+	DAO<Client> dao = new DAO<>(Client.class);
+	
+	if(btn_apagarpix_cpf.isPressed()) {
+		cliente.setPix_cpf(null);
+		atualizarchaves();
+	}
+	
+	if(btn_apagarpix_celular.isPressed()) {
+		cliente.setPix_celular(null);
+		atualizarchaves();
+	}
+	
+	if(btn_apagarpix_email.isPressed()) {
+		cliente.setPix_email(null);
+		atualizarchaves();
+	}
+	
+	if(btn_apagarpix_aleatoria.isPressed()) {
+		cliente.setPix_aleatorio(null);
+		atualizarchaves();
+	}
+	
+    dao.abrir().atualizar(cliente).fechar();
 }
 	
 public void ExcluirConta() {

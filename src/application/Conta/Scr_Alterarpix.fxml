@@ -272,17 +272,6 @@
          </font>
       </Text>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="68.0" layoutX="825.0" layoutY="233.0" stroke="#1b1a1a" strokeType="INSIDE" strokeWidth="2.0" width="110.0" />
-      <AnchorPane fx:id="loadingPane" layoutX="10.0" layoutY="10.0" prefHeight="755" prefWidth="1119" style="-fx-background-color: rgba(0,0,0,0.6);" visible="false">
-         <children>
-            <HBox alignment="CENTER" layoutX="500" layoutY="350" spacing="10">
-               <children>
-                  <Circle fx:id="dot1" fill="WHITE" radius="8" />
-                  <Circle fx:id="dot2" fill="WHITE" radius="8" />
-                  <Circle fx:id="dot3" fill="WHITE" radius="8" />
-               </children>
-            </HBox>
-         </children>
-      </AnchorPane>
       <Text fx:id="TXT_chavecpf" fill="#1b1a1a" layoutX="390.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="412.0">
          <font>
             <Font name="Caladea Regular" size="21.0" />
@@ -353,22 +342,45 @@
          <cursor>
             <Cursor fx:constant="CLOSED_HAND" />
          </cursor></Button>
-      <Button fx:id="btn_apagarpix_cpf" layoutX="941.0" layoutY="234.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="117.0" style="-fx-background-color: #ffffff00;" />
+      <Button fx:id="btn_apagarpix_cpf" layoutX="941.0" layoutY="234.0" mnemonicParsing="false" onMousePressed="#Deletarpix" prefHeight="68.0" prefWidth="117.0" style="-fx-background-color: #ffffff00;">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor></Button>
       <Button fx:id="btn_adcpix_celular" layoutX="825.0" layoutY="320.0" mnemonicParsing="false" onMousePressed="#transicaopix_celular" prefHeight="68.0" prefWidth="110.0" style="-fx-background-color: #ffffff00;">
          <cursor>
             <Cursor fx:constant="CLOSED_HAND" />
          </cursor></Button>
-      <Button fx:id="btn_apagarpix_celular" layoutX="941.0" layoutY="321.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="117.0" style="-fx-background-color: #ffffff00;" />
+      <Button fx:id="btn_apagarpix_celular" layoutX="941.0" layoutY="321.0" mnemonicParsing="false" onMousePressed="#Deletarpix" prefHeight="68.0" prefWidth="117.0" style="-fx-background-color: #ffffff00;">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor></Button>
       <Button fx:id="btn_adcpix_email" layoutX="826.0" layoutY="408.0" mnemonicParsing="false" onMousePressed="#transicaopix_email" prefHeight="68.0" prefWidth="110.0" style="-fx-background-color: #ffffff00;">
          <cursor>
             <Cursor fx:constant="CLOSED_HAND" />
          </cursor></Button>
-      <Button fx:id="btn_apagarpix_email" layoutX="941.0" layoutY="407.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="117.0" style="-fx-background-color: #ffffff00;" />
+      <Button fx:id="btn_apagarpix_email" layoutX="941.0" layoutY="407.0" mnemonicParsing="false" onMousePressed="#Deletarpix" prefHeight="68.0" prefWidth="117.0" style="-fx-background-color: #ffffff00;">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor></Button>
       <Button fx:id="btn_adcpix_aleatoria" layoutX="825.0" layoutY="495.0" mnemonicParsing="false" onMousePressed="#chamaralteracaopix3" prefHeight="68.0" prefWidth="110.0" style="-fx-background-color: #ffffff00;">
          <cursor>
             <Cursor fx:constant="CLOSED_HAND" />
          </cursor></Button>
-      <Button fx:id="btn_apagarpix_aleatoria" layoutX="941.0" layoutY="494.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="117.0" style="-fx-background-color: #ffffff00;" />
+      <Button fx:id="btn_apagarpix_aleatoria" layoutX="941.0" layoutY="494.0" mnemonicParsing="false" onMousePressed="#Deletarpix" prefHeight="68.0" prefWidth="117.0" style="-fx-background-color: #ffffff00;">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor></Button>
+      <AnchorPane fx:id="loadingPane" layoutX="10.0" layoutY="10.0" prefHeight="755" prefWidth="1119" style="-fx-background-color: rgba(0,0,0,0.6);" visible="false">
+         <children>
+            <HBox alignment="CENTER" layoutX="500" layoutY="350" spacing="10">
+               <children>
+                  <Circle fx:id="dot1" fill="WHITE" radius="8" />
+                  <Circle fx:id="dot2" fill="WHITE" radius="8" />
+                  <Circle fx:id="dot3" fill="WHITE" radius="8" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
       
    </children>
 </AnchorPane>
