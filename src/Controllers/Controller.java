@@ -937,7 +937,7 @@ public void Validarpix()  throws IOException {
     else { erro_pixvazio.setVisible(false); }
 	  
     //NENHUM OPÇÃO SELECIONADA
-    if(!radio_cpfpix.isSelected() && !radio_telefonepix.isSelected() && !radio_emailpix.isSelected() && !radio_emailpix.isSelected()) {
+    if(!radio_cpfpix.isSelected() && !radio_telefonepix.isSelected() && !radio_emailpix.isSelected() && !radio_aleatoriapix.isSelected()) {
     	erro_opcaovazia.setVisible(true);
     	tremer(field_inserirpix);
 		tremer(btn_confirmardestino);
@@ -1135,7 +1135,7 @@ public void Favoritar() {
 	  else { erro_pixvazio.setVisible(false); }
 		  
 	  //NENHUM OPÇÃO SELECIONADA
-	  if(!radio_cpfpix.isSelected() && !radio_telefonepix.isSelected() && !radio_emailpix.isSelected() && !radio_emailpix.isSelected()) {
+	  if(!radio_cpfpix.isSelected() && !radio_telefonepix.isSelected() && !radio_emailpix.isSelected() && !radio_aleatoriapix.isSelected()) {
 		  erro_opcaovazia.setVisible(true);
 		  tremer(field_inserirpix);
 		  tremer(btn_confirmardestino);
