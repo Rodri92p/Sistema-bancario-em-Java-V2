@@ -95,12 +95,10 @@ int PIX_OP = 0;
 @FXML private Button btn_areacofrinho;        @FXML private Button btn_trabalho;     		@FXML private Button btn_sobrenos;
 @FXML private Button btn_atendimento;         @FXML private Button btn_favadd3;             @FXML private Button btn_confirmar_excluirconta;
 @FXML private Button btn_adcpix_cpf;          @FXML private Button btn_adcpix_celular;      @FXML private Button btn_adcpix_email;
-@FXML private Button btn_adcpix_aleatoria;    @FXML private Button btn_editarpix_cpf;       @FXML private Button btn_editarpix_celular;
-@FXML private Button btn_editarpix_email;     @FXML private Button btn_editarpix_aleatorio; @FXML private Button btn_apagarpix_cpf;
-@FXML private Button btn_apagarpix_celular;   @FXML private Button btn_apagarpix_email;     @FXML private Button btn_apagarpix_aleatoria;
-@FXML private Button btn_SIM;
+@FXML private Button btn_adcpix_aleatoria;    @FXML private Button btn_apagarpix_cpf;       @FXML private Button btn_apagarpix_celular;   
+@FXML private Button btn_apagarpix_email;     @FXML private Button btn_apagarpix_aleatoria; @FXML private Button btn_SIM;
 
-//TEXTFIELD + PASSWORDFIELD
+//TEXTFIELD + PASSWORDFIELD	3
 @FXML private TextField cpf_login;            @FXML private TextField cpf_registro;         @FXML private TextField email_registro;
 @FXML private TextField nome_registro;        @FXML private TextField sobrenome_registro;   @FXML private TextField field_valorpix; 
 @FXML private TextField field_senhapix;       @FXML private TextField field_inserirpix;     @FXML private TextField field_confirmesenhapix;
@@ -750,11 +748,11 @@ public void Transicao() {
 	    btn_resgatarUS.setOnAction(e -> TransicaoTela("/application/Cofrinho/Scr_ResgatarUS.fxml", btn_resgatarUS));
 	  return;  
 	  }
-	}
+}
 	
-	//LOGAR E ENTRAR NA TELA INICIAL
-	@FXML
-	private void FazerLogin() {
+//LOGAR E ENTRAR NA TELA INICIAL
+@FXML
+private void FazerLogin() {
 	
 	// SE NÃO TIVER NADA
 	if(cpf_login.getText().isEmpty() || senha_login.getText().isEmpty()) {
@@ -791,10 +789,10 @@ public void Transicao() {
 	//SE HOUVER CLIENTE + SENHA CORRETA = SISTEMA LIBERADO
 	TransicaoTela("/application/Inicio/Scr_Inicial.fxml",btn_login);
 	return;
-	}
+}
 	
-	@FXML
-	private void FazerRegistro() {
+@FXML
+private void FazerRegistro() {
 		
 	// SE NÃO TIVER NADA OU ALGUM DADO FALTANDO
 	if(cpf_registro.getText().isEmpty() || senha_registro.getText().isEmpty() || nome_registro.getText().isEmpty() ||
@@ -923,6 +921,7 @@ public void Transicao() {
 	TransicaoTela("/application/Inicio/Scr_Inicial.fxml",btn_registro);
 	}
 	
+
 //TRANSFERENCIAS
 public void Validarpix()  throws IOException {
 	
@@ -1125,7 +1124,7 @@ public void Validarpix()  throws IOException {
 	 TransicaoPix();
 	}
 	
-	public void Favoritar() {
+public void Favoritar() {
 	  //NENHUM PIX INSERIDO
 	  if(field_inserirpix.getText().isEmpty()) {
 		  erro_pixvazio.setVisible(true);
