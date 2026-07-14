@@ -1,6 +1,6 @@
 # InterKaik Bank
 
-![LOOGO INTERKAIK2](images/LOOGO INTERKAIK 2.png)
+![LOGO INTERKAIK2](images/LOGO_INTERKAIK2.png)
 
 Um sistema bancário desktop desenvolvido em Java para simular as principais operações de um banco digital, utilizando JavaFX para a interface gráfica e Hibernate/JPA para persistência dos dados.
 
