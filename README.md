@@ -118,4 +118,27 @@ Mais do que um sistema bancário, o InterKaik representa minha evolução como d
 
 ***IMAGENS DO PROJETO***
 
-![Logo](https://raw.githubusercontent.com/Rodri92p/Sistema-bancario-em-Java-V2/master/assets/LOGOINTERKAIK.png)
+TELA DE LOGIN:
+
+![Logo](https://raw.githubusercontent.com/Rodri92p/Sistema-bancario-em-Java-V2/master/assets/TELA_LOGIN.png)
+
+TELA DE INICIO:
+
+![Logo](https://raw.githubusercontent.com/Rodri92p/Sistema-bancario-em-Java-V2/master/assets/TELA_INICIO.png)
+
+TELA DE TRANSFERENCIA (SEM FAVORITO):
+
+![Logo](https://raw.githubusercontent.com/Rodri92p/Sistema-bancario-em-Java-V2/master/assets/SEM_FAV.png)
+
+TELA DE TRANSFERENCIA (COM FAVORITO):
+
+![Logo](https://raw.githubusercontent.com/Rodri92p/Sistema-bancario-em-Java-V2/master/assets/COM_FAV.png)
+
+TELA DE TRANSFERENCIA PIX:
+
+![Logo](https://raw.githubusercontent.com/Rodri92p/Sistema-bancario-em-Java-V2/master/assets/TELA_PIX.png)
+
+
+TELA DE CRIAÇÃO DE PIX:
+
+![Logo](https://raw.githubusercontent.com/Rodri92p/Sistema-bancario-em-Java-V2/master/assets/TELA_PIX2.png)
