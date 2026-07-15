@@ -138,6 +138,13 @@ TELA DE TRANSFERENCIA PIX:
 
 ![Logo](https://raw.githubusercontent.com/Rodri92p/Sistema-bancario-em-Java-V2/master/assets/TELA_PIX.png)
 
+TELA DE ALTERAÇÃO DE SENHA:
+
+![Logo](https://raw.githubusercontent.com/Rodri92p/Sistema-bancario-em-Java-V2/master/assets/TELA_ALTERACAO.png)
+
+TELA DE EXCLUSÃO DE CONTA:
+
+![Logo](https://raw.githubusercontent.com/Rodri92p/Sistema-bancario-em-Java-V2/master/assets/TELA_EXCLUSAO.png)
 
 TELA DE CRIAÇÃO DE PIX:
 
