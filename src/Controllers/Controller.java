@@ -1739,13 +1739,7 @@ public void ExcluirConta() {
 	 
    ChamarconfirmacaoPIX();
    if(confirmarsenhaPIX() == true) {
-	   
-	 for (Client c : dao.listarTodos()) {
-	   if (c.removerFavorito(cliente.getId(), 1)) {
-         dao.atualizar(c);
-	   }
-	 }
-				
+	   	
 	 dao.abrir();
 	 dao.excluir(cliente);
 	 dao.fechar();
