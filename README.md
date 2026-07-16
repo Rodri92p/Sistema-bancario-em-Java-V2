@@ -122,9 +122,21 @@ TELA DE LOGIN:
 
 ![Logo](https://raw.githubusercontent.com/Rodri92p/Sistema-bancario-em-Java-V2/master/assets/TELA_LOGIN.png)
 
+LOGIN:
+
+![Logo](https://raw.githubusercontent.com/Rodri92p/Sistema-bancario-em-Java-V2/master/assets/LOGIN.gif)
+
+CADASTRO:
+
+![Logo](https://raw.githubusercontent.com/Rodri92p/Sistema-bancario-em-Java-V2/master/assets/CRIAR_CONTA.gif)
+
+
+
 TELA DE INICIO:
 
 ![Logo](https://raw.githubusercontent.com/Rodri92p/Sistema-bancario-em-Java-V2/master/assets/TELA_INICIO.png)
+
+
 
 TELA DE TRANSFERENCIA (SEM FAVORITO):
 
@@ -134,20 +146,40 @@ TELA DE TRANSFERENCIA (COM FAVORITO):
 
 ![Logo](https://raw.githubusercontent.com/Rodri92p/Sistema-bancario-em-Java-V2/master/assets/COM_FAV.png)
 
+ADIÇÃO DO FAVORITO:
+
+![Logo](https://raw.githubusercontent.com/Rodri92p/Sistema-bancario-em-Java-V2/master/assets/FAVORITOS.gif)
+
+
+
 TELA DE TRANSFERENCIA PIX:
 
 ![Logo](https://raw.githubusercontent.com/Rodri92p/Sistema-bancario-em-Java-V2/master/assets/TELA_PIX.png)
+
+![Logo](https://raw.githubusercontent.com/Rodri92p/Sistema-bancario-em-Java-V2/master/assets/PIX_P1.gif)   
+
 
 TELA DE ALTERAÇÃO DE SENHA:
 
 ![Logo](https://raw.githubusercontent.com/Rodri92p/Sistema-bancario-em-Java-V2/master/assets/TELA_ALTERACAO.png)
 
+![Logo](https://raw.githubusercontent.com/Rodri92p/Sistema-bancario-em-Java-V2/master/assets/ALTERAR_SENHA.gif)
+
+
+
 TELA DE EXCLUSÃO DE CONTA:
 
 ![Logo](https://raw.githubusercontent.com/Rodri92p/Sistema-bancario-em-Java-V2/master/assets/TELA_EXCLUSAO.png)
 
+![Logo](https://raw.githubusercontent.com/Rodri92p/Sistema-bancario-em-Java-V2/master/assets/EXCLUSAO.gif)
+
+
+
 TELA DE CRIAÇÃO DE PIX:
 
 ![Logo](https://raw.githubusercontent.com/Rodri92p/Sistema-bancario-em-Java-V2/master/assets/TELA_PIX2.png)
+
+![Logo](https://raw.githubusercontent.com/Rodri92p/Sistema-bancario-em-Java-V2/master/assets/CRIAR_PIX.gif)
+
 
 ATUALIZADO 16/07 - 15:20
