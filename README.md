@@ -146,6 +146,8 @@ TELA DE EXCLUSÃO DE CONTA:
 
 ![Logo](https://raw.githubusercontent.com/Rodri92p/Sistema-bancario-em-Java-V2/master/assets/TELA_EXCLUSAO.png)
 
+ATUALIZADO 16/07 - 15:20
+
 TELA DE CRIAÇÃO DE PIX:
 
 ![Logo](https://raw.githubusercontent.com/Rodri92p/Sistema-bancario-em-Java-V2/master/assets/TELA_PIX2.png)
