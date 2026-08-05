@@ -1,41 +1,40 @@
 package Controllers;
 				
 import javafx.animation.TranslateTransition;
-				import javafx.scene.Node;
-				import javafx.util.Duration;
-				import java.time.LocalDate;
-				import java.time.LocalTime;
-				import java.time.format.DateTimeFormatter;
-				import java.util.Locale;
-				import java.util.UUID;
-				
-				import Controllers.CambioAPI.Cambio;
-				import java.io.IOException;
-				import java.math.RoundingMode;
-				import java.text.NumberFormat;
-				import System.Client;
-				import System.DAO;
-				import System.Investment;
-				import System.TipoInvestimento;
-				import javafx.animation.Animation;
-				import javafx.animation.FadeTransition;
-				import javafx.animation.PauseTransition;
-				import javafx.fxml.FXML;
-				import javafx.fxml.FXMLLoader;
-				import javafx.scene.Parent;
-				import javafx.scene.Scene;
-				import javafx.scene.control.Button;
-				import javafx.scene.control.Label;
-				import javafx.scene.control.PasswordField;
-				import javafx.scene.control.RadioButton;
-				import javafx.scene.control.TextField;
-				import javafx.scene.image.ImageView;
-				import javafx.scene.layout.AnchorPane;
-				import javafx.scene.shape.Circle;
-				import javafx.scene.shape.Line;
-				import javafx.scene.text.Text;
-				import javafx.stage.Modality;
-				import javafx.stage.Stage;
+import javafx.scene.Node;	
+import javafx.util.Duration;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
+import java.util.UUID;
+import Controllers.CambioAPI.Cambio;
+import java.io.IOException;
+import java.math.RoundingMode;
+import java.text.NumberFormat;
+import System.Client;
+import System.DAO;
+import System.Investment;
+import System.TipoInvestimento;
+import javafx.animation.Animation;
+import javafx.animation.FadeTransition;
+import javafx.animation.PauseTransition;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Circle;
+import javafx.scene.shape.Line;
+import javafx.scene.text.Text;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 				
 public class Controller {
 				
@@ -77,6 +76,8 @@ int PIX_OP = 0;
 @FXML private Text erro_alterarpix3;          @FXML private Text erro_alterarpix4;          @FXML private Text erro_alterarpix5;
 @FXML private Text TXT_chavecpf;
 @FXML private Text TXT_chavecelular;          @FXML private Text TXT_chaveemail;            @FXML private Text TXT_chavealeatoria;
+@FXML private Text txt_datainvestimentous;    @FXML private Text txt_valorrendimentous;     @FXML private Text txt_valorinvestimentous;
+@FXML private Text txt_datainvestimentobr;    @FXML private Text txt_valorrendimentobr;     @FXML private Text txt_valorinvestimentobr;
 
 
 //BUTTON
@@ -97,6 +98,8 @@ int PIX_OP = 0;
 @FXML private Button btn_adcpix_cpf;          @FXML private Button btn_adcpix_celular;      @FXML private Button btn_adcpix_email;
 @FXML private Button btn_adcpix_aleatoria;    @FXML private Button btn_apagarpix_cpf;       @FXML private Button btn_apagarpix_celular;   
 @FXML private Button btn_apagarpix_email;     @FXML private Button btn_apagarpix_aleatoria; @FXML private Button btn_SIM;
+@FXML private Button btn_investirvalorBR;     @FXML private Button btn_resgatarvalorBR;     @FXML private Button btn_investirvalorUS;
+@FXML private Button btn_resgatarvalorUS; 
 
 //TEXTFIELD + PASSWORDFIELD	3
 @FXML private TextField cpf_login;            @FXML private TextField cpf_registro;         @FXML private TextField email_registro;
@@ -146,9 +149,10 @@ public void PassarDados(Client cliente) {
 		cambioTela();
 		investimentoTela();
 		atualizarchaves();
+	    TelaCofrinho();
 		txt_cliente.setText(cliente.getNome().toUpperCase()+" "+cliente.getSobrenome().toUpperCase());
 	    txt_saldo.setText("R$ " + cliente.getSaldo());
-	}
+}
 	
 public void receberPix(Client clientePix) {
 		
@@ -171,7 +175,7 @@ public void receberPix(Client clientePix) {
 	    lbl_cpfpix.setText(
 	        "**-***." + cpfcliente.substring(3, 6) + ".***"
 	    );
-	}
+}
 	
 private void atualizarFavoritos() {
 	    if(btn_favadd1 == null) {
@@ -284,7 +288,7 @@ private void atualizarFavoritos() {
 	            barras[i].setVisible(false);
 	        }
 	    }
-	}
+}
 	
 private void atualizarchaves() {
 	
@@ -309,7 +313,7 @@ private void atualizarchaves() {
 	        cliente.getPix_aleatorio() == null
 	            ? "NENHUMA CHAVE INFORMADA"
 	            : cliente.getChavePixPrincipal(4));
-	}
+}
 	
 @SuppressWarnings("deprecation")
 public void cambioTela() {
@@ -348,66 +352,64 @@ public void cambioTela() {
 		    TXT_ienne.setText(nf.format(cambio.getJpy()));
 		}
 		
-	}
+}
 	
 @SuppressWarnings("deprecation")
 public void investimentoTela() {
 	
-		if(txt_valorcofreBR != null) {
+  if(txt_valorcofreBR != null) {
 			
-		  DAO<Client> dao = new DAO<>(Client.class);
-		  investimentoBR = dao.buscarPorClienteETipo(cliente,TipoInvestimento.BRASIL);
-		  investimentoUS = dao.buscarPorClienteETipo(cliente,TipoInvestimento.DOLAR);
+	  DAO<Client> dao = new DAO<>(Client.class);
+	  investimentoBR = dao.buscarPorClienteETipo(cliente,TipoInvestimento.BRASIL);
+	  investimentoUS = dao.buscarPorClienteETipo(cliente,TipoInvestimento.DOLAR);
+	  
+	  if(investimentoUS != null) {
+		  NumberFormat nf = NumberFormat.getNumberInstance(new Locale("en", "US"));
+		  nf.setMinimumFractionDigits(2);
+		  nf.setMaximumFractionDigits(2);
+	
+		  txt_valorcofreUS.setText(nf.format(investimentoUS.calcularValorAtual()));  
+		  txt_valorlucroUS.setText(investimentoUS.calcularValorizacao().setScale(2, RoundingMode.HALF_UP).toString() + "%"); 
+		  DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		  String datainvestimento = investimentoUS.getDataInvestimento().format(formatter);
+		  txt_datainvestimentoUS.setText(datainvestimento);
 		  
-		  if(investimentoUS != null) {
-			  NumberFormat nf = NumberFormat.getNumberInstance(new Locale("en", "US"));
-			  nf.setMinimumFractionDigits(2);
-			  nf.setMaximumFractionDigits(2);
-	
-			  txt_valorcofreUS.setText(nf.format(investimentoUS.calcularValorAtual()));  
-			  txt_valorlucroUS.setText(investimentoUS.calcularValorizacao().setScale(2, RoundingMode.HALF_UP).toString() + "%"); 
-			  DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-			  String datainvestimento = investimentoUS.getDataInvestimento().format(formatter);
-			  txt_datainvestimentoUS.setText(datainvestimento);
-			  
-			  dao.atualizarRendimento(investimentoUS);
-		  } 
-		  else 
-		  {
-			  txt_valorcofreUS.setText("0,00");  
-			  txt_valorlucroUS.setText("0%");  
-			  txt_datainvestimentoUS.setText("N/A");  
-		  }
+		  dao.atualizarRendimento(investimentoUS);
+	  } 
+	  else 
+	  {
+		  txt_valorcofreUS.setText("0,00");  
+		  txt_valorlucroUS.setText("0%");  
+		  txt_datainvestimentoUS.setText("N/A");  
+	  }
 		  
 		  
-		  if(investimentoBR != null) {
+	  if(investimentoBR != null) {
 			  
-			  NumberFormat nf = NumberFormat.getNumberInstance(new Locale("pt", "BR"));
-			  nf.setMinimumFractionDigits(2);
-			  nf.setMaximumFractionDigits(2);
+		  NumberFormat nf = NumberFormat.getNumberInstance(new Locale("pt", "BR"));
+		  nf.setMinimumFractionDigits(2);
+		  nf.setMaximumFractionDigits(2);
+		  
+		  txt_valorcofreBR.setText(nf.format(investimentoBR.calcularValorAtual()));  
+		  txt_valorlucroBR.setText(investimentoBR.calcularValorizacao().setScale(2, RoundingMode.HALF_UP).toString() + "%");
 			  
-			  txt_valorcofreBR.setText(nf.format(investimentoBR.calcularValorAtual()));  
-			  txt_valorlucroBR.setText(investimentoBR.calcularValorizacao().setScale(2, RoundingMode.HALF_UP).toString() + "%");
-			  
-			  DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-			  String datainvestimento = investimentoBR.getDataInvestimento().format(formatter);
-			  txt_datainvestimentoBR.setText(datainvestimento);  
-			  
-			  dao.atualizarRendimento(investimentoBR);
-		  }
+		  DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		  String datainvestimento = investimentoBR.getDataInvestimento().format(formatter);
+		  txt_datainvestimentoBR.setText(datainvestimento);  
+		  
+		  dao.atualizarRendimento(investimentoBR);
+	   }
 	
-		  else
-		  {
-			  txt_valorcofreBR.setText("0,00");  
-			  txt_valorlucroBR.setText("0%");  
-			  txt_datainvestimentoBR.setText("N/A"); 
-		  }
-	
-	
+	  else
+	   {
+		  txt_valorcofreBR.setText("0,00");  
+		  txt_valorlucroBR.setText("0%");  
+		  txt_datainvestimentoBR.setText("N/A"); 
+	   }
 	}
-	}
+}
 	
-	@FXML
+@FXML
 private void deletarFavoritos() {
 	  
 	  //DELETA FAVORITO 1
@@ -542,7 +544,7 @@ private void deletarFavoritos() {
 			  atualizarFavoritos();
 		  }
 	  }
-	}
+}
 	
 public void Animar() {
 	TranslateTransition t1 = new TranslateTransition(Duration.millis(300), dot1);
@@ -565,7 +567,7 @@ public void Animar() {
 	   t1.play();
 	   t2.play();
 	   t3.play();
-	}
+}
 	
 @SuppressWarnings("unused")
 public void TransicaoTela(String Caminho, Button botao) {
@@ -608,7 +610,7 @@ public void TransicaoTela(String Caminho, Button botao) {
 	   });
 	
 	   fadeIn.play();
-	}
+}
 	
 @SuppressWarnings("unused")
 public void TransicaoPix() throws IOException {
@@ -653,7 +655,7 @@ public void TransicaoPix() throws IOException {
 		   });
 	
 		   fadeIn.play();
-	}
+}
 	
 public void tremer(Node node) {
 	
@@ -666,7 +668,7 @@ public void tremer(Node node) {
 	    tt.setAutoReverse(true);
 	
 	    tt.play();
-	}
+}
 	
 	@SuppressWarnings("unused")
 public void Transicao() {
@@ -920,9 +922,8 @@ private void FazerRegistro() {
 	}
 	
 	TransicaoTela("/application/Inicio/Scr_Inicial.fxml",btn_registro);
-	}
+}
 	
-
 //TRANSFERENCIAS
 public void Validarpix()  throws IOException {
 	
@@ -1069,7 +1070,7 @@ public void Validarpix()  throws IOException {
 		  
 		  TransicaoPix();  
 	  }
-	}
+}
 	
 public void Pixfavorito() throws IOException {
 	 if(btn_favadd1.isPressed()) {
@@ -1123,7 +1124,7 @@ public void Pixfavorito() throws IOException {
 	 }
 	 
 	 TransicaoPix();
-	}
+}
 	
 public void Favoritar() {
 	  //NENHUM PIX INSERIDO
@@ -1415,6 +1416,8 @@ public void ChamarconfirmacaoPIX() {
 		e.printStackTrace();
 	}
 }
+
+//CONTA
 	
 public void alterarsenha() {
 	  
@@ -1765,6 +1768,66 @@ public void ExcluirConta() {
   }
 }
 
+//COFRINHO
+public void TelaCofrinho() {
+	
+	  if(txt_valorinvestimentobr != null) {
+				
+		  DAO<Client> dao = new DAO<>(Client.class);
+		  investimentoBR = dao.buscarPorClienteETipo(cliente,TipoInvestimento.BRASIL);
+		  investimentoUS = dao.buscarPorClienteETipo(cliente,TipoInvestimento.DOLAR);
+		  
+		  if(investimentoUS != null) {
+			  @SuppressWarnings("deprecation")
+			  NumberFormat nf = NumberFormat.getNumberInstance(new Locale("en", "US"));
+			  nf.setMinimumFractionDigits(2);
+			  nf.setMaximumFractionDigits(2);
+		
+			  txt_valorinvestimentous.setText(nf.format(investimentoUS.getValorInvestido()));
+			  txt_valorrendimentous.setText(nf.format(investimentoUS.calcularValorAtual()));  
+			  
+			  DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+			  String datainvestimento = investimentoUS.getDataInvestimento().format(formatter);
+			  txt_datainvestimentous.setText(datainvestimento);
+			  
+			  dao.atualizarRendimento(investimentoUS);
+		  } 
+		  else 
+		  {
+			  txt_valorrendimentous.setText("0,00");  
+			  txt_valorinvestimentous.setText("0,00");
+			  txt_datainvestimentous.setText("N/A");
+
+		  }
+			 
+	      if(investimentoBR != null) {
+				  
+			  @SuppressWarnings("deprecation")
+			  NumberFormat nf = NumberFormat.getNumberInstance(new Locale("br", "BR"));
+			  nf.setMinimumFractionDigits(2);
+			  nf.setMaximumFractionDigits(2);
+		
+			  txt_valorinvestimentobr.setText(nf.format(investimentoBR.getValorInvestido()));
+			  txt_valorrendimentobr.setText(nf.format(investimentoBR.calcularValorAtual()));  
+			  
+			  DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+			  String datainvestimento = investimentoBR.getDataInvestimento().format(formatter);
+			  txt_datainvestimentobr.setText(datainvestimento);
+			  
+			  dao.atualizarRendimento(investimentoBR);
+		  	} 
+		  	else 
+		  	{
+			  txt_valorrendimentobr.setText("0,00");  
+			  txt_valorinvestimentobr.setText("0,00");
+			  txt_datainvestimentobr.setText("N/A");
+
+		  }
+	 }
+}
+
+
+
 //OUTROS
 public void FecharPrograma() {
 	try {
@@ -1799,4 +1862,5 @@ public void Sair_NaoSair() {
 	 stage.close();	
  }
 }
+
 }
