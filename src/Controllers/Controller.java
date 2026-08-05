@@ -1826,8 +1826,6 @@ public void TelaCofrinho() {
 	 }
 }
 
-
-
 //OUTROS
 public void FecharPrograma() {
 	try {
