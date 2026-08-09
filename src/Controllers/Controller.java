@@ -76,7 +76,7 @@ int PIX_OP = 0;
 @FXML private Text txt_data_nova;             @FXML private Text txt_senhanova1;            @FXML private Text txt_senhanova2;
 @FXML private Text txt_senhanova3;            @FXML private Text erro_alterarpix1;          @FXML private Text erro_alterarpix2;
 @FXML private Text erro_alterarpix3;          @FXML private Text erro_alterarpix4;          @FXML private Text erro_alterarpix5;
-@FXML private Text TXT_chavecpf;
+@FXML private Text TXT_chavecpf;              @FXML private Text TXT_dolarinvestimento;
 @FXML private Text TXT_chavecelular;          @FXML private Text TXT_chaveemail;            @FXML private Text TXT_chavealeatoria;
 @FXML private Text txt_datainvestimentous;    @FXML private Text txt_valorrendimentous;     @FXML private Text txt_valorinvestimentous;
 @FXML private Text txt_datainvestimentobr;    @FXML private Text txt_valorrendimentobr;     @FXML private Text txt_valorinvestimentobr;
@@ -152,6 +152,8 @@ int PIX_OP = 0;
 		
 //UTILIDADES, TRANSIÇÕES E PASSAGEM DE DADOS
 public void PassarDados(Client cliente) {
+	    @SuppressWarnings("deprecation")
+		NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));
 		this.cliente = cliente;
 		atualizarFavoritos();
 		cambioTela();
@@ -159,7 +161,7 @@ public void PassarDados(Client cliente) {
 		atualizarchaves();
 	    TelaCofrinho();
 		txt_cliente.setText(cliente.getNome().toUpperCase()+" "+cliente.getSobrenome().toUpperCase());
-	    txt_saldo.setText("R$ " + cliente.getSaldo());
+	    txt_saldo.setText("R$ " + nf.format(cliente.getSaldo()));
 }
 	
 public void receberPix(Client clientePix) {
@@ -320,13 +322,20 @@ public void cambioTela() {
 	
 		}
 		
+		if (TXT_dolarinvestimento != null) {
+		    CambioAPI api = new CambioAPI();
+		    Cambio cambio = api.cambioAtual();
+		    
+			NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));
+			TXT_dolarinvestimento.setText(nf.format(cambio.getUsd()));
+		}
+		
 		if (TXT_dolarUSD != null) {
 	
 		    CambioAPI api = new CambioAPI();
 		    Cambio cambio = api.cambioAtual();
 	
-		    NumberFormat nf = NumberFormat.getCurrencyInstance(
-		    new Locale("pt", "BR"));
+		    NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));
 		    
 		    
 		    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
@@ -1779,7 +1788,7 @@ public void TelaCofrinho() {
 			  nf.setMaximumFractionDigits(2);
 		
 			  txt_valorinvestimentous.setText(nf.format(investimentoUS.getValorInvestido()));
-			  txt_valorrendimentous.setText(nf.format(investimentoUS.calcularValorAtual()));  
+			  txt_valorrendimentous.setText(nf.format(investimentoUS.calcularValorizacao()));  
 			  txt_valortotalus.setText(nf.format(investimentoUS.getValorTotal()));
 			  
 			  DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -1981,9 +1990,13 @@ public void investimentoEUA() {
 	else { erro_investimento1.setVisible(false); }
 	
 	BigDecimal saldo = BigDecimal.valueOf(cliente.getSaldo());
-	
+    CambioAPI api = new CambioAPI();
+    cambioAtual = api.cambioAtual();
+    BigDecimal dolar = BigDecimal.valueOf(cambioAtual.getUsd());
+    BigDecimal saldoEmDolar = saldo.divide(dolar,2,RoundingMode.HALF_UP);
+
 	//VALOR MAIOR QUE SALDO
-	if (valor.compareTo(saldo) > 0) {
+	if (valor.compareTo(saldoEmDolar) > 0) {
 		erro_investimento2.setVisible(true);
 		tremer(field_valorinvestimento);
 		tremer(image_br);
@@ -2006,9 +2019,11 @@ public void investimentoEUA() {
 	
 	DAO<Investment> daoInvestimento = new DAO<>(Investment.class);
 	
-	Investment investimentoBR = daoInvestimento.buscarPorClienteETipo(cliente,TipoInvestimento.BRASIL);
+	Investment investimentoUS = daoInvestimento.buscarPorClienteETipo(cliente,TipoInvestimento.DOLAR);
 	
-	cliente.setSaldo(cliente.getSaldo() - valor.doubleValue());
+	BigDecimal valorEmReais = valor.multiply(dolar);
+	
+	cliente.setSaldo(cliente.getSaldo() - valorEmReais.doubleValue());
 	txt_saldo.setText("R$ " + cliente.getSaldo());
 	
 	daoCliente.abrir();
@@ -2018,32 +2033,33 @@ public void investimentoEUA() {
 	daoInvestimento.abrir();
 	
 	//INVESTIMENTO JÁ ATIVO
-	if (investimentoBR != null && investimentoBR.getAtivo()) {
+	if (investimentoUS != null && investimentoUS.getAtivo()) {
 		
-		BigDecimal valorAtual = investimentoBR.calcularValorAtual();
-		BigDecimal rendimentoAtual = valorAtual.subtract(investimentoBR.getValorInvestido());
-		BigDecimal novoValorInvestido = investimentoBR.getValorInvestido().add(valor);
-		BigDecimal novoValorTotal = valorAtual.add(valor);
+        BigDecimal valorAtual = investimentoUS.calcularValorAtual();
+        BigDecimal rendimentoAtual = valorAtual.subtract(investimentoUS.getValorInvestido());
+        BigDecimal novoValorInvestido = investimentoUS.getValorInvestido().add(valor);
+        BigDecimal novoValorTotal = valorAtual.add(valor);
 		
-		investimentoBR.setValorInvestido(novoValorInvestido);
-		investimentoBR.setValorRendido(rendimentoAtual);
-		investimentoBR.setValorTotal(novoValorTotal);
-		investimentoBR.setDataInvestimento(hoje);
+        investimentoUS.setValorInvestido(novoValorInvestido);
+        investimentoUS.setValorRendido(rendimentoAtual);
+        investimentoUS.setValorTotal(novoValorTotal);
+        investimentoUS.setDataInvestimento(hoje);
 		
-		daoInvestimento.atualizar(investimentoBR);         
+		daoInvestimento.atualizar(investimentoUS);         
 	}
 	
 	//INVESTIMENTO INATIVO
 	else {
-		investimentoBR = new Investment();
-		investimentoBR.setCliente(cliente);
-		investimentoBR.setTipo(TipoInvestimento.BRASIL);
-		investimentoBR.setValorInvestido(valor);
-		investimentoBR.setValorRendido(BigDecimal.ZERO);
-		investimentoBR.setValorTotal(valor);
-		investimentoBR.setAtivo(true);
-		investimentoBR.setDataInvestimento(hoje);
-		daoInvestimento.adcionar(investimentoBR);
+        investimentoUS = new Investment();
+        investimentoUS.setCliente(cliente);
+        investimentoUS.setTipo(TipoInvestimento.DOLAR);
+        investimentoUS.setValorInvestido(valor);
+        investimentoUS.setValorRendido(BigDecimal.ZERO);
+        investimentoUS.setValorTotal(valor);
+        investimentoUS.setAtivo(true);
+        investimentoUS.setDataInvestimento(hoje);
+
+        daoInvestimento.adcionar(investimentoUS);
 	}
 	
 	daoInvestimento.fechar();
