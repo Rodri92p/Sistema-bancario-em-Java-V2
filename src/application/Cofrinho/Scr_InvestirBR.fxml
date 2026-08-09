@@ -469,17 +469,6 @@
             <Font name="Caladea Regular" size="30.0" />
          </font>
       </Text>
-       <AnchorPane fx:id="loadingPane" prefHeight="755" prefWidth="1119" style="-fx-background-color: rgba(0,0,0,0.6);" visible="false">
-         <children>
-            <HBox alignment="CENTER" layoutX="500" layoutY="350" spacing="10">
-               <children>
-                  <Circle fx:id="dot1" fill="WHITE" radius="8" />
-                  <Circle fx:id="dot2" fill="WHITE" radius="8" />
-                  <Circle fx:id="dot3" fill="WHITE" radius="8" />
-               </children>
-            </HBox>
-         </children>
-      </AnchorPane>
       <Text fx:id="erro_investimento1" fill="RED" layoutX="530.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INSIRA UM VALOR VALIDO PARA INVESTIMENTO" visible="false">
          <font>
             <Font name="Caladea Regular" size="14.0" />
@@ -495,6 +484,17 @@
             <Font name="Caladea Regular" size="14.0" />
          </font>
       </Text>
+       <AnchorPane fx:id="loadingPane" prefHeight="755" prefWidth="1119" style="-fx-background-color: rgba(0,0,0,0.6);" visible="false">
+         <children>
+            <HBox alignment="CENTER" layoutX="500" layoutY="350" spacing="10">
+               <children>
+                  <Circle fx:id="dot1" fill="WHITE" radius="8" />
+                  <Circle fx:id="dot2" fill="WHITE" radius="8" />
+                  <Circle fx:id="dot3" fill="WHITE" radius="8" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
       
    </children>
 </AnchorPane>

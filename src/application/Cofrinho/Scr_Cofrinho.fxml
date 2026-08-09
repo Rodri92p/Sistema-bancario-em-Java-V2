@@ -381,17 +381,6 @@
             <Image url="@../../../images/USA.png" />
          </image>
       </ImageView>
-      <AnchorPane fx:id="loadingPane" prefHeight="755" prefWidth="1119" style="-fx-background-color: rgba(0,0,0,0.6);" visible="false">
-         <children>
-            <HBox alignment="CENTER" layoutX="500" layoutY="350" spacing="10">
-               <children>
-                  <Circle fx:id="dot1" fill="WHITE" radius="8" />
-                  <Circle fx:id="dot2" fill="WHITE" radius="8" />
-                  <Circle fx:id="dot3" fill="WHITE" radius="8" />
-               </children>
-            </HBox>
-         </children>
-      </AnchorPane>
       <Text fill="#1b1a1a" layoutX="293.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$" wrappingWidth="58.0">
          <font>
             <Font name="Caladea Bold" size="27.0" />
@@ -434,6 +423,17 @@
          </font>
       </Text>
       <Line endX="232.5" layoutX="820.0" layoutY="260.0" startX="-100.0" stroke="#1b1a1a" strokeWidth="2.0" />
+      <AnchorPane fx:id="loadingPane" prefHeight="755" prefWidth="1119" style="-fx-background-color: rgba(0,0,0,0.6);" visible="false">
+         <children>
+            <HBox alignment="CENTER" layoutX="500" layoutY="350" spacing="10">
+               <children>
+                  <Circle fx:id="dot1" fill="WHITE" radius="8" />
+                  <Circle fx:id="dot2" fill="WHITE" radius="8" />
+                  <Circle fx:id="dot3" fill="WHITE" radius="8" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
       
    </children>
 </AnchorPane>

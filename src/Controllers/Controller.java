@@ -1806,7 +1806,7 @@ public void TelaCofrinho() {
 		
 			  txt_valorinvestimentobr.setText(nf.format(investimentoBR.getValorInvestido()));
 			  txt_valorrendimentobr.setText(nf.format(investimentoBR.calcularValorizacao()));  
-			  txt_valortotalbr.setText(nf.format(investimentoBR.getValorTotal().toString()));
+			  txt_valortotalbr.setText(nf.format(investimentoBR.getValorTotal()));
 			  
 			  DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 			  String datainvestimento = investimentoBR.getDataInvestimento().format(formatter);
@@ -1823,6 +1823,25 @@ public void TelaCofrinho() {
 
 		  }
 	 }
+}
+
+public void ChamarInvestimento() {
+	try {
+		FXMLLoader loader = new FXMLLoader(
+		getClass().getResource("/application/Inicio/Scr_Confirmacao5.fxml")
+		);
+		loader.setController(this);
+		Parent root = loader.load();
+		
+		Stage novaJanela = new Stage();
+		novaJanela.initModality(Modality.APPLICATION_MODAL);
+			
+		
+		novaJanela.setScene(new Scene(root));
+		novaJanela.showAndWait();
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
 }
 
 public void investimentoBrasil() {
@@ -1887,6 +1906,7 @@ public void investimentoBrasil() {
 	Investment investimentoBR = daoInvestimento.buscarPorClienteETipo(cliente,TipoInvestimento.BRASIL);
 	
     cliente.setSaldo(cliente.getSaldo() - valor.doubleValue());
+    txt_saldo.setText("R$ " + cliente.getSaldo());
 
     daoCliente.abrir();
     daoCliente.atualizar(cliente);
@@ -1922,12 +1942,112 @@ public void investimentoBrasil() {
 	   investimentoBR.setDataInvestimento(hoje);
 	   daoInvestimento.adcionar(investimentoBR);
     }
+    
+       daoInvestimento.fechar();
+       ChamarInvestimento();
+}
 
-
-
-    daoInvestimento.fechar();
-
-    System.out.println("INVESTIMENTO REALIZADO COM SUCESSO!");
+public void investimentoEUA() {
+	
+	DAO<Client> daoCliente = new DAO<>(Client.class);
+	
+	String textoValor = field_valorinvestimento.getText().trim();
+	
+	BigDecimal valor;
+	
+	try {
+		valor = new BigDecimal(textoValor.replace(",", "."));
+		
+	} catch (NumberFormatException e) {
+		erro_investimento1.setVisible(true);
+		tremer(field_valorinvestimento);
+		tremer(image_br);
+		tremer(barra_cofrinho);
+		tremer(txt_real);
+		erro_investimento2.setVisible(false);
+		erro_investimento3.setVisible(false);
+		return;
+	}
+	
+	//VALOR MENOR OU IGUAL A ZERO
+	if (valor.compareTo(BigDecimal.ZERO) <= 0) {
+		erro_investimento1.setVisible(true);
+		tremer(field_valorinvestimento);
+		tremer(image_br);
+		tremer(barra_cofrinho);
+		tremer(txt_real);
+		erro_investimento2.setVisible(false); erro_investimento3.setVisible(false);
+		return; }
+	else { erro_investimento1.setVisible(false); }
+	
+	BigDecimal saldo = BigDecimal.valueOf(cliente.getSaldo());
+	
+	//VALOR MAIOR QUE SALDO
+	if (valor.compareTo(saldo) > 0) {
+		erro_investimento2.setVisible(true);
+		tremer(field_valorinvestimento);
+		tremer(image_br);
+		tremer(barra_cofrinho);
+		tremer(txt_real);
+		erro_investimento1.setVisible(false); erro_investimento3.setVisible(false);
+		return;} 
+	else { erro_investimento2.setVisible(false); }
+	
+	//RADIO NÃO SELECIONADO
+	if (!radio_investimento.isSelected()) {
+		erro_investimento3.setVisible(true);
+		tremer(radio_investimento);
+		erro_investimento1.setVisible(false); erro_investimento2.setVisible(false);
+		return; }
+	else{ erro_investimento3.setVisible(false); }
+	
+	
+	LocalDate hoje = LocalDate.now();
+	
+	DAO<Investment> daoInvestimento = new DAO<>(Investment.class);
+	
+	Investment investimentoBR = daoInvestimento.buscarPorClienteETipo(cliente,TipoInvestimento.BRASIL);
+	
+	cliente.setSaldo(cliente.getSaldo() - valor.doubleValue());
+	txt_saldo.setText("R$ " + cliente.getSaldo());
+	
+	daoCliente.abrir();
+	daoCliente.atualizar(cliente);
+	daoCliente.fechar();
+	
+	daoInvestimento.abrir();
+	
+	//INVESTIMENTO JÁ ATIVO
+	if (investimentoBR != null && investimentoBR.getAtivo()) {
+		
+		BigDecimal valorAtual = investimentoBR.calcularValorAtual();
+		BigDecimal rendimentoAtual = valorAtual.subtract(investimentoBR.getValorInvestido());
+		BigDecimal novoValorInvestido = investimentoBR.getValorInvestido().add(valor);
+		BigDecimal novoValorTotal = valorAtual.add(valor);
+		
+		investimentoBR.setValorInvestido(novoValorInvestido);
+		investimentoBR.setValorRendido(rendimentoAtual);
+		investimentoBR.setValorTotal(novoValorTotal);
+		investimentoBR.setDataInvestimento(hoje);
+		
+		daoInvestimento.atualizar(investimentoBR);         
+	}
+	
+	//INVESTIMENTO INATIVO
+	else {
+		investimentoBR = new Investment();
+		investimentoBR.setCliente(cliente);
+		investimentoBR.setTipo(TipoInvestimento.BRASIL);
+		investimentoBR.setValorInvestido(valor);
+		investimentoBR.setValorRendido(BigDecimal.ZERO);
+		investimentoBR.setValorTotal(valor);
+		investimentoBR.setAtivo(true);
+		investimentoBR.setDataInvestimento(hoje);
+		daoInvestimento.adcionar(investimentoBR);
+	}
+	
+	daoInvestimento.fechar();
+	ChamarInvestimento();
 }
 
 
