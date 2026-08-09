@@ -2,6 +2,7 @@ package Controllers;
 				
 import javafx.animation.TranslateTransition;
 import javafx.scene.Node;	
+import javafx.scene.shape.Rectangle;	
 import javafx.util.Duration;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -10,6 +11,7 @@ import java.util.Locale;
 import java.util.UUID;
 import Controllers.CambioAPI.Cambio;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.NumberFormat;
 import System.Client;
@@ -78,7 +80,8 @@ int PIX_OP = 0;
 @FXML private Text TXT_chavecelular;          @FXML private Text TXT_chaveemail;            @FXML private Text TXT_chavealeatoria;
 @FXML private Text txt_datainvestimentous;    @FXML private Text txt_valorrendimentous;     @FXML private Text txt_valorinvestimentous;
 @FXML private Text txt_datainvestimentobr;    @FXML private Text txt_valorrendimentobr;     @FXML private Text txt_valorinvestimentobr;
-
+@FXML private Text erro_investimento1;        @FXML private Text erro_investimento2;        @FXML private Text erro_investimento3;
+@FXML private Text txt_valortotalus;          @FXML private Text txt_valortotalbr;          @FXML private Text txt_real;      
 
 //BUTTON
 @FXML private Button btn_sair;                @FXML private Button btn_investirBR;          @FXML private Button btn_resgatarBR;
@@ -99,14 +102,14 @@ int PIX_OP = 0;
 @FXML private Button btn_adcpix_aleatoria;    @FXML private Button btn_apagarpix_cpf;       @FXML private Button btn_apagarpix_celular;   
 @FXML private Button btn_apagarpix_email;     @FXML private Button btn_apagarpix_aleatoria; @FXML private Button btn_SIM;
 @FXML private Button btn_investirvalorBR;     @FXML private Button btn_resgatarvalorBR;     @FXML private Button btn_investirvalorUS;
-@FXML private Button btn_resgatarvalorUS; 
+@FXML private Button btn_resgatarvalorUS;     @FXML private Button btn_confirmarinvestimento; 
 
 //TEXTFIELD + PASSWORDFIELD	3
 @FXML private TextField cpf_login;            @FXML private TextField cpf_registro;         @FXML private TextField email_registro;
 @FXML private TextField nome_registro;        @FXML private TextField sobrenome_registro;   @FXML private TextField field_valorpix; 
 @FXML private TextField field_senhapix;       @FXML private TextField field_inserirpix;     @FXML private TextField field_confirmesenhapix;
 @FXML private TextField field_confirmarnova;  @FXML private TextField field_senhaantiga;    @FXML private TextField field_senhanova;
-@FXML private TextField field_chavepix;       @FXML private TextField field_confirmechave;    
+@FXML private TextField field_chavepix;       @FXML private TextField field_confirmechave;  @FXML private TextField field_valorinvestimento; 
 @FXML private PasswordField senha_login;      @FXML private PasswordField senha_registro;   @FXML private PasswordField confirme_registro;
 
 //LABEL
@@ -129,16 +132,21 @@ int PIX_OP = 0;
 @FXML private Line barra_senha1;              @FXML private Line barra_senha2;              @FXML private Line barra_senha3;
 @FXML private Line fav_barra1;                @FXML private Line fav_barra2; 				@FXML private Line fav_barra3;
 @FXML private Line fav_barra4;                @FXML private Line fav_barra5; 				@FXML private Line fav_barra6;
+@FXML private Line barra_cofrinho;               
 
-//SHAPES, ANCHORS, RADIO, IMAGES, ETC...
-@FXML private AnchorPane loadingPane; 
-@FXML private Circle dot1, dot2, dot3;
-@FXML private ImageView sad_facepix;
-@FXML private ImageView emoji_1;                        @FXML private ImageView emoji_2;                        @FXML private ImageView emoji_3;
+//RADIOS
+@FXML private RadioButton radio_investimento;
 @FXML private RadioButton radio_aleatoriapix;           @FXML private RadioButton radio_emailpix;               @FXML private RadioButton radio_concordarexcluir;
 @FXML private RadioButton radio_telefonepix;            @FXML private RadioButton radio_cpfpix;                 @FXML private RadioButton btn_ciente_senhanova;
-@FXML private javafx.scene.shape.Rectangle quadrado_1;  @FXML private javafx.scene.shape.Rectangle quadrado_2;  @FXML private javafx.scene.shape.Rectangle quadrado_3;
-@FXML private javafx.scene.shape.Rectangle retangulo_1; @FXML private javafx.scene.shape.Rectangle retangulo_2; @FXML private javafx.scene.shape.Rectangle retangulo_3;
+
+//IMAGEVIEW
+@FXML private ImageView sad_facepix;                    @FXML private ImageView image_br;
+@FXML private ImageView emoji_1;                        @FXML private ImageView emoji_2;                        @FXML private ImageView emoji_3;
+
+//SHAPES
+@FXML private AnchorPane loadingPane; @FXML private Circle dot1, dot2, dot3;
+@FXML private Rectangle quadrado_1;   @FXML private Rectangle quadrado_2;    @FXML private Rectangle quadrado_3;
+@FXML private Rectangle retangulo_1;  @FXML private Rectangle retangulo_2;   @FXML private Rectangle retangulo_3;
 
 //--------------------------------------------------------------------------------------------------
 		
@@ -167,127 +175,114 @@ public void receberPix(Client clientePix) {
 	    String dataFormatada = hoje.format(formato);
 	
 	    lbl_datapix.setText(dataFormatada);
-	    lbl_nomepix.setText(
-	        clientePix.getNome() + " " +
-	        clientePix.getSobrenome()
-	    );
-	
-	    lbl_cpfpix.setText(
-	        "**-***." + cpfcliente.substring(3, 6) + ".***"
-	    );
+	    lbl_nomepix.setText(clientePix.getNome() + " " + clientePix.getSobrenome());
+	    lbl_cpfpix.setText("**-***." + cpfcliente.substring(3, 6) + ".***");
 }
 	
 private void atualizarFavoritos() {
-	    if(btn_favadd1 == null) {
-	        return;
-	    }
 	
-	    Integer[] favoritos = {
-	        cliente.getFavorito1(),
-	        cliente.getFavorito2(),
-	        cliente.getFavorito3(),
-	        cliente.getFavorito4(),
-	        cliente.getFavorito5(),
-	        cliente.getFavorito6(),
-	        cliente.getFavorito7()
-	    };
+	if(btn_favadd1 == null) {
+	   return;
+	}
+	
+	Integer[] favoritos = {
+	  cliente.getFavorito1(),
+	  cliente.getFavorito2(),
+	  cliente.getFavorito3(),
+	  cliente.getFavorito4(),
+	  cliente.getFavorito5(),
+	  cliente.getFavorito6(),
+	  cliente.getFavorito7()
+    };
 	    
-	    Integer[] tipos = {
-	        cliente.getFavorito1tipo(),
-	        cliente.getFavorito2tipo(),
-	        cliente.getFavorito3tipo(),
-	        cliente.getFavorito4tipo(),
-	        cliente.getFavorito5tipo(),
-	        cliente.getFavorito6tipo(),
-	        cliente.getFavorito7tipo()
-	    };
+	Integer[] tipos = {
+	  cliente.getFavorito1tipo(),
+	  cliente.getFavorito2tipo(),
+	  cliente.getFavorito3tipo(),
+	  cliente.getFavorito4tipo(),
+	  cliente.getFavorito5tipo(),
+	  cliente.getFavorito6tipo(),
+	  cliente.getFavorito7tipo()
+	};
 	
-	    Button[] btnAdd = {
-	        btn_favadd1,
-	        btn_favadd2,
-	        btn_favadd3,
-	        btn_favadd4,
-	        btn_favadd5,
-	        btn_favadd6,
-	        btn_favadd7
-	    };
+	Button[] btnAdd = {
+	  btn_favadd1,
+	  btn_favadd2,
+	  btn_favadd3,
+	  btn_favadd4,
+	  btn_favadd5,
+	  btn_favadd6,
+	  btn_favadd7
+	};
 	    
-	    Text[] txtFav = {
-	        fav_1,
-	        fav_2,
-	        fav_3,
-	        fav_4,
-	        fav_5,
-	        fav_6,
-	        fav_7,
-	    };
+	Text[] txtFav = {
+	  fav_1,
+	  fav_2,
+	  fav_3,
+	  fav_4,
+	  fav_5,
+	  fav_6,
+	  fav_7,
+	};
 	
-	    Button[] btnDelete = {
-	        btn_favdelete1,
-	        btn_favdelete2,
-	        btn_favdelete3,
-	        btn_favdelete4,
-	        btn_favdelete5,
-	        btn_favdelete6,
-	        btn_favdelete7
-	    };
+	Button[] btnDelete = {
+	  btn_favdelete1,
+	  btn_favdelete2,
+	  btn_favdelete3,
+	  btn_favdelete4,
+	  btn_favdelete5,
+	  btn_favdelete6,
+	  btn_favdelete7
+	};
 	
-	    Line[] barras = {
-	        fav_barra1,
-	        fav_barra2,
-	        fav_barra3,
-	        fav_barra4,
-	        fav_barra5,
-	        fav_barra6,
-	        fav_barra7
-	    };
+	Line[] barras = {
+	  fav_barra1,
+	  fav_barra2,
+	  fav_barra3,
+	  fav_barra4,
+	  fav_barra5,
+	  fav_barra6,
+	  fav_barra7
+	};
 		
-	    DAO<Client> dao = new DAO<>(Client.class);
+	DAO<Client> dao = new DAO<>(Client.class);
 	
-	    for(int i = 0; i < 7; i++) {
-	    	
-	    	if (favoritos[i] == null) {
-	
-	    	    txtFav[i].setVisible(false);
-	    	    btnAdd[i].setVisible(false);
-	    	    btnDelete[i].setVisible(false);
-	    	    barras[i].setVisible(false);
-	
-	    	    continue;
-	    	}
-	    	
-	    	Client favorito = dao.BuscarPorId(favoritos[i]);
-	    	
-	        if(favoritos[i] != null) {
-	
-	        	if(favoritos[0] != null) {
-	                sad_facepix.setVisible(false);
-	                nenhum_TXT.setVisible(false);
-	         	}
-	
-	            btnAdd[i].setVisible(true);
-	            txtFav[i].setVisible(true);
-	            btnDelete[i].setVisible(true);
-	            barras[i].setVisible(true);
-	            txtFav[i].setText(
-	                favorito.getNome()             +
-	                " "                            +
-	                favorito.getSobrenome()        +
-	                " - CHAVE: "                   +
-	                favorito.getChavePixPrincipal(tipos[i])
-	            );
-	
-	        } else {    	
-	        	if(favoritos[0] == null) {
-	                sad_facepix.setVisible(true);
-	                nenhum_TXT.setVisible(true);
-	         	}
-	        	txtFav[i].setVisible(false);
-	            btnAdd[i].setVisible(false);
-	            btnDelete[i].setVisible(false);
-	            barras[i].setVisible(false);
-	        }
+	  for(int i = 0; i < 7; i++) {
+		if (favoritos[i] == null) {
+	      txtFav[i].setVisible(false);
+		  btnAdd[i].setVisible(false);
+		  btnDelete[i].setVisible(false);
+		  barras[i].setVisible(false);
+	    continue;
 	    }
+	    	
+	    Client favorito = dao.BuscarPorId(favoritos[i]);
+	    	
+	      if(favoritos[i] != null) {
+		    if(favoritos[0] != null) {
+		       sad_facepix.setVisible(false);
+		       nenhum_TXT.setVisible(false);
+	        }
+	
+		    btnAdd[i].setVisible(true);
+		    txtFav[i].setVisible(true);
+		    btnDelete[i].setVisible(true);
+		    barras[i].setVisible(true);
+		    txtFav[i].setText(favorito.getNome() + " " + favorito.getSobrenome() + " - CHAVE: " + favorito.getChavePixPrincipal(tipos[i]));
+	
+	      } else {    
+	    	  
+	    	  if(favoritos[0] == null) {
+	    		  sad_facepix.setVisible(true);
+	    		  nenhum_TXT.setVisible(true);
+	          }
+	    	  
+	          txtFav[i].setVisible(false);
+	          btnAdd[i].setVisible(false);
+	          btnDelete[i].setVisible(false);
+	          barras[i].setVisible(false);
+	     }
+	 }
 }
 	
 private void atualizarchaves() {
@@ -369,7 +364,7 @@ public void investimentoTela() {
 		  nf.setMaximumFractionDigits(2);
 	
 		  txt_valorcofreUS.setText(nf.format(investimentoUS.calcularValorAtual()));  
-		  txt_valorlucroUS.setText(investimentoUS.calcularValorizacao().setScale(2, RoundingMode.HALF_UP).toString() + "%"); 
+		  txt_valorlucroUS.setText(investimentoUS.calcularValorizacao().setScale(2, RoundingMode.HALF_UP).toString()); 
 		  DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		  String datainvestimento = investimentoUS.getDataInvestimento().format(formatter);
 		  txt_datainvestimentoUS.setText(datainvestimento);
@@ -391,7 +386,7 @@ public void investimentoTela() {
 		  nf.setMaximumFractionDigits(2);
 		  
 		  txt_valorcofreBR.setText(nf.format(investimentoBR.calcularValorAtual()));  
-		  txt_valorlucroBR.setText(investimentoBR.calcularValorizacao().setScale(2, RoundingMode.HALF_UP).toString() + "%");
+		  txt_valorlucroBR.setText(investimentoBR.calcularValorizacao().setScale(2, RoundingMode.HALF_UP).toString());
 			  
 		  DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		  String datainvestimento = investimentoBR.getDataInvestimento().format(formatter);
@@ -670,7 +665,7 @@ public void tremer(Node node) {
 	    tt.play();
 }
 	
-	@SuppressWarnings("unused")
+@SuppressWarnings("unused")
 public void Transicao() {
 	
 	//TRANSIÇÕES LATERAIS
@@ -732,23 +727,23 @@ public void Transicao() {
 	  }
 	  
 	//TRANSIÇÕES INTERNAS - COFRINHO
-	  if(btn_investirBR != null && btn_investirBR.isPressed()) {
-		btn_investirBR.setOnAction(e -> TransicaoTela("/application/Cofrinho/Scr_InvestirBR.fxml", btn_investirBR));
+	  if(btn_investirvalorBR != null && btn_investirvalorBR.isPressed()) {
+		 btn_investirvalorBR.setOnAction(e -> TransicaoTela("/application/Cofrinho/Scr_InvestirBR.fxml", btn_investirvalorBR));
 	  return;  
 	  }
 	
-	  if(btn_resgatarBR != null && btn_resgatarBR.isPressed()) {
-		btn_resgatarBR.setOnAction(e -> TransicaoTela("/application/Cofrinho/Scr_ResgatarBR.fxml", btn_resgatarBR));
+	  if(btn_resgatarvalorBR != null && btn_resgatarvalorBR.isPressed()) {
+		 btn_resgatarvalorBR.setOnAction(e -> TransicaoTela("/application/Cofrinho/Scr_ResgatarBR.fxml", btn_resgatarvalorBR));
 	  return;  
 	  }
 	
-	  if(btn_investirUS != null && btn_investirUS.isPressed()) {
-	    btn_investirUS.setOnAction(e -> TransicaoTela("/application/Cofrinho/Scr_InvestirUS.fxml", btn_investirUS));
+	  if(btn_investirvalorUS != null && btn_investirvalorUS.isPressed()) {
+		 btn_investirvalorUS.setOnAction(e -> TransicaoTela("/application/Cofrinho/Scr_InvestirUS.fxml", btn_investirvalorUS));
 	  return;  
 	  }
 	  
-	  if(btn_resgatarUS != null && btn_resgatarUS.isPressed()) {
-	    btn_resgatarUS.setOnAction(e -> TransicaoTela("/application/Cofrinho/Scr_ResgatarUS.fxml", btn_resgatarUS));
+	  if(btn_resgatarvalorUS != null && btn_resgatarvalorUS.isPressed()) {
+		 btn_resgatarvalorUS.setOnAction(e -> TransicaoTela("/application/Cofrinho/Scr_ResgatarUS.fxml", btn_resgatarvalorUS));
 	  return;  
 	  }
 }
@@ -1317,6 +1312,7 @@ private void RealizarPix() {
 	dao.atualizar(cliente_pix);
 	dao.fechar();
 	
+    txt_saldo.setText("R$ " + cliente.getSaldo());
 	pix_realizado();
   }
 }
@@ -1418,7 +1414,6 @@ public void ChamarconfirmacaoPIX() {
 }
 
 //CONTA
-	
 public void alterarsenha() {
 	  
   //CASO NENHUM DADO PREENCHIDO.
@@ -1785,6 +1780,7 @@ public void TelaCofrinho() {
 		
 			  txt_valorinvestimentous.setText(nf.format(investimentoUS.getValorInvestido()));
 			  txt_valorrendimentous.setText(nf.format(investimentoUS.calcularValorAtual()));  
+			  txt_valortotalus.setText(nf.format(investimentoUS.getValorTotal()));
 			  
 			  DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 			  String datainvestimento = investimentoUS.getDataInvestimento().format(formatter);
@@ -1796,6 +1792,7 @@ public void TelaCofrinho() {
 		  {
 			  txt_valorrendimentous.setText("0,00");  
 			  txt_valorinvestimentous.setText("0,00");
+			  txt_valortotalus.setText("0,00");
 			  txt_datainvestimentous.setText("N/A");
 
 		  }
@@ -1808,7 +1805,8 @@ public void TelaCofrinho() {
 			  nf.setMaximumFractionDigits(2);
 		
 			  txt_valorinvestimentobr.setText(nf.format(investimentoBR.getValorInvestido()));
-			  txt_valorrendimentobr.setText(nf.format(investimentoBR.calcularValorAtual()));  
+			  txt_valorrendimentobr.setText(nf.format(investimentoBR.calcularValorizacao()));  
+			  txt_valortotalbr.setText(nf.format(investimentoBR.getValorTotal().toString()));
 			  
 			  DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 			  String datainvestimento = investimentoBR.getDataInvestimento().format(formatter);
@@ -1820,11 +1818,118 @@ public void TelaCofrinho() {
 		  	{
 			  txt_valorrendimentobr.setText("0,00");  
 			  txt_valorinvestimentobr.setText("0,00");
+			  txt_valortotalbr.setText("0,00");
 			  txt_datainvestimentobr.setText("N/A");
 
 		  }
 	 }
 }
+
+public void investimentoBrasil() {
+
+	DAO<Client> daoCliente = new DAO<>(Client.class);
+
+	String textoValor = field_valorinvestimento.getText().trim();
+
+	BigDecimal valor;
+
+	try {
+		valor = new BigDecimal(textoValor.replace(",", "."));
+		
+	} catch (NumberFormatException e) {
+		erro_investimento1.setVisible(true);
+		tremer(field_valorinvestimento);
+		tremer(image_br);
+		tremer(barra_cofrinho);
+		tremer(txt_real);
+		erro_investimento2.setVisible(false);
+		erro_investimento3.setVisible(false);
+		return;
+}
+
+	//VALOR MENOR OU IGUAL A ZERO
+	if (valor.compareTo(BigDecimal.ZERO) <= 0) {
+		erro_investimento1.setVisible(true);
+		tremer(field_valorinvestimento);
+		tremer(image_br);
+		tremer(barra_cofrinho);
+		tremer(txt_real);
+		erro_investimento2.setVisible(false); erro_investimento3.setVisible(false);
+		return; }
+	else { erro_investimento1.setVisible(false); }
+
+	BigDecimal saldo = BigDecimal.valueOf(cliente.getSaldo());
+
+	//VALOR MAIOR QUE SALDO
+	if (valor.compareTo(saldo) > 0) {
+		erro_investimento2.setVisible(true);
+		tremer(field_valorinvestimento);
+		tremer(image_br);
+		tremer(barra_cofrinho);
+		tremer(txt_real);
+		erro_investimento1.setVisible(false); erro_investimento3.setVisible(false);
+		return;} 
+	else { erro_investimento2.setVisible(false); }
+
+	//RADIO NÃO SELECIONADO
+	if (!radio_investimento.isSelected()) {
+		erro_investimento3.setVisible(true);
+		tremer(radio_investimento);
+		erro_investimento1.setVisible(false); erro_investimento2.setVisible(false);
+		return; }
+	else{ erro_investimento3.setVisible(false); }
+
+
+	LocalDate hoje = LocalDate.now();
+
+	DAO<Investment> daoInvestimento = new DAO<>(Investment.class);
+
+	Investment investimentoBR = daoInvestimento.buscarPorClienteETipo(cliente,TipoInvestimento.BRASIL);
+	
+    cliente.setSaldo(cliente.getSaldo() - valor.doubleValue());
+
+    daoCliente.abrir();
+    daoCliente.atualizar(cliente);
+    daoCliente.fechar();
+
+    daoInvestimento.abrir();
+
+    //INVESTIMENTO JÁ ATIVO
+    if (investimentoBR != null && investimentoBR.getAtivo()) {
+    	
+    	BigDecimal valorAtual = investimentoBR.calcularValorAtual();
+    	BigDecimal rendimentoAtual = valorAtual.subtract(investimentoBR.getValorInvestido());
+    	BigDecimal novoValorInvestido = investimentoBR.getValorInvestido().add(valor);
+    	BigDecimal novoValorTotal = valorAtual.add(valor);
+
+    	investimentoBR.setValorInvestido(novoValorInvestido);
+    	investimentoBR.setValorRendido(rendimentoAtual);
+    	investimentoBR.setValorTotal(novoValorTotal);
+    	investimentoBR.setDataInvestimento(hoje);
+
+    	daoInvestimento.atualizar(investimentoBR);         
+    }
+   
+    //INVESTIMENTO INATIVO
+    else {
+	   investimentoBR = new Investment();
+	   investimentoBR.setCliente(cliente);
+	   investimentoBR.setTipo(TipoInvestimento.BRASIL);
+	   investimentoBR.setValorInvestido(valor);
+	   investimentoBR.setValorRendido(BigDecimal.ZERO);
+	   investimentoBR.setValorTotal(valor);
+	   investimentoBR.setAtivo(true);
+	   investimentoBR.setDataInvestimento(hoje);
+	   daoInvestimento.adcionar(investimentoBR);
+    }
+
+
+
+    daoInvestimento.fechar();
+
+    System.out.println("INVESTIMENTO REALIZADO COM SUCESSO!");
+}
+
 
 //OUTROS
 public void FecharPrograma() {

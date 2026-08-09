@@ -40,6 +40,9 @@ private BigDecimal valorInvestido;
 private BigDecimal valorRendido;
 
 @Column(nullable = false)
+private BigDecimal valorTotal;
+
+@Column(nullable = false)
 private Boolean ativo;
 	
 @Column(nullable = false)
@@ -47,25 +50,32 @@ private LocalDate dataInvestimento;
 
 public BigDecimal calcularValorAtual() {
 
-    long dias = ChronoUnit.DAYS.between(dataInvestimento, LocalDate.now());
+    LocalDate hoje = LocalDate.now();
 
-    double taxa = (tipo == TipoInvestimento.BRASIL) ? 0.12 : 0.03;
+    long dias = ChronoUnit.DAYS.between(dataInvestimento, hoje);
 
-    double valor = valorInvestido.doubleValue()
-            * Math.pow(1 + taxa / 365, dias);
+    BigDecimal taxa;
 
-    return BigDecimal.valueOf(valor);
+    if (tipo == TipoInvestimento.BRASIL) 
+         { taxa = new BigDecimal("0.12"); } 
+    else 
+         { taxa = new BigDecimal("0.03"); }
+
+    BigDecimal taxaDiaria = taxa.divide(new BigDecimal("365"),20,RoundingMode.HALF_UP);
+
+    BigDecimal fator = BigDecimal.ONE.add(taxaDiaria);
+
+    BigDecimal valorTotalAtual = valorTotal.multiply(BigDecimal.valueOf(Math.pow(fator.doubleValue(), dias)));
+
+    return valorTotalAtual.setScale(2, RoundingMode.HALF_UP);
 }
+
 
 public BigDecimal calcularValorizacao() {
 
     BigDecimal valorAtual = calcularValorAtual();
 
-    BigDecimal lucro = valorAtual.subtract(valorInvestido);
-
-    return lucro
-            .divide(valorInvestido, 6, RoundingMode.HALF_UP)
-            .multiply(BigDecimal.valueOf(100));
+    return valorAtual.subtract(valorInvestido).setScale(2, RoundingMode.HALF_UP);
 }
    
 
@@ -74,6 +84,14 @@ public Investment() {
     this.dataInvestimento = LocalDate.now();
     this.valorInvestido = BigDecimal.ZERO;
 }
+
+public Investment(Boolean ativo, LocalDate data, BigDecimal valor, TipoInvestimento investimento) {
+	this.ativo = ativo;
+	this.dataInvestimento = data;
+	this.valorInvestido = valor;
+	this.tipo = investimento;
+}
+
 
 public Integer getId() {
 	return id;
@@ -132,6 +150,14 @@ public void setValorRendido(BigDecimal valorRendido) {
 }
 
 
+public BigDecimal getValorTotal() {
+	return valorTotal;
+}
+
+
+public void setValorTotal(BigDecimal valorTotal) {
+	this.valorTotal = valorTotal;
+}
    
     
 }

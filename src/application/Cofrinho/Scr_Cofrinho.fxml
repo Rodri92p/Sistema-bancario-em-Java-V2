@@ -18,7 +18,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="755.0" prefWidth="1119.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Controller">
   <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="762.0" layoutX="-3.0" layoutY="43.0" opacity="0.19" strokeType="INSIDE" strokeWidth="0.0" width="1128.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="762.0" layoutX="-1.0" layoutY="34.0" opacity="0.19" strokeType="INSIDE" strokeWidth="0.0" width="1128.0">
          <stroke>
             <LinearGradient endX="0.11904761904761905" endY="1.0" startX="0.24285714285714285" startY="0.6142857142857143">
                <stops>
@@ -220,28 +220,28 @@
          
          
    
-      <Text fill="#1b1a1a" layoutX="292.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$" wrappingWidth="58.0">
+      <Text fill="#1b1a1a" layoutX="293.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$" wrappingWidth="58.0">
          <font>
-            <Font size="30.0" />
+            <Font name="Caladea Bold" size="27.0" />
          </font>
       </Text>
-      <Text fill="#1b1a1a" layoutX="293.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL INVESTIDO">
+      <Text fill="#1b1a1a" layoutX="293.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VALOR RENDIDO">
          <font>
-            <Font name="Caladea Regular" size="30.0" />
+            <Font name="Caladea Regular" size="27.0" />
          </font>
       </Text>
-      <ImageView fitHeight="62.0" fitWidth="58.0" layoutX="564.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="62.0" fitWidth="58.0" layoutX="565.0" layoutY="278.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../images/brasil.png" />
          </image>
       </ImageView>
-      <Text fx:id="txt_valorinvestimentobr" fill="#1b1a1a" layoutX="341.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00" wrappingWidth="299.1328125">
+      <Text fx:id="txt_valorrendimentobr" fill="#1b1a1a" layoutX="330.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00" wrappingWidth="299.1328125">
          <font>
-            <Font size="30.0" />
+            <Font name="Caladea Bold" size="27.0" />
          </font>
       </Text>
-      <Line endX="232.5" layoutX="394.0" layoutY="298.0" startX="-100.0" stroke="#1b1a1a" strokeWidth="2.0" />
-      <Button fx:id="btn_investirvalorBR" layoutX="279.0" layoutY="581.0" mnemonicParsing="false" onMousePressed="#Transicao" prefHeight="50.0" prefWidth="175.0" style="-fx-background-color: #ffffff; -fx-border-color: #1b1a1a;" text="INVESTIR" textFill="#1b1a1a">
+      <Line endX="232.5" layoutX="392.0" layoutY="351.0" startX="-100.0" stroke="#1b1a1a" strokeWidth="2.0" />
+      <Button fx:id="btn_investirvalorBR" layoutX="290.0" layoutY="558.0" mnemonicParsing="false" onMousePressed="#Transicao" prefHeight="50.0" prefWidth="160.0" style="-fx-background-color: #ffffff; -fx-border-color: #1b1a1a;" text="INVESTIR" textFill="#1b1a1a">
          <font>
             <Font name="Caladea Regular" size="20.0" />
          </font>
@@ -249,32 +249,32 @@
             <Cursor fx:constant="CLOSED_HAND" />
          </cursor>
       </Button>
-      <Text fill="#1b1a1a" layoutX="292.0" layoutY="351.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VALOR RENDIDO">
+      <Text fill="#1b1a1a" layoutX="292.0" layoutY="391.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VALOR TOTAL">
          <font>
             <Font name="Caladea Regular" size="30.0" />
          </font>
       </Text>
-      <Text fill="#1b1a1a" layoutX="293.0" layoutY="401.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$" wrappingWidth="58.0">
+      <Text fill="#1b1a1a" layoutX="293.0" layoutY="426.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$" wrappingWidth="58.0">
          <font>
-            <Font size="30.0" />
+            <Font name="Caladea Bold" size="27.0" />
          </font>
       </Text>
-      <Text fx:id="txt_valorrendimentobr" fill="#1b1a1a" layoutX="341.0" layoutY="401.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00" wrappingWidth="299.1328125">
+      <Text fx:id="txt_valortotalbr" fill="#1b1a1a" layoutX="329.0" layoutY="426.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00" wrappingWidth="299.1328125">
          <font>
-            <Font size="30.0" />
+            <Font name="Caladea Bold" size="27.0" />
          </font>
       </Text>
-      <ImageView fitHeight="62.0" fitWidth="58.0" layoutX="564.0" layoutY="343.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="62.0" fitWidth="58.0" layoutX="564.0" layoutY="368.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../images/brasil.png" />
          </image>
       </ImageView>
-      <Text fill="#1b1a1a" layoutX="291.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12% ao ANO   MINIMO: R$ 1,00" wrappingWidth="334.5">
+      <Text fill="#1b1a1a" layoutX="291.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12% ao ANO   MINIMO: R$ 1,00" wrappingWidth="334.5">
          <font>
             <Font name="Caladea Regular" size="10.0" />
          </font>
       </Text>
-      <Button fx:id="btn_resgatarvalorBR" layoutX="460.0" layoutY="581.0" mnemonicParsing="false" onMousePressed="#Transicao" prefHeight="50.0" prefWidth="175.0" style="-fx-background-color: #ffffff; -fx-border-color: #1b1a1a;" text="RESGATAR" textFill="#1b1a1a">
+      <Button fx:id="btn_resgatarvalorBR" layoutX="470.0" layoutY="558.0" mnemonicParsing="false" onMousePressed="#Transicao" prefHeight="50.0" prefWidth="158.0" style="-fx-background-color: #ffffff; -fx-border-color: #1b1a1a;" text="RESGATAR" textFill="#1b1a1a">
          <font>
             <Font name="Caladea Regular" size="20.0" />
          </font>
@@ -282,28 +282,28 @@
             <Cursor fx:constant="CLOSED_HAND" />
          </cursor>
       </Button>
-      <Text fill="#1b1a1a" layoutX="717.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="US$" wrappingWidth="70.0">
+      <Text fill="#1b1a1a" layoutX="719.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="US$" wrappingWidth="70.0">
          <font>
-            <Font size="30.0" />
+            <Font name="Caladea Bold" size="27.0" />
          </font>
       </Text>
-      <Text fill="#1b1a1a" layoutX="719.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL INVESTIDO">
+      <Text fill="#1b1a1a" layoutX="719.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VALOR RENDIDO">
          <font>
-            <Font name="Caladea Regular" size="30.0" />
+            <Font name="Caladea Regular" size="27.0" />
          </font>
       </Text>
-      <ImageView fitHeight="62.0" fitWidth="58.0" layoutX="990.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="62.0" fitWidth="58.0" layoutX="990.0" layoutY="276.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../images/USA.png" />
          </image>
       </ImageView>
-      <Text fx:id="txt_valorinvestimentous" fill="#1b1a1a" layoutX="785.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00" wrappingWidth="299.1328125">
+      <Text fx:id="txt_valorrendimentous" fill="#1b1a1a" layoutX="770.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00" wrappingWidth="299.1328125">
          <font>
-            <Font size="30.0" />
+            <Font name="Caladea Bold" size="27.0" />
          </font>
       </Text>
-      <Line endX="232.5" layoutX="820.0" layoutY="298.0" startX="-100.0" stroke="#1b1a1a" strokeWidth="2.0" />
-      <Button fx:id="btn_investirvalorUS" layoutX="705.0" layoutY="579.0" mnemonicParsing="false" onMousePressed="#Transicao" prefHeight="50.0" prefWidth="175.0" style="-fx-background-color: #ffffff; -fx-border-color: #1b1a1a;" text="INVESTIR" textFill="#1b1a1a">
+      <Line endX="232.5" layoutX="820.0" layoutY="351.0" startX="-100.0" stroke="#1b1a1a" strokeWidth="2.0" />
+      <Button fx:id="btn_investirvalorUS" layoutX="717.0" layoutY="560.0" mnemonicParsing="false" onMousePressed="#Transicao" prefHeight="50.0" prefWidth="160.0" style="-fx-background-color: #ffffff; -fx-border-color: #1b1a1a;" text="INVESTIR" textFill="#1b1a1a">
          <font>
             <Font name="Caladea Regular" size="20.0" />
          </font>
@@ -311,27 +311,27 @@
             <Cursor fx:constant="CLOSED_HAND" />
          </cursor>
       </Button>
-      <Text fill="#1b1a1a" layoutX="718.0" layoutY="351.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VALOR RENDIDO">
+      <Text fill="#1b1a1a" layoutX="718.0" layoutY="391.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VALOR TOTAL">
          <font>
-            <Font name="Caladea Regular" size="30.0" />
+            <Font name="Caladea Regular" size="27.0" />
          </font>
       </Text>
-      <Text fill="#1b1a1a" layoutX="717.0" layoutY="399.0" strokeType="OUTSIDE" strokeWidth="0.0" text="US$" wrappingWidth="103.0">
+      <Text fill="#1b1a1a" layoutX="718.0" layoutY="424.0" strokeType="OUTSIDE" strokeWidth="0.0" text="US$" wrappingWidth="103.0">
          <font>
-            <Font size="30.0" />
+            <Font name="Caladea Bold" size="27.0" />
          </font>
       </Text>
-      <Text fx:id="txt_valorrendimentous" fill="#1b1a1a" layoutX="786.0" layoutY="399.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00" wrappingWidth="299.1328125">
+      <Text fx:id="txt_valortotalus" fill="#1b1a1a" layoutX="771.0" layoutY="424.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00" wrappingWidth="299.1328125">
          <font>
-            <Font size="30.0" />
+            <Font name="Caladea Bold" size="27.0" />
          </font>
       </Text>
-      <ImageView fitHeight="62.0" fitWidth="58.0" layoutX="990.0" layoutY="343.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="62.0" fitWidth="58.0" layoutX="990.0" layoutY="369.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../images/USA.png" />
          </image>
       </ImageView>
-      <Button fx:id="btn_resgatarvalorUS" layoutX="886.0" layoutY="579.0" mnemonicParsing="false" onMousePressed="#Transicao" prefHeight="50.0" prefWidth="175.0" style="-fx-background-color: #ffffff; -fx-border-color: #1b1a1a;" text="RESGATAR" textFill="#1b1a1a">
+      <Button fx:id="btn_resgatarvalorUS" layoutX="895.0" layoutY="560.0" mnemonicParsing="false" onMousePressed="#Transicao" prefHeight="50.0" prefWidth="160.0" style="-fx-background-color: #ffffff; -fx-border-color: #1b1a1a;" text="RESGATAR" textFill="#1b1a1a">
          <font>
             <Font name="Caladea Regular" size="20.0" />
          </font>
@@ -339,13 +339,13 @@
             <Cursor fx:constant="CLOSED_HAND" />
          </cursor>
       </Button>
-      <Text fill="#1b1a1a" layoutX="719.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MINIMO: US$ 1,00   3% ao ANO" textAlignment="RIGHT" wrappingWidth="334.5">
+      <Text fill="#1b1a1a" layoutX="719.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MINIMO: US$ 1,00   3% ao ANO" textAlignment="RIGHT" wrappingWidth="334.5">
          <font>
             <Font name="Caladea Regular" size="10.0" />
          </font>
       </Text>
-      <Line endX="232.5" layoutX="392.0" layoutY="435.0" startX="-100.0" stroke="#1b1a1a" strokeWidth="2.0" />
-      <Text fill="#1b1a1a" layoutX="288.0" layoutY="488.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ULTIMO DEPOSITO">
+      <Line endX="232.5" layoutX="392.0" layoutY="444.0" startX="-100.0" stroke="#1b1a1a" strokeWidth="2.0" />
+      <Text fill="#1b1a1a" layoutX="290.0" layoutY="483.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ULTIMO DEPOSITO">
          <font>
             <Font name="Caladea Regular" size="30.0" />
          </font>
@@ -355,28 +355,28 @@
             <Font size="30.0" />
          </font>
       </Text>
-      <Text fx:id="txt_datainvestimentobr" fill="#1b1a1a" layoutX="292.0" layoutY="539.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(DATA)" wrappingWidth="299.1328125">
+      <Text fx:id="txt_datainvestimentobr" fill="#1b1a1a" layoutX="293.0" layoutY="518.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DATA" wrappingWidth="299.1328125">
          <font>
-            <Font size="30.0" />
+            <Font name="Caladea Bold" size="27.0" />
          </font>
       </Text>
-      <ImageView fitHeight="62.0" fitWidth="58.0" layoutX="563.0" layoutY="480.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="62.0" fitWidth="58.0" layoutX="565.0" layoutY="460.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../images/brasil.png" />
          </image>
       </ImageView>
-      <Line endX="232.5" layoutX="817.0" layoutY="434.0" startX="-100.0" stroke="#1b1a1a" strokeWidth="2.0" />
-      <Text fill="#1b1a1a" layoutX="715.0" layoutY="487.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ULTIMO DEPOSITO">
+      <Line endX="232.5" layoutX="817.0" layoutY="443.0" startX="-100.0" stroke="#1b1a1a" strokeWidth="2.0" />
+      <Text fill="#1b1a1a" layoutX="716.0" layoutY="482.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ULTIMO DEPOSITO">
          <font>
-            <Font name="Caladea Regular" size="30.0" />
+            <Font name="Caladea Regular" size="27.0" />
          </font>
       </Text>
-      <Text fx:id="txt_datainvestimentous" fill="#1b1a1a" layoutX="717.0" layoutY="539.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(DATA)" wrappingWidth="299.1328125">
+      <Text fx:id="txt_datainvestimentous" fill="#1b1a1a" layoutX="717.0" layoutY="516.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DATA" wrappingWidth="299.1328125">
          <font>
-            <Font size="30.0" />
+            <Font name="Caladea Bold" size="27.0" />
          </font>
       </Text>
-      <ImageView fitHeight="62.0" fitWidth="58.0" layoutX="987.0" layoutY="479.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="62.0" fitWidth="58.0" layoutX="987.0" layoutY="459.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../images/USA.png" />
          </image>
@@ -392,6 +392,48 @@
             </HBox>
          </children>
       </AnchorPane>
+      <Text fill="#1b1a1a" layoutX="293.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$" wrappingWidth="58.0">
+         <font>
+            <Font name="Caladea Bold" size="27.0" />
+         </font>
+      </Text>
+      <Text fill="#1b1a1a" layoutX="293.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VALOR INVESTIDO">
+         <font>
+            <Font name="Caladea Regular" size="27.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="62.0" fitWidth="58.0" layoutX="565.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/brasil.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="txt_valorinvestimentobr" fill="#1b1a1a" layoutX="330.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00" wrappingWidth="299.1328125">
+         <font>
+            <Font name="Caladea Bold" size="27.0" />
+         </font>
+      </Text>
+      <Line endX="232.5" layoutX="392.0" layoutY="260.0" startX="-100.0" stroke="#1b1a1a" strokeWidth="2.0" />
+      <Text fill="#1b1a1a" layoutX="719.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="US$" wrappingWidth="70.0">
+         <font>
+            <Font name="Caladea Bold" size="27.0" />
+         </font>
+      </Text>
+      <Text fill="#1b1a1a" layoutX="719.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VALOR INVESTIDO">
+         <font>
+            <Font name="Caladea Regular" size="27.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="62.0" fitWidth="58.0" layoutX="990.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/USA.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="txt_valorinvestimentous" fill="#1b1a1a" layoutX="770.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00" wrappingWidth="299.1328125">
+         <font>
+            <Font name="Caladea Bold" size="27.0" />
+         </font>
+      </Text>
+      <Line endX="232.5" layoutX="820.0" layoutY="260.0" startX="-100.0" stroke="#1b1a1a" strokeWidth="2.0" />
       
    </children>
 </AnchorPane>

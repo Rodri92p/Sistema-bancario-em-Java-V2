@@ -1,5 +1,6 @@
 package System;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -162,13 +163,18 @@ public Investment buscarPorClienteETipo(Client cliente, TipoInvestimento tipo) {
     }
 }
 
-public void atualizarRendimento(Investment investimento) {
 
-    investimento.setValorRendido(investimento.calcularValorAtual());
+public DAO<E> atualizarRendimento(Investment investimento) {
 
-    abrir();
+    BigDecimal valorAtual = investimento.calcularValorAtual();
+    BigDecimal rendimento = valorAtual.subtract(investimento.getValorInvestido());
+
+    investimento.setValorTotal(valorAtual);
+    investimento.setValorRendido(rendimento);
+
     em.merge(investimento);
-    fechar();
+
+    return this;
 }
 
 }
