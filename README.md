@@ -26,8 +26,9 @@ Além das funcionalidades bancárias, o projeto também serviu como laboratório
 - Alteração de senha;
 - Alteração/Criação de até 4 chaves pix (CPF, EMAIL, CELULAR e ALEATORIA);
 - Exclusão de conta;
-- Sistema de investimento, renda e resgate em Real (BRL);
-- Sistema de investimento, renda e resgate em Dolar (USD);
+- Sistema de investimento em Real (BRL) e Dolar (USD);
+- Sistema de renda em Real (BRL) m Dolar (USD);
+- Sistema de resgate em Real (BRL) e Dolar (USD);
 - Persistência completa em banco de dados MySQL.
 
 ---
@@ -182,4 +183,4 @@ TELA DE CRIAÇÃO DE PIX:
 ![Logo](https://raw.githubusercontent.com/Rodri92p/Sistema-bancario-em-Java-V2/master/assets/CRIAR_PIX.gif)
 
 
-ATUALIZADO 11/08 - 19:00
+ATUALIZADO 11/08 - 20:20
