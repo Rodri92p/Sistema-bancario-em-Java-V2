@@ -58,14 +58,24 @@ public DAO<E> atualizar(E entidade){
 	return this;
 }
 
-public DAO<E> fechar(){
-	em.getTransaction().commit();
-    if (em.isOpen()) {
-        em.close();
+public DAO<E> fechar() {
+    try {
+        if (em.getTransaction().isActive()) {
+            em.getTransaction().commit();
+        }
+    } catch (Exception e) {
+        if (em.getTransaction().isActive()) {
+            em.getTransaction().rollback();
+        }
+        throw e;
+    } finally {
+        if (em.isOpen()) {
+            em.close();
+        }
     }
-	return this;
-}
 
+    return this;
+}
 
 public Client BuscarCliente(String cpf) {
 	try {

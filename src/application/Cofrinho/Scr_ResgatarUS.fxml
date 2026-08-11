@@ -220,12 +220,12 @@
          <cursor>
             <Cursor fx:constant="CLOSED_HAND" />
          </cursor></Button>
-      <Text fill="#1b1a1a" layoutX="491.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QUANTO DESEJA RESGATAR?">
+      <Text fill="#1b1a1a" layoutX="491.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QUANTO DESEJA RESGATAR?">
          <font>
             <Font name="Caladea Regular" size="30.0" />
          </font>
       </Text>
-      <Button id="btn_confirmarresgateUS" layoutX="587.0" layoutY="635.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="175.0" style="-fx-background-color: #ffffff; -fx-border-color: #1b1a1a; -fx-border-radius: 20; -fx-background-radius: 20;" text="CONFIRMAR" textFill="#1b1a1a">
+      <Button id="btn_confirmarresgateUS" layoutX="587.0" layoutY="635.0" mnemonicParsing="false" onMousePressed="#resgateEUA" prefHeight="50.0" prefWidth="175.0" style="-fx-background-color: #ffffff; -fx-border-color: #1b1a1a; -fx-border-radius: 20; -fx-background-radius: 20;" text="CONFIRMAR" textFill="#1b1a1a">
          <font>
             <Font name="Caladea Regular" size="20.0" />
          </font>
@@ -233,13 +233,13 @@
             <Cursor fx:constant="CLOSED_HAND" />
          </cursor>
       </Button>
-      <TextField id="field_valorresgatarUS" layoutX="374.0" layoutY="205.0" prefHeight="38.0" prefWidth="602.0" promptText="US$ 0,00" style="-fx-background-color: #ffffff00;">
+      <TextField fx:id="field_valorinvestimento" layoutX="372.0" layoutY="192.0" prefHeight="38.0" prefWidth="602.0" promptText="DIGITE O VALOR" style="-fx-background-color: #ffffff00;">
          <font>
             <Font name="Caladea Bold" size="20.0" />
          </font>
       </TextField>
-      <Line endX="489.5" layoutX="485.0" layoutY="240.0" startX="-100.0" stroke="#1b1a1a" strokeWidth="2.0" />
-      <RadioButton layoutX="406.0" layoutY="592.0" mnemonicParsing="false" text="CONCORDO COM O TEXTO ACIMA E AFIRMO QUE ESTOU CIENTE DO CONTEÚDO INFORMADO.">
+      <Line fx:id="barra_cofrinho" endX="489.5" layoutX="480.0" layoutY="227.0" startX="-93.5" stroke="#1b1a1a" strokeWidth="2.0" />
+      <RadioButton fx:id="radio_investimento" layoutX="406.0" layoutY="592.0" mnemonicParsing="false" text="CONCORDO COM O TEXTO ACIMA E AFIRMO QUE ESTOU CIENTE DO CONTEÚDO INFORMADO.">
          <font>
             <Font name="Caladea Regular" size="13.0" />
          </font>
@@ -479,7 +479,7 @@
             </AnchorPane>
          </content>
       </ScrollPane>
-      <ImageView fitHeight="38.0" fitWidth="35.0" layoutX="939.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="image_br" fitHeight="38.0" fitWidth="35.0" layoutX="934.0" layoutY="188.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../images/USA.png" />
          </image>
@@ -495,6 +495,26 @@
             </HBox>
          </children>
       </AnchorPane>
+      <Text fx:id="txt_real" fill="#1b1a1a" layoutX="330.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="US$">
+         <font>
+            <Font name="Caladea Regular" size="30.0" />
+         </font>
+      </Text>
+      <Text fx:id="erro_investimento1" fill="RED" layoutX="545.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INSIRA UM VALOR VALIDO PARA RESGATE" textAlignment="CENTER" visible="false">
+         <font>
+            <Font name="Caladea Regular" size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="erro_investimento2" fill="RED" layoutX="497.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VALOR INSERIDO É MAIOR DO QUE O INVESTIMENTO ATUAL" visible="false">
+         <font>
+            <Font name="Caladea Regular" size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="erro_investimento3" fill="RED" layoutX="490.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" text="POR FAVOR, É NECESSARIO CONCORDAR COM OS TERMOS ABAIXO" visible="false">
+         <font>
+            <Font name="Caladea Regular" size="14.0" />
+         </font>
+      </Text>
       
    </children>
 </AnchorPane>

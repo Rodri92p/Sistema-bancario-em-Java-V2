@@ -136,24 +136,22 @@ int PIX_OP = 0;
 
 //RADIOS
 @FXML private RadioButton radio_investimento;
-@FXML private RadioButton radio_aleatoriapix;           @FXML private RadioButton radio_emailpix;               @FXML private RadioButton radio_concordarexcluir;
-@FXML private RadioButton radio_telefonepix;            @FXML private RadioButton radio_cpfpix;                 @FXML private RadioButton btn_ciente_senhanova;
+@FXML private RadioButton radio_aleatoriapix; @FXML private RadioButton radio_emailpix;     @FXML private RadioButton radio_concordarexcluir;
+@FXML private RadioButton radio_telefonepix;  @FXML private RadioButton radio_cpfpix;       @FXML private RadioButton btn_ciente_senhanova;
 
 //IMAGEVIEW
-@FXML private ImageView sad_facepix;                    @FXML private ImageView image_br;
-@FXML private ImageView emoji_1;                        @FXML private ImageView emoji_2;                        @FXML private ImageView emoji_3;
+@FXML private ImageView sad_facepix;          @FXML private ImageView image_br;
+@FXML private ImageView emoji_1;              @FXML private ImageView emoji_2;              @FXML private ImageView emoji_3;
 
 //SHAPES
-@FXML private AnchorPane loadingPane; @FXML private Circle dot1, dot2, dot3;
-@FXML private Rectangle quadrado_1;   @FXML private Rectangle quadrado_2;    @FXML private Rectangle quadrado_3;
-@FXML private Rectangle retangulo_1;  @FXML private Rectangle retangulo_2;   @FXML private Rectangle retangulo_3;
+@FXML private AnchorPane loadingPane;         @FXML private Circle dot1, dot2, dot3;
+@FXML private Rectangle quadrado_1;           @FXML private Rectangle quadrado_2;           @FXML private Rectangle quadrado_3;
+@FXML private Rectangle retangulo_1;          @FXML private Rectangle retangulo_2;          @FXML private Rectangle retangulo_3;
 
 //--------------------------------------------------------------------------------------------------
 		
 //UTILIDADES, TRANSIÇÕES E PASSAGEM DE DADOS
 public void PassarDados(Client cliente) {
-	    @SuppressWarnings("deprecation")
-		NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));
 		this.cliente = cliente;
 		atualizarFavoritos();
 		cambioTela();
@@ -161,9 +159,11 @@ public void PassarDados(Client cliente) {
 		atualizarchaves();
 	    TelaCofrinho();
 		txt_cliente.setText(cliente.getNome().toUpperCase()+" "+cliente.getSobrenome().toUpperCase());
-	    txt_saldo.setText("R$ " + nf.format(cliente.getSaldo()));
+		@SuppressWarnings("deprecation")
+		NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));
+	    txt_saldo.setText(nf.format(cliente.getSaldo()));
 }
-	
+
 public void receberPix(Client clientePix) {
 		
 		this.cliente_pix = clientePix;
@@ -911,7 +911,7 @@ private void FazerRegistro() {
 	
 	try {
 	    FXMLLoader loader = new FXMLLoader(
-	        getClass().getResource("/application/Inicio/Scr_Confirmacao.fxml")
+	        getClass().getResource("/application/Inicio/Scr_Confirmacao1.fxml")
 	    );
 	
 	    Parent root = loader.load();
@@ -1321,7 +1321,9 @@ private void RealizarPix() {
 	dao.atualizar(cliente_pix);
 	dao.fechar();
 	
-    txt_saldo.setText("R$ " + cliente.getSaldo());
+	@SuppressWarnings("deprecation")
+	NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));	
+	txt_saldo.setText(nf.format(cliente.getSaldo()));
 	pix_realizado();
   }
 }
@@ -1370,7 +1372,7 @@ public boolean confirmarsenhaPIX() {
 public void pix_realizado() {
 	try {
 		FXMLLoader loader = new FXMLLoader(
-		getClass().getResource("/application/Inicio/Scr_Confirmacao2.fxml")
+		getClass().getResource("/application/Confirmacoes/Scr_Confirmacao2.fxml")
 		);
 	
 		Parent root = loader.load();
@@ -1385,28 +1387,11 @@ public void pix_realizado() {
 	}
 }
 	
-public void confirmaralteração() {
-	try {
-		FXMLLoader loader = new FXMLLoader(
-		getClass().getResource("/application/Inicio/Scr_Confirmacao4.fxml")
-		);
-			
-		Parent root = loader.load();
-			
-		Stage novaJanela = new Stage();
-		novaJanela.initModality(Modality.APPLICATION_MODAL);
-			
-		novaJanela.setScene(new Scene(root));
-		novaJanela.showAndWait();
-	} catch (Exception e) {
-		e.printStackTrace();
-	}
-}
 	
 public void ChamarconfirmacaoPIX() {
 	try {
 		FXMLLoader loader = new FXMLLoader(
-		getClass().getResource("/application/Inicio/Scr_SenhaPix.fxml")
+		getClass().getResource("/application/Confirmacoes/Scr_Confirmacao10.fxml")
 		);
 		loader.setController(this);
 		Parent root = loader.load();
@@ -1519,11 +1504,29 @@ public void alterarsenha() {
   confirmaralteração();
 	  
 }
+
+public void confirmaralteração() {
+	try {
+		FXMLLoader loader = new FXMLLoader(
+		getClass().getResource("/application/Inicio/Scr_Confirmacao4.fxml")
+		);
+			
+		Parent root = loader.load();
+			
+		Stage novaJanela = new Stage();
+		novaJanela.initModality(Modality.APPLICATION_MODAL);
+			
+		novaJanela.setScene(new Scene(root));
+		novaJanela.showAndWait();
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+}
 	
 public void chamaralteracaopix2() {
 	try {
 		FXMLLoader loader = new FXMLLoader(
-		getClass().getResource("/application/Inicio/Scr_SenhaPix3.fxml")
+		getClass().getResource("/application/Confirmacoes/Scr_Confirmacao8.fxml")
 		);
 		loader.setController(this);
 		Parent root = loader.load();
@@ -1541,7 +1544,7 @@ public void chamaralteracaopix2() {
 public void chamaralteracaopix3() {
 	try {
 		FXMLLoader loader = new FXMLLoader(
-		   getClass().getResource("/application/Inicio/Scr_SenhaPix4.fxml")
+		   getClass().getResource("/application/Confirmacoes/Scr_Confirmacao7.fxml")
 		);
 		loader.setController(this);
 		Parent root = loader.load();
@@ -1582,7 +1585,7 @@ public void transicaopix_celular() {
 	PIX_OP = 1;
 	try {
 		FXMLLoader loader = new FXMLLoader(
-		getClass().getResource("/application/Inicio/Scr_SenhaPix2.fxml")
+		getClass().getResource("/application/Confirmacoes/Scr_Confirmacao9.fxml")
 		);
 		loader.setController(this);
 		Parent root = loader.load();
@@ -1601,7 +1604,7 @@ public void transicaopix_email() {
 	PIX_OP = 2;
 	try {
 		FXMLLoader loader = new FXMLLoader(
-		getClass().getResource("/application/Inicio/Scr_SenhaPix2.fxml")
+		getClass().getResource("/application/Confirmacoes/Scr_Confirmacao9.fxml")
 		);
 		loader.setController(this);
 		Parent root = loader.load();
@@ -1753,7 +1756,7 @@ public void ExcluirConta() {
 				
 	 try {
 		 FXMLLoader loader = new FXMLLoader(
-		 getClass().getResource("/application/Inicio/Scr_Confirmacao3.fxml")
+		 getClass().getResource("/application/Confirmacoes/Scr_Confirmacao3.fxml")
 		 );
 	
 		 Parent root = loader.load();
@@ -1837,7 +1840,7 @@ public void TelaCofrinho() {
 public void ChamarInvestimento() {
 	try {
 		FXMLLoader loader = new FXMLLoader(
-		getClass().getResource("/application/Inicio/Scr_Confirmacao5.fxml")
+		getClass().getResource("/application/Confirmacoes/Scr_Confirmacao5.fxml")
 		);
 		loader.setController(this);
 		Parent root = loader.load();
@@ -1845,6 +1848,25 @@ public void ChamarInvestimento() {
 		Stage novaJanela = new Stage();
 		novaJanela.initModality(Modality.APPLICATION_MODAL);
 			
+		
+		novaJanela.setScene(new Scene(root));
+		novaJanela.showAndWait();
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+}
+
+public void ChamarResgate() {
+	try {
+		FXMLLoader loader = new FXMLLoader(
+				getClass().getResource("/application/Confirmacoes/Scr_Confirmacao11.fxml")
+				);
+		loader.setController(this);
+		Parent root = loader.load();
+		
+		Stage novaJanela = new Stage();
+		novaJanela.initModality(Modality.APPLICATION_MODAL);
+		
 		
 		novaJanela.setScene(new Scene(root));
 		novaJanela.showAndWait();
@@ -1915,7 +1937,9 @@ public void investimentoBrasil() {
 	Investment investimentoBR = daoInvestimento.buscarPorClienteETipo(cliente,TipoInvestimento.BRASIL);
 	
     cliente.setSaldo(cliente.getSaldo() - valor.doubleValue());
-    txt_saldo.setText("R$ " + cliente.getSaldo());
+	@SuppressWarnings("deprecation")
+	NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));
+    txt_saldo.setText(nf.format(cliente.getSaldo()));
 
     daoCliente.abrir();
     daoCliente.atualizar(cliente);
@@ -2024,7 +2048,9 @@ public void investimentoEUA() {
 	BigDecimal valorEmReais = valor.multiply(dolar);
 	
 	cliente.setSaldo(cliente.getSaldo() - valorEmReais.doubleValue());
-	txt_saldo.setText("R$ " + cliente.getSaldo());
+	@SuppressWarnings("deprecation")
+	NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));
+    txt_saldo.setText(nf.format(cliente.getSaldo()));
 	
 	daoCliente.abrir();
 	daoCliente.atualizar(cliente);
@@ -2066,6 +2092,199 @@ public void investimentoEUA() {
 	ChamarInvestimento();
 }
 
+public void resgateBrasil() {
+	DAO<Client> daoCliente = new DAO<>(Client.class);
+
+	String textoValor = field_valorinvestimento.getText().trim();
+
+	BigDecimal valor;
+	
+	DAO<Investment> daoInvestimento = new DAO<>(Investment.class);
+
+	Investment investimentoBR = daoInvestimento.buscarPorClienteETipo(cliente,TipoInvestimento.BRASIL);
+
+	try {
+		valor = new BigDecimal(textoValor.replace(",", "."));
+		
+	} catch (NumberFormatException e) {
+		erro_investimento1.setVisible(true);
+		tremer(field_valorinvestimento);
+		tremer(image_br);
+		tremer(barra_cofrinho);
+		tremer(txt_real);
+		erro_investimento2.setVisible(false);
+		erro_investimento3.setVisible(false);
+		return;
+}
+
+	//VALOR MENOR OU IGUAL A ZERO
+	if (valor.compareTo(BigDecimal.ZERO) <= 0) {
+		erro_investimento1.setVisible(true);
+		tremer(field_valorinvestimento);
+		tremer(image_br);
+		tremer(barra_cofrinho);
+		tremer(txt_real);
+		erro_investimento2.setVisible(false); erro_investimento3.setVisible(false);
+		return; }
+	else { erro_investimento1.setVisible(false); }
+
+	//VALOR MAIOR QUE SALDO
+	if (valor.compareTo(investimentoBR.getValorTotal()) > 0) {
+		erro_investimento2.setVisible(true);
+		tremer(field_valorinvestimento);
+		tremer(image_br);
+		tremer(barra_cofrinho);
+		tremer(txt_real);
+		erro_investimento1.setVisible(false); erro_investimento3.setVisible(false);
+		return;} 
+	else { erro_investimento2.setVisible(false); }
+
+	//RADIO NÃO SELECIONADO
+	if (!radio_investimento.isSelected()) {
+		erro_investimento3.setVisible(true);
+		tremer(radio_investimento);
+		erro_investimento1.setVisible(false); erro_investimento2.setVisible(false);
+		return; }
+	else{ erro_investimento3.setVisible(false); }
+
+    cliente.setSaldo(cliente.getSaldo() + valor.doubleValue());
+    @SuppressWarnings("deprecation")
+    NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));	
+    txt_saldo.setText(nf.format(cliente.getSaldo()));
+
+    daoCliente.abrir();
+    daoCliente.atualizar(cliente);
+    daoCliente.fechar();
+
+    daoInvestimento.abrir();
+
+    if (investimentoBR != null && investimentoBR.getAtivo()) {
+
+        BigDecimal valorTotalAtual = investimentoBR.getValorTotal();
+        BigDecimal novoValorTotal = valorTotalAtual.subtract(valor);
+        BigDecimal novoValorInvestido = investimentoBR.getValorInvestido().subtract(valor);
+
+        if (novoValorInvestido.compareTo(BigDecimal.ZERO) < 0) {
+            novoValorInvestido = BigDecimal.ZERO;
+        }
+
+        if (novoValorTotal.compareTo(BigDecimal.ZERO) == 0) {
+            investimentoBR.setValorInvestido(BigDecimal.ZERO);
+            investimentoBR.setValorRendido(BigDecimal.ZERO);
+            investimentoBR.setValorTotal(BigDecimal.ZERO);
+        } 
+       
+        else {
+            BigDecimal novoRendimento = novoValorTotal.subtract(novoValorInvestido);
+            investimentoBR.setValorInvestido(novoValorInvestido);
+            investimentoBR.setValorTotal(novoValorTotal);
+            investimentoBR.setValorRendido(novoRendimento);
+        }
+        daoInvestimento.atualizar(investimentoBR);
+    }
+    daoInvestimento.fechar();
+    ChamarResgate();
+}
+
+public void resgateEUA() {
+	DAO<Client> daoCliente = new DAO<>(Client.class);
+
+	String textoValor = field_valorinvestimento.getText().trim();
+
+	BigDecimal valor;
+	
+	DAO<Investment> daoInvestimento = new DAO<>(Investment.class);
+
+	Investment investimentoUS = daoInvestimento.buscarPorClienteETipo(cliente,TipoInvestimento.DOLAR);
+
+	try {
+		valor = new BigDecimal(textoValor.replace(",", "."));
+		
+	} catch (NumberFormatException e) {
+		erro_investimento1.setVisible(true);
+		tremer(field_valorinvestimento);
+		tremer(image_br);
+		tremer(barra_cofrinho);
+		tremer(txt_real);
+		erro_investimento2.setVisible(false);
+		erro_investimento3.setVisible(false);
+		return;
+}
+	
+    CambioAPI api = new CambioAPI();
+    cambioAtual = api.cambioAtual();
+    BigDecimal dolar = BigDecimal.valueOf(cambioAtual.getUsd());
+
+	//VALOR MENOR OU IGUAL A ZERO
+	if (valor.compareTo(BigDecimal.ZERO) <= 0) {
+		erro_investimento1.setVisible(true);
+		tremer(field_valorinvestimento);
+		tremer(image_br);
+		tremer(barra_cofrinho);
+		tremer(txt_real);
+		erro_investimento2.setVisible(false); erro_investimento3.setVisible(false);
+		return; }
+	else { erro_investimento1.setVisible(false); }
+
+	//VALOR MAIOR QUE SALDO
+	if (valor.compareTo(investimentoUS.getValorTotal()) > 0) {
+		erro_investimento2.setVisible(true);
+		tremer(field_valorinvestimento);
+		tremer(image_br);
+		tremer(barra_cofrinho);
+		tremer(txt_real);
+		erro_investimento1.setVisible(false); erro_investimento3.setVisible(false);
+		return;} 
+	else { erro_investimento2.setVisible(false); }
+
+	//RADIO NÃO SELECIONADO
+	if (!radio_investimento.isSelected()) {
+		erro_investimento3.setVisible(true);
+		tremer(radio_investimento);
+		erro_investimento1.setVisible(false); erro_investimento2.setVisible(false);
+		return; }
+	else{ erro_investimento3.setVisible(false); }
+	
+	Double saldoemdolar = valor.multiply(dolar).doubleValue();
+
+    cliente.setSaldo(cliente.getSaldo() + saldoemdolar);
+    @SuppressWarnings("deprecation")
+    NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));	
+    txt_saldo.setText(nf.format(cliente.getSaldo()));
+
+    daoCliente.abrir();
+    daoCliente.atualizar(cliente);
+    daoCliente.fechar();
+
+    daoInvestimento.abrir();
+
+    if (investimentoUS != null && investimentoUS.getAtivo()) {
+
+        BigDecimal valorTotalAtual = investimentoUS.getValorTotal();
+        BigDecimal novoValorTotal = valorTotalAtual.subtract(valor);
+        BigDecimal novoValorInvestido = investimentoUS.getValorInvestido().subtract(valor);
+
+        if (novoValorInvestido.compareTo(BigDecimal.ZERO) < 0) {
+            novoValorInvestido = BigDecimal.ZERO;
+        }
+
+        if (novoValorTotal.compareTo(BigDecimal.ZERO) == 0) {
+        	investimentoUS.setValorInvestido(BigDecimal.ZERO);
+        	investimentoUS.setValorRendido(BigDecimal.ZERO);
+        	investimentoUS.setValorTotal(BigDecimal.ZERO);
+        } 
+       
+        else {
+            BigDecimal novoRendimento = novoValorTotal.subtract(novoValorInvestido);
+            investimentoUS.setValorInvestido(novoValorInvestido);
+            investimentoUS.setValorTotal(novoValorTotal);
+            investimentoUS.setValorRendido(novoRendimento);
+        }
+        daoInvestimento.atualizar(investimentoUS);
+    }
+    daoInvestimento.fechar();	
+    ChamarResgate();
+}
 
 //OUTROS
 public void FecharPrograma() {
