@@ -99,8 +99,6 @@ src/
 
 **ATUALIZAÇÕES EM DESENVOLVIMENTO**
 
-- Sistema de investimento, renda e resgate em Real (BRL);
-- Sistema de investimento, renda e resgate em Dolar (USD);
 - Sistema de registros de saida e entrada de valores na aba extrato bancario;
 - Criação das ferramentas de ajuda (projetos menores que eu quero adicionar nesse para não poluir o github, como calculadora, calendario, campo minado, etc...);
 - Melhorias na interface e em animações de transição.
