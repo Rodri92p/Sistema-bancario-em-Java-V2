@@ -26,6 +26,8 @@ Além das funcionalidades bancárias, o projeto também serviu como laboratório
 - Alteração de senha;
 - Alteração/Criação de até 4 chaves pix (CPF, EMAIL, CELULAR e ALEATORIA);
 - Exclusão de conta;
+- Sistema de investimento, renda e resgate em Real (BRL);
+- Sistema de investimento, renda e resgate em Dolar (USD);
 - Persistência completa em banco de dados MySQL.
 
 ---
