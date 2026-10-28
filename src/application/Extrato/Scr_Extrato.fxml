@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Point3D?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.image.Image?>
@@ -19,7 +18,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="755.0" prefWidth="1119.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Controller">
   <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="762.0" layoutX="-3.0" layoutY="-6.0" opacity="0.19" strokeType="INSIDE" strokeWidth="0.0" width="1128.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="762.0" layoutX="-3.0" layoutY="-4.0" opacity="0.19" strokeType="INSIDE" strokeWidth="0.0" width="1128.0">
          <stroke>
             <LinearGradient endX="0.11904761904761905" endY="1.0" startX="0.24285714285714285" startY="0.6142857142857143">
                <stops>
@@ -177,13 +176,6 @@
       </Text>
     
       <Line endX="143.0" layoutX="96.0" layoutY="551.0" startX="-100.0" stroke="#00000025" />
-      <Line endX="-63.0" layoutX="91.0" layoutY="582.0" startX="-110.0" stroke="WHITE" strokeLineCap="ROUND" strokeWidth="3.0" />
-    
-      <Text fx:id="txt_ferramentas" fill="WHITE" layoutX="42.0" layoutY="587.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FERRAMENTAS" wrappingWidth="109.99999999999994">
-         <font>
-            <Font name="Caladea Regular" size="16.0" />
-         </font>
-      </Text>
       <Line endX="-63.0" layoutX="93.0" layoutY="254.0" startX="-110.0" stroke="WHITE" strokeLineCap="ROUND" strokeWidth="3.0" />
       <Line endX="143.0" layoutX="96.0" layoutY="283.0" startX="-100.0" stroke="#00000025" />
     
@@ -214,289 +206,8 @@
          <cursor>
             <Cursor fx:constant="CLOSED_HAND" />
          </cursor></Button>
-      <Button fx:id="btn_ferramentas" layoutX="2.0" layoutY="553.0" mnemonicParsing="false" onMousePressed="#Transicao" prefHeight="58.0" prefWidth="237.0" style="-fx-background-color: #ffffff00;">
-         <cursor>
-            <Cursor fx:constant="CLOSED_HAND" />
-         </cursor></Button>
-      <Text id="lbl_cliente" fill="#1b1a1a" layoutX="514.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ULTIMAS MOVIMENTAÇÕES" textAlignment="CENTER" wrappingWidth="315.0">
-         <font>
-            <Font name="Caladea Regular" size="22.0" />
-         </font>
-      </Text>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1b1a1a" height="507.0" layoutX="276.0" layoutY="133.0" stroke="BLACK" strokeType="INSIDE" width="808.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="62.0" layoutX="276.0" layoutY="133.0" stroke="#1b1a1a" strokeType="INSIDE" strokeWidth="2.0" width="808.0" />
-      <VBox layoutX="454.0" layoutY="144.0" prefHeight="39.0" prefWidth="15.0" rotate="90.0">
-         <children>
-            <Line endX="-43.914215087890625" endY="-1.7380714416503906E-4" startX="-100.0" stroke="#1b1a1a" strokeWidth="2.0">
-               <rotationAxis>
-                  <Point3D />
-               </rotationAxis>
-            </Line>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Line endX="-43.914215087890625" endY="-1.7380714416503906E-4" startX="-100.0" stroke="#1b1a1a" strokeWidth="2.0" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Line endX="-43.914215087890625" endY="-1.7380714416503906E-4" startX="-100.0" stroke="#1b1a1a" strokeWidth="2.0" />
-         </children>
-      </VBox>
-      <VBox layoutX="663.0" layoutY="144.0" prefHeight="39.0" prefWidth="15.0" rotate="90.0">
-         <children>
-            <Line endX="-43.914215087890625" endY="-1.7380714416503906E-4" startX="-100.0" stroke="#1b1a1a" strokeWidth="2.0">
-               <rotationAxis>
-                  <Point3D />
-               </rotationAxis>
-            </Line>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Line endX="-43.914215087890625" endY="-1.7380714416503906E-4" startX="-100.0" stroke="#1b1a1a" strokeWidth="2.0" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Line endX="-43.914215087890625" endY="-1.7380714416503906E-4" startX="-100.0" stroke="#1b1a1a" strokeWidth="2.0" />
-         </children>
-      </VBox>
-      <VBox layoutX="283.0" layoutY="228.0" prefHeight="341.0" prefWidth="258.0">
-         <children>
-            <Text id="lbl_receb1" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="{NOME DO RECEBEDOR_1}" wrappingWidth="244.0">
-               <font>
-                  <Font name="Caladea Regular" size="18.0" />
-               </font>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text id="lbl_receb2" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="{NOME DO RECEBEDOR_2}" wrappingWidth="244.0">
-               <font>
-                  <Font name="Caladea Regular" size="18.0" />
-               </font>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text id="lbl_receb3" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="{NOME DO RECEBEDOR_3}" wrappingWidth="244.0">
-               <font>
-                  <Font name="Caladea Regular" size="18.0" />
-               </font>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text id="lbl_receb4" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="{NOME DO RECEBEDOR_4}" wrappingWidth="244.0">
-               <font>
-                  <Font name="Caladea Regular" size="18.0" />
-               </font>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text id="lbl_receb5" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="{NOME DO RECEBEDOR_5}" wrappingWidth="244.0">
-               <font>
-                  <Font name="Caladea Regular" size="18.0" />
-               </font>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text id="lbl_receb6" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="{NOME DO RECEBEDOR_6}" wrappingWidth="244.0">
-               <font>
-                  <Font name="Caladea Regular" size="18.0" />
-               </font>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text id="lbl_receb7" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="{NOME DO RECEBEDOR_7}" wrappingWidth="244.0">
-               <font>
-                  <Font name="Caladea Regular" size="18.0" />
-               </font>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text id="lbl_receb8" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="{NOME DO RECEBEDOR_8}" wrappingWidth="244.0">
-               <font>
-                  <Font name="Caladea Regular" size="18.0" />
-               </font>
-            </Text>
-         </children>
-      </VBox>
-      <VBox layoutX="690.0" layoutY="233.0" prefHeight="341.0" prefWidth="212.0">
-         <children>
-            <Text id="lbl_tipo1" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="{ENTRADA OU SAIDA_1}" textAlignment="CENTER" wrappingWidth="212.0">
-               <font>
-                  <Font name="Caladea Regular" size="18.0" />
-               </font>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text id="lbl_tipo2" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="{ENTRADA OU SAIDA_2}" textAlignment="CENTER" wrappingWidth="212.0">
-               <font>
-                  <Font name="Caladea Regular" size="18.0" />
-               </font>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text id="lbl_tipo3" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="{ENTRADA OU SAIDA_3}" textAlignment="CENTER" wrappingWidth="212.0">
-               <font>
-                  <Font name="Caladea Regular" size="18.0" />
-               </font>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text id="lbl_tipo4" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="{ENTRADA OU SAIDA_4}" textAlignment="CENTER" wrappingWidth="212.0">
-               <font>
-                  <Font name="Caladea Regular" size="18.0" />
-               </font>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text id="lbl_tipo5" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="{ENTRADA OU SAIDA_5}" textAlignment="CENTER" wrappingWidth="212.0">
-               <font>
-                  <Font name="Caladea Regular" size="18.0" />
-               </font>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text id="lbl_tipo6" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="{ENTRADA OU SAIDA_6}" textAlignment="CENTER" wrappingWidth="212.0">
-               <font>
-                  <Font name="Caladea Regular" size="18.0" />
-               </font>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text id="lbl_tipo7" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="{ENTRADA OU SAIDA_7}" textAlignment="CENTER" wrappingWidth="212.0">
-               <font>
-                  <Font name="Caladea Regular" size="18.0" />
-               </font>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text id="lbl_tipo8" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="{ENTRADA OU SAIDA_8}" textAlignment="CENTER" wrappingWidth="212.0">
-               <font>
-                  <Font name="Caladea Regular" size="18.0" />
-               </font>
-            </Text>
-         </children>
-      </VBox>
-      <VBox layoutX="550.0" layoutY="229.0" prefHeight="381.0" prefWidth="212.0">
-         <children>
-            <Text id="lbl_valor1" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="{VALOR_1}" wrappingWidth="244.0">
-               <font>
-                  <Font name="Caladea Regular" size="18.0" />
-               </font>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text id="lbl_valor2" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="{VALOR_2}" wrappingWidth="244.0">
-               <font>
-                  <Font name="Caladea Regular" size="18.0" />
-               </font>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text id="lbl_valor3" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="{VALOR_3}" wrappingWidth="244.0">
-               <font>
-                  <Font name="Caladea Regular" size="18.0" />
-               </font>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text id="lbl_valor4" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="{VALOR_4}" wrappingWidth="244.0">
-               <font>
-                  <Font name="Caladea Regular" size="18.0" />
-               </font>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text id="lbl_valor5" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="{VALOR_5}" wrappingWidth="244.0">
-               <font>
-                  <Font name="Caladea Regular" size="18.0" />
-               </font>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text id="lbl_valor6" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="{VALOR_6}" wrappingWidth="244.0">
-               <font>
-                  <Font name="Caladea Regular" size="18.0" />
-               </font>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text id="lbl_valor7" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="{VALOR_7}" wrappingWidth="244.0">
-               <font>
-                  <Font name="Caladea Regular" size="18.0" />
-               </font>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text id="lbl_valor8" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="{VALOR_8}" wrappingWidth="244.0">
-               <font>
-                  <Font name="Caladea Regular" size="18.0" />
-               </font>
-            </Text>
-         </children>
-      </VBox>
-      <VBox layoutX="867.0" layoutY="144.0" prefHeight="39.0" prefWidth="15.0" rotate="90.0">
-         <children>
-            <Line endX="-43.914215087890625" endY="-1.7380714416503906E-4" startX="-100.0" stroke="#1b1a1a" strokeWidth="2.0">
-               <rotationAxis>
-                  <Point3D />
-               </rotationAxis>
-            </Line>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Line endX="-43.914215087890625" endY="-1.7380714416503906E-4" startX="-100.0" stroke="#1b1a1a" strokeWidth="2.0" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Line endX="-43.914215087890625" endY="-1.7380714416503906E-4" startX="-100.0" stroke="#1b1a1a" strokeWidth="2.0" />
-         </children>
-      </VBox>
-      <VBox layoutX="889.0" layoutY="233.0" prefHeight="341.0" prefWidth="212.0">
-         <children>
-            <Text id="lbl_data1" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="{DATA_1}" textAlignment="CENTER" wrappingWidth="212.0">
-               <font>
-                  <Font name="Caladea Regular" size="18.0" />
-               </font>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text id="lbl_data2" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="{DATA_2}" textAlignment="CENTER" wrappingWidth="212.0">
-               <font>
-                  <Font name="Caladea Regular" size="18.0" />
-               </font>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text id="lbl_data3" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="{DATA_3}" textAlignment="CENTER" wrappingWidth="212.0">
-               <font>
-                  <Font name="Caladea Regular" size="18.0" />
-               </font>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text id="lbl_data4" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="{DATA_4}" textAlignment="CENTER" wrappingWidth="212.0">
-               <font>
-                  <Font name="Caladea Regular" size="18.0" />
-               </font>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text id="lbl_data5" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="{DATA_5}" textAlignment="CENTER" wrappingWidth="212.0">
-               <font>
-                  <Font name="Caladea Regular" size="18.0" />
-               </font>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text id="lbl_data6" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="{DATA_6}" textAlignment="CENTER" wrappingWidth="212.0">
-               <font>
-                  <Font name="Caladea Regular" size="18.0" />
-               </font>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text id="lbl_data7" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="{DATA_7}" textAlignment="CENTER" wrappingWidth="212.0">
-               <font>
-                  <Font name="Caladea Regular" size="18.0" />
-               </font>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text id="lbl_data8" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="{DATA_8}" textAlignment="CENTER" wrappingWidth="212.0">
-               <font>
-                  <Font name="Caladea Regular" size="18.0" />
-               </font>
-            </Text>
-         </children>
-      </VBox>
-      <Button id="btn_anterior" layoutX="276.0" layoutY="654.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="158.0" style="-fx-background-color: #ffffff; -fx-border-color: #1b1a1a;" text="ANTERIOR" textFill="#1b1a1a">
+      <Rectangle fx:id="bloco_1" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="100.0" layoutX="282.0" layoutY="175.0" stroke="#1b1a1a" strokeType="INSIDE" strokeWidth="2.0" width="789.0" />
+      <Button id="btn_anterior" fx:id="btn_anteriorpag" layoutX="282.0" layoutY="630.0" mnemonicParsing="false" onMousePressed="#paginaAnterior" prefHeight="41.0" prefWidth="158.0" style="-fx-background-color: #ffffff; -fx-border-color: #1b1a1a;" text="ANTERIOR" textFill="#1b1a1a">
          <font>
             <Font name="Caladea Regular" size="20.0" />
          </font>
@@ -504,7 +215,7 @@
             <Cursor fx:constant="CLOSED_HAND" />
          </cursor>
       </Button>
-      <Button id="btn_proximo" layoutX="926.0" layoutY="654.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="158.0" style="-fx-background-color: #ffffff; -fx-border-color: #1b1a1a;" text="PRÓXIMO" textFill="#1b1a1a">
+      <Button id="btn_proximo" fx:id="btn_proximapag" layoutX="915.0" layoutY="630.0" mnemonicParsing="false" onMousePressed="#proximaPagina" prefHeight="41.0" prefWidth="158.0" style="-fx-background-color: #ffffff; -fx-border-color: #1b1a1a;" text="PRÓXIMO" textFill="#1b1a1a">
          <font>
             <Font name="Caladea Regular" size="20.0" />
          </font>
@@ -512,24 +223,97 @@
             <Cursor fx:constant="CLOSED_HAND" />
          </cursor>
       </Button>
-      <Text id="lbl_cliente" fill="#1b1a1a" layoutX="333.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DESTINO" textAlignment="CENTER" wrappingWidth="98.0">
+      <Text id="lbl_cliente" fill="#1b1a1a" layoutX="282.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ULTIMAS MOVIMENTAÇÕES" wrappingWidth="338.0">
+         <font>
+            <Font name="Caladea Regular" size="28.0" />
+         </font>
+      </Text>
+      <Text id="lbl_cliente" fill="#1b1a1a" layoutX="277.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="315.0">
          <font>
             <Font name="Caladea Regular" size="22.0" />
          </font>
       </Text>
-      <Text id="lbl_cliente" fill="#1b1a1a" layoutX="745.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TIPO" textAlignment="CENTER" wrappingWidth="98.0">
+      <Text fx:id="lbl_transferencia1" fill="#1b1a1a" layoutX="293.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[TRANSFERÊNCIA]" wrappingWidth="380.0">
          <font>
             <Font name="Caladea Regular" size="22.0" />
          </font>
       </Text>
-      <Text id="lbl_cliente" fill="#1b1a1a" layoutX="546.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VALOR" textAlignment="CENTER" wrappingWidth="84.0">
+      <Text fx:id="lbl_nomeextrato1" fill="#1b1a1a" layoutX="291.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[FULANO DA SILVA]" wrappingWidth="450.0">
+         <font>
+            <Font name="Caladea Regular" size="34.0" />
+         </font>
+      </Text>
+      <Text fx:id="lbl_dataextrato1" fill="#1b1a1a" layoutX="788.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[DD/MM/YYYY - HH:MM]" textAlignment="RIGHT" wrappingWidth="270.0">
+         <font>
+            <Font name="Caladea Regular" size="24.0" />
+         </font>
+      </Text>
+      <Text fx:id="lbl_valorextrato1" fill="#1b1a1a" layoutX="770.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[R$ XX,XX]" textAlignment="RIGHT" wrappingWidth="289.0">
+         <font>
+            <Font name="Caladea Regular" size="30.0" />
+         </font>
+      </Text>
+      <Rectangle fx:id="bloco_2" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="100.0" layoutX="282.0" layoutY="287.0" stroke="#1b1a1a" strokeType="INSIDE" strokeWidth="2.0" width="789.0" />
+      <Text fx:id="lbl_transferencia2" fill="#1b1a1a" layoutX="293.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[TRANSFERÊNCIA]" wrappingWidth="380.0">
          <font>
             <Font name="Caladea Regular" size="22.0" />
          </font>
       </Text>
-      <Text id="lbl_cliente" fill="#1b1a1a" layoutX="945.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DATA" textAlignment="CENTER" wrappingWidth="98.0">
+      <Text fx:id="lbl_nomeextrato2" fill="#1b1a1a" layoutX="291.0" layoutY="362.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[FULANO DA SILVA]" wrappingWidth="450.0">
+         <font>
+            <Font name="Caladea Regular" size="34.0" />
+         </font>
+      </Text>
+      <Text fx:id="lbl_dataextrato2" fill="#1b1a1a" layoutX="788.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[DD/MM/YYYY - HH:MM]" textAlignment="RIGHT" wrappingWidth="270.0">
+         <font>
+            <Font name="Caladea Regular" size="24.0" />
+         </font>
+      </Text>
+      <Text fx:id="lbl_valorextrato2" fill="#1b1a1a" layoutX="770.0" layoutY="362.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[R$ XX,XX]" textAlignment="RIGHT" wrappingWidth="289.0">
+         <font>
+            <Font name="Caladea Regular" size="30.0" />
+         </font>
+      </Text>
+      <Rectangle fx:id="bloco_3" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="100.0" layoutX="282.0" layoutY="397.0" stroke="#1b1a1a" strokeType="INSIDE" strokeWidth="2.0" width="789.0" />
+      <Text fx:id="lbl_transferencia3" fill="#1b1a1a" layoutX="293.0" layoutY="434.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[TRANSFERÊNCIA]" wrappingWidth="380.0">
          <font>
             <Font name="Caladea Regular" size="22.0" />
+         </font>
+      </Text>
+      <Text fx:id="lbl_nomeextrato3" fill="#1b1a1a" layoutX="291.0" layoutY="472.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[FULANO DA SILVA]" wrappingWidth="450.0">
+         <font>
+            <Font name="Caladea Regular" size="34.0" />
+         </font>
+      </Text>
+      <Text fx:id="lbl_dataextrato3" fill="#1b1a1a" layoutX="788.0" layoutY="434.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[DD/MM/YYYY - HH:MM]" textAlignment="RIGHT" wrappingWidth="270.0">
+         <font>
+            <Font name="Caladea Regular" size="24.0" />
+         </font>
+      </Text>
+      <Text fx:id="lbl_valorextrato3" fill="#1b1a1a" layoutX="770.0" layoutY="472.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[R$ XX,XX]" textAlignment="RIGHT" wrappingWidth="289.0">
+         <font>
+            <Font name="Caladea Regular" size="30.0" />
+         </font>
+      </Text>
+      <Rectangle fx:id="bloco_4" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="100.0" layoutX="282.0" layoutY="509.0" stroke="#1b1a1a" strokeType="INSIDE" strokeWidth="2.0" width="789.0" />
+      <Text fx:id="lbl_transferencia4" fill="#1b1a1a" layoutX="293.0" layoutY="546.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[TRANSFERÊNCIA]" wrappingWidth="380.0">
+         <font>
+            <Font name="Caladea Regular" size="22.0" />
+         </font>
+      </Text>
+      <Text fx:id="lbl_nomeextrato4" fill="#1b1a1a" layoutX="291.0" layoutY="584.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[FULANO DA SILVA]" wrappingWidth="450.0">
+         <font>
+            <Font name="Caladea Regular" size="34.0" />
+         </font>
+      </Text>
+      <Text fx:id="lbl_dataextrato4" fill="#1b1a1a" layoutX="788.0" layoutY="546.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[DD/MM/YYYY - HH:MM]" textAlignment="RIGHT" wrappingWidth="270.0">
+         <font>
+            <Font name="Caladea Regular" size="24.0" />
+         </font>
+      </Text>
+      <Text fx:id="lbl_valorextrato4" fill="#1b1a1a" layoutX="770.0" layoutY="584.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[R$ XX,XX]" textAlignment="RIGHT" wrappingWidth="289.0">
+         <font>
+            <Font name="Caladea Regular" size="30.0" />
          </font>
       </Text>
       
