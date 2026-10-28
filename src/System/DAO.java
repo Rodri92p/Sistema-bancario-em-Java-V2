@@ -17,11 +17,13 @@ private EntityManager em;
 private Class <E> classe;
 
 static {
-	try {
-		emf = Persistence.createEntityManagerFactory("JavaBanco_v2");
-	} catch (Exception e) {
-		
-	}
+    try {
+        emf = Persistence.createEntityManagerFactory("JavaBanco_v2");
+    } catch (Exception e) {
+        e.printStackTrace();
+
+        throw new ExceptionInInitializerError(e);
+    }
 }
 
 public DAO() {
@@ -173,7 +175,6 @@ public Investment buscarPorClienteETipo(Client cliente, TipoInvestimento tipo) {
     }
 }
 
-
 public DAO<E> atualizarRendimento(Investment investimento) {
 
     BigDecimal valorAtual = investimento.calcularValorAtual();
@@ -185,6 +186,33 @@ public DAO<E> atualizarRendimento(Investment investimento) {
     em.merge(investimento);
 
     return this;
+}
+
+public List<Movement> buscarExtratoPaginado(Client cliente, int pagina) {
+
+    String jpql = """
+        SELECT m FROM Movement m
+        WHERE m.remetente = :cliente
+           OR m.destinatario = :cliente
+        ORDER BY m.data DESC, m.id DESC
+        """;
+
+    return em.createQuery(jpql, Movement.class)
+             .setParameter("cliente", cliente)
+             .setFirstResult(pagina * 4)
+             .setMaxResults(4)
+             .getResultList();
+}
+
+public List<Movement> buscarExtrato(Client cliente) {
+    String jpql = """
+        SELECT m FROM Movement m
+        WHERE m.remetente = :cliente
+           OR m.destinatario = :cliente
+        ORDER BY m.data DESC
+        """;
+
+    return em.createQuery(jpql, Movement.class).setParameter("cliente", cliente).getResultList();
 }
 
 }

@@ -7,9 +7,11 @@ import javafx.util.Duration;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.Locale;
 import java.util.UUID;
 import Controllers.CambioAPI.Cambio;
+import javafx.scene.paint.Color;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -17,6 +19,8 @@ import java.text.NumberFormat;
 import System.Client;
 import System.DAO;
 import System.Investment;
+import System.Movement;
+import System.TipoExtrato;
 import System.TipoInvestimento;
 import javafx.animation.Animation;
 import javafx.animation.FadeTransition;
@@ -51,6 +55,7 @@ String nometexto;
 String chavetexto;
 int tipo;
 int PIX_OP = 0;
+private int paginaExtrato = 0;
 
 //--------------------------------------------------------------------------------------------------
 //VARIAVEIS
@@ -82,6 +87,12 @@ int PIX_OP = 0;
 @FXML private Text txt_datainvestimentobr;    @FXML private Text txt_valorrendimentobr;     @FXML private Text txt_valorinvestimentobr;
 @FXML private Text erro_investimento1;        @FXML private Text erro_investimento2;        @FXML private Text erro_investimento3;
 @FXML private Text txt_valortotalus;          @FXML private Text txt_valortotalbr;          @FXML private Text txt_real;      
+@FXML private Text lbl_transferencia1;        @FXML private Text lbl_transferencia2;        @FXML private Text lbl_transferencia3;
+@FXML private Text lbl_transferencia4;        @FXML private Text lbl_nomeextrato1;          @FXML private Text lbl_nomeextrato2;      
+@FXML private Text lbl_nomeextrato3;          @FXML private Text lbl_nomeextrato4;          @FXML private Text lbl_valorextrato1;   
+@FXML private Text lbl_dataextrato1;          @FXML private Text lbl_dataextrato2;          @FXML private Text lbl_dataextrato3;      
+@FXML private Text lbl_dataextrato4;          @FXML private Text lbl_valorextrato2;            
+@FXML private Text lbl_valorextrato3;         @FXML private Text lbl_valorextrato4;            
 
 //BUTTON
 @FXML private Button btn_sair;                @FXML private Button btn_investirBR;          @FXML private Button btn_resgatarBR;
@@ -103,6 +114,7 @@ int PIX_OP = 0;
 @FXML private Button btn_apagarpix_email;     @FXML private Button btn_apagarpix_aleatoria; @FXML private Button btn_SIM;
 @FXML private Button btn_investirvalorBR;     @FXML private Button btn_resgatarvalorBR;     @FXML private Button btn_investirvalorUS;
 @FXML private Button btn_resgatarvalorUS;     @FXML private Button btn_confirmarinvestimento; 
+@FXML private Button btn_proximapag;          @FXML private Button btn_anteriorpag; 
 
 //TEXTFIELD + PASSWORDFIELD	3
 @FXML private TextField cpf_login;            @FXML private TextField cpf_registro;         @FXML private TextField email_registro;
@@ -155,6 +167,7 @@ public void PassarDados(Client cliente) {
 		this.cliente = cliente;
 		atualizarFavoritos();
 		cambioTela();
+		UltimasTransferencias();
 		investimentoTela();
 		atualizarchaves();
 	    TelaCofrinho();
@@ -711,11 +724,6 @@ public void Transicao() {
 	
 	  if(btn_conta != null && btn_conta.isPressed()) {
 		btn_conta.setOnAction(e -> TransicaoTela("/application/Conta/Scr_Conta.fxml", btn_conta));
-	  return;  
-	  }
-	
-	  if(btn_ferramentas != null && btn_ferramentas.isPressed()) {
-		btn_ferramentas.setOnAction(e -> TransicaoTela("/application/Ferramentas/Scr_Ferramentas.fxml", btn_ferramentas));
 	  return;  
 	  }
 	  
@@ -1313,6 +1321,10 @@ private void RealizarPix() {
 	
 	cliente.setSaldo(saldonovo_clienteatual);
 	cliente_pix.setSaldo(saldonovo_clientedestino);
+	
+	BigDecimal valor = new BigDecimal(field_valorpix.getText().replace(",", "."));
+	
+    Movement transferencia = new Movement(TipoExtrato.TRANSFERENCIA, cliente_pix, cliente, valor);
 		    
 	DAO<Client> dao = new DAO<>(Client.class);
 	
@@ -1321,6 +1333,10 @@ private void RealizarPix() {
 	dao.atualizar(cliente_pix);
 	dao.fechar();
 	
+    DAO<Movement> dao1 = new DAO<>(Movement.class);
+
+    dao1.abrir().adcionar(transferencia).fechar();
+
 	@SuppressWarnings("deprecation")
 	NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));	
 	txt_saldo.setText(nf.format(cliente.getSaldo()));
@@ -2286,6 +2302,184 @@ public void resgateEUA() {
     ChamarResgate();
 }
 
+//EXTRATO
+public String[] PesquisaExtrato(Movement one) {
+
+    String pessoa;
+    String tipoMovimento;
+    String data;
+    String valor;
+
+    @SuppressWarnings("deprecation")
+	NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));
+
+    DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+
+    if (one.getRemetente().getId() == cliente.getId()
+            && one.getDestinatario().getId() == cliente.getId()) {
+
+        pessoa = "Cofrinho";
+        tipoMovimento = "DEPÓSITO COFRINHO";
+
+    } else if (one.getRemetente().getId() == cliente.getId()) {
+
+        pessoa = one.getDestinatario().getNome() + " "
+               + one.getDestinatario().getSobrenome();
+
+        tipoMovimento = "TRANSFERÊNCIA ENVIADA";
+
+    } else {
+
+        pessoa = one.getRemetente().getNome() + " "
+               + one.getRemetente().getSobrenome();
+
+        tipoMovimento = "TRANSFERÊNCIA RECEBIDA";
+    }
+
+    data = one.getData().format(formato);
+    valor = nf.format(one.getValor());
+
+    return new String[] { pessoa, tipoMovimento, data, valor };
+}
+
+public void UltimasTransferencias() {
+
+  if(lbl_transferencia1 != null) {
+    Text[] nomes = {
+    	      lbl_nomeextrato1,
+    	      lbl_nomeextrato2,
+    	      lbl_nomeextrato3,
+    	      lbl_nomeextrato4
+    	    };
+    	    
+    	    Text[] tipo = {
+    	      lbl_transferencia1,
+    	      lbl_transferencia2,
+    	      lbl_transferencia3,
+    	      lbl_transferencia4
+    	    };
+    	    
+    	    Text[] data = {
+    	      lbl_dataextrato1,
+    	      lbl_dataextrato2,
+    	      lbl_dataextrato3,
+    	      lbl_dataextrato4
+    	    };
+    	    
+    	    Text[] valor = {
+    	      lbl_valorextrato1,
+    	      lbl_valorextrato2,
+    	      lbl_valorextrato3,
+    	      lbl_valorextrato4
+    	    };
+
+    	    DAO<Movement> dao = new DAO<>(Movement.class);
+
+    	    List<Movement> movimentacoes =
+    	            dao.buscarExtratoPaginado(cliente, 0);
+
+    	    for (int i = 0; i < 4; i++) {
+
+    	        if (i < movimentacoes.size()) {
+
+    	        	String[] dados = PesquisaExtrato(movimentacoes.get(i));
+
+    	            nomes[i].setText(dados[0]);
+    	            tipo[i].setText(dados[1]);
+    	            if (tipo[i].getText().equals("TRANSFERÊNCIA RECEBIDA")) {
+    	                tipo[i].setFill(Color.GREEN);
+    	            } else {
+    	                tipo[i].setFill(Color.RED);
+    	            }
+    	            data[i].setText(dados[2]);
+    	            valor[i].setText(dados[3]);
+
+    	        } else {
+
+    	            nomes[i].setText("");
+    	            tipo[i].setText("");
+    	            data[i].setText("");
+    	            valor[i].setText("");
+    	        }
+    	    }
+    
+   }
+  }
+
+private void atualizarExtrato(List<Movement> movimentacoes) {
+
+    Text[] nomes = {
+        lbl_nomeextrato1, lbl_nomeextrato2,
+        lbl_nomeextrato3, lbl_nomeextrato4
+    };
+
+    Text[] tipos = {
+        lbl_transferencia1, lbl_transferencia2,
+        lbl_transferencia3, lbl_transferencia4
+    };
+
+    Text[] datas = {
+        lbl_dataextrato1, lbl_dataextrato2,
+        lbl_dataextrato3, lbl_dataextrato4
+    };
+
+    Text[] valores = {
+        lbl_valorextrato1, lbl_valorextrato2,
+        lbl_valorextrato3, lbl_valorextrato4
+    };
+
+    for (int i = 0; i < 4; i++) {
+        if (i < movimentacoes.size()) {
+        	String[] dados = PesquisaExtrato(movimentacoes.get(i));
+
+        	nomes[i].setText(dados[0]);
+        	tipos[i].setText(dados[1]);
+        	datas[i].setText(dados[2]);
+        	valores[i].setText(dados[3]);
+        } else {
+            nomes[i].setText("");
+            tipos[i].setText("");
+            datas[i].setText("");
+            valores[i].setText("");
+        }
+    }
+}
+
+@FXML
+void proximaPagina() {
+
+    DAO<Movement> dao = new DAO<>(Movement.class);
+
+    List<Movement> novasMovimentacoes = dao.buscarExtratoPaginado(cliente, paginaExtrato + 1);
+
+    if (novasMovimentacoes.isEmpty()) {
+        return;
+    }
+
+    paginaExtrato++;
+
+    atualizarExtrato(novasMovimentacoes);
+}
+
+private void carregarPaginaExtrato() {
+
+    DAO<Movement> dao = new DAO<>(Movement.class);
+
+    List<Movement> movimentacoes =
+            dao.buscarExtratoPaginado(cliente, paginaExtrato);
+
+    atualizarExtrato(movimentacoes);
+}
+
+@FXML
+void paginaAnterior() {
+
+    if (paginaExtrato > 0) {
+        paginaExtrato--;
+        carregarPaginaExtrato();
+    }
+}
+
 //OUTROS
 public void FecharPrograma() {
 	try {
@@ -2320,5 +2514,4 @@ public void Sair_NaoSair() {
 	 stage.close();	
  }
 }
-
 }

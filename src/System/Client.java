@@ -98,8 +98,6 @@ public void setFavorito7tipo(Integer favorito7tipo) {
 @OneToMany(mappedBy = "cliente", fetch = FetchType.LAZY)
 private List<Investment> investimentos;
 
-@OneToMany(mappedBy = "cliente")
-private List<Movement> movimentacoes;
 
 public Client() {
 	
@@ -391,13 +389,6 @@ public void setPix_aleatorio(String pix_aleatorio) {
 	this.pix_aleatorio = pix_aleatorio;
 }
 
-public List<Movement> getMovimentacoes() {
-	return movimentacoes;
-}
-
-public void setMovimentacoes(List<Movement> movimentacoes) {
-	this.movimentacoes = movimentacoes;
-}
 
 public Integer getFavorito1() {
 	return favorito1;
