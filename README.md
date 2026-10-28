@@ -174,6 +174,3 @@ TELA DE CRIAÇÃO DE PIX:
 ![Logo](https://raw.githubusercontent.com/Rodri92p/Sistema-bancario-em-Java-V2/master/assets/TELA_PIX2.png)
 
 ![Logo](https://raw.githubusercontent.com/Rodri92p/Sistema-bancario-em-Java-V2/master/assets/CRIAR_PIX.gif)
-
-
-ATUALIZADO 28/10 - 18:15
