@@ -18,7 +18,7 @@
 
 <AnchorPane layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="755.0" prefWidth="1119.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Controller">
   <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="762.0" layoutX="-6.0" opacity="0.19" strokeType="INSIDE" strokeWidth="0.0" width="1128.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="762.0" layoutX="-6.0" layoutY="2.0" opacity="0.19" strokeType="INSIDE" strokeWidth="0.0" width="1128.0">
          <stroke>
             <LinearGradient endX="0.11904761904761905" endY="1.0" startX="0.24285714285714285" startY="0.6142857142857143">
                <stops>
@@ -600,16 +600,79 @@
          </children>
       </AnchorPane>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="189.0" layoutX="294.0" layoutY="183.0" stroke="BLACK" strokeType="INSIDE" width="384.0" />
-      <Text fill="#1b1a1a" layoutX="328.0" layoutY="313.0" opacity="0.36" strokeType="OUTSIDE" strokeWidth="0.0" text="VOCÊ AINDA NÃO REALIZOU NENHUMA TRANSFERENCIA." textAlignment="CENTER" wrappingWidth="307.00000000000006">
+      <Text fx:id="txt_semtransferencia" fill="#1b1a1a" layoutX="328.0" layoutY="313.0" opacity="0.36" strokeType="OUTSIDE" strokeWidth="0.0" text="VOCÊ AINDA NÃO REALIZOU NENHUMA TRANSFERENCIA." textAlignment="CENTER" visible="false" wrappingWidth="307.00000000000006">
          <font>
             <Font name="Caladea Regular" size="23.0" />
          </font>
       </Text>
-      <ImageView fitHeight="76.0" fitWidth="70.0" layoutX="444.0" layoutY="210.0" opacity="0.24" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="image_semtransferencia" fitHeight="76.0" fitWidth="70.0" layoutX="444.0" layoutY="210.0" opacity="0.24" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../../../images/sad-face.png" />
          </image>
       </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="52.0" layoutX="302.0" layoutY="191.0" stroke="BLACK" strokeType="INSIDE" width="368.0" />
+      <Text fx:id="lbl_transferencia1" fill="#1b1a1a" layoutX="306.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[TRANSFERÊNCIA]" wrappingWidth="202.00003051757812">
+         <font>
+            <Font name="Caladea Regular" size="12.0" />
+         </font>
+      </Text>
+      <Text fx:id="lbl_nomeextrato1" fill="#1b1a1a" layoutX="304.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[FULANO DA SILVA]" wrappingWidth="450.0">
+         <font>
+            <Font name="Caladea Regular" size="20.0" />
+         </font>
+      </Text>
+      <Text fx:id="lbl_dataextrato1" fill="#1b1a1a" layoutX="507.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[DD/MM/YYYY - HH:MM]" textAlignment="RIGHT" wrappingWidth="158.66668701171875">
+         <font>
+            <Font name="Caladea Regular" size="12.0" />
+         </font>
+      </Text>
+      <Text fx:id="lbl_valorextrato1" fill="#1b1a1a" layoutX="503.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[R$ XX,XX]" textAlignment="RIGHT" wrappingWidth="164.99999999999977">
+         <font>
+            <Font name="Caladea Regular" size="20.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="52.0" layoutX="302.0" layoutY="251.0" stroke="BLACK" strokeType="INSIDE" width="368.0" />
+      <Text fx:id="lbl_transferencia2" fill="#1b1a1a" layoutX="306.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[TRANSFERÊNCIA]" wrappingWidth="202.00003051757812">
+         <font>
+            <Font name="Caladea Regular" size="12.0" />
+         </font>
+      </Text>
+      <Text fx:id="lbl_nomeextrato2" fill="#1b1a1a" layoutX="304.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[FULANO DA SILVA]" wrappingWidth="450.0">
+         <font>
+            <Font name="Caladea Regular" size="20.0" />
+         </font>
+      </Text>
+      <Text fx:id="lbl_dataextrato2" fill="#1b1a1a" layoutX="507.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[DD/MM/YYYY - HH:MM]" textAlignment="RIGHT" wrappingWidth="158.66668701171875">
+         <font>
+            <Font name="Caladea Regular" size="12.0" />
+         </font>
+      </Text>
+      <Text fx:id="lbl_valorextrato2" fill="#1b1a1a" layoutX="503.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[R$ XX,XX]" textAlignment="RIGHT" wrappingWidth="164.99999999999977">
+         <font>
+            <Font name="Caladea Regular" size="20.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="52.0" layoutX="302.0" layoutY="311.0" stroke="BLACK" strokeType="INSIDE" width="368.0" />
+      <Text fx:id="lbl_transferencia3" fill="#1b1a1a" layoutX="306.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[TRANSFERÊNCIA]" wrappingWidth="202.00003051757812">
+         <font>
+            <Font name="Caladea Regular" size="12.0" />
+         </font>
+      </Text>
+      <Text fx:id="lbl_nomeextrato3" fill="#1b1a1a" layoutX="304.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[FULANO DA SILVA]" wrappingWidth="450.0">
+         <font>
+            <Font name="Caladea Regular" size="20.0" />
+         </font>
+      </Text>
+      <Text fx:id="lbl_dataextrato3" fill="#1b1a1a" layoutX="507.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[DD/MM/YYYY - HH:MM]" textAlignment="RIGHT" wrappingWidth="158.66668701171875">
+         <font>
+            <Font name="Caladea Regular" size="12.0" />
+         </font>
+      </Text>
+      <Text fx:id="lbl_valorextrato3" fill="#1b1a1a" layoutX="503.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[R$ XX,XX]" textAlignment="RIGHT" wrappingWidth="164.99999999999977">
+         <font>
+            <Font name="Caladea Regular" size="20.0" />
+         </font>
+      </Text>
       
    </children>
 </AnchorPane>

@@ -11,7 +11,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.UUID;
 import Controllers.CambioAPI.Cambio;
-import javafx.scene.paint.Color;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -2315,25 +2314,15 @@ public String[] PesquisaExtrato(Movement one) {
 
     DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 
-    if (one.getRemetente().getId() == cliente.getId()
-            && one.getDestinatario().getId() == cliente.getId()) {
+    if (one.getRemetente().getId() == cliente.getId()) {
 
-        pessoa = "Cofrinho";
-        tipoMovimento = "DEPÓSITO COFRINHO";
-
-    } else if (one.getRemetente().getId() == cliente.getId()) {
-
-        pessoa = one.getDestinatario().getNome() + " "
-               + one.getDestinatario().getSobrenome();
-
-        tipoMovimento = "TRANSFERÊNCIA ENVIADA";
+    	pessoa = one.getDestinatario().getNome() + " " + one.getDestinatario().getSobrenome();
+    	tipoMovimento = "TRANSFERÊNCIA ENVIADA";
 
     } else {
 
-        pessoa = one.getRemetente().getNome() + " "
-               + one.getRemetente().getSobrenome();
-
-        tipoMovimento = "TRANSFERÊNCIA RECEBIDA";
+    	pessoa = one.getRemetente().getNome() + " "  + one.getRemetente().getSobrenome();
+    	tipoMovimento = "TRANSFERÊNCIA RECEBIDA";
     }
 
     data = one.getData().format(formato);
@@ -2345,6 +2334,7 @@ public String[] PesquisaExtrato(Movement one) {
 public void UltimasTransferencias() {
 
   if(lbl_transferencia1 != null) {
+	paginaExtrato = 0;
     Text[] nomes = {
     	      lbl_nomeextrato1,
     	      lbl_nomeextrato2,
@@ -2379,18 +2369,13 @@ public void UltimasTransferencias() {
     	            dao.buscarExtratoPaginado(cliente, 0);
 
     	    for (int i = 0; i < 4; i++) {
-
+    	     if(nomes[i] != null) {
     	        if (i < movimentacoes.size()) {
 
     	        	String[] dados = PesquisaExtrato(movimentacoes.get(i));
 
     	            nomes[i].setText(dados[0]);
     	            tipo[i].setText(dados[1]);
-    	            if (tipo[i].getText().equals("TRANSFERÊNCIA RECEBIDA")) {
-    	                tipo[i].setFill(Color.GREEN);
-    	            } else {
-    	                tipo[i].setFill(Color.RED);
-    	            }
     	            data[i].setText(dados[2]);
     	            valor[i].setText(dados[3]);
 
@@ -2402,9 +2387,10 @@ public void UltimasTransferencias() {
     	            valor[i].setText("");
     	        }
     	    }
-    
    }
   }
+
+}
 
 private void atualizarExtrato(List<Movement> movimentacoes) {
 
