@@ -4,7 +4,7 @@
 
 **SOBRE O PROJETO:**
 
-STATUS: 75%
+STATUS: 100%
 
 Essa é a primeira versão de um projeto que é uma evolução do meu primeiro sistema bancário em Java. O projeto deixou de utilizar armazenamento em arquivos .txt e passou a trabalhar com banco de dados relacional e outras tecnologias, tornando a aplicação muito mais próxima de um sistema real. A ideia foi adaptar o primeiro projeto e melhorar o sistema bancário desktop desenvolvido em Java para simular as principais operações de um banco digital, utilizando JavaFX (ao inves do Java Swing) para a interface gráfica e Hibernate/JPA para persistência dos dados.
 
@@ -29,7 +29,8 @@ Além das funcionalidades bancárias, o projeto também serviu como laboratório
 - Sistema de investimento em Real (BRL) e Dolar (USD);
 - Sistema de renda em Real (BRL) m Dolar (USD);
 - Sistema de resgate em Real (BRL) e Dolar (USD);
-- Persistência completa em banco de dados MySQL.
+- Persistência completa em banco de dados MySQL;
+- Sistema de registros de saida e entrada de valores na aba extrato bancario;
 
 ---
 
@@ -98,14 +99,6 @@ src/
 └── META-INF/
     └── persistence.xml
 ```
----
-
-**ATUALIZAÇÕES EM DESENVOLVIMENTO**
-
-- Sistema de registros de saida e entrada de valores na aba extrato bancario;
-- Criação das ferramentas de ajuda (projetos menores que eu quero adicionar nesse para não poluir o github, como calculadora, calendario, campo minado, etc...);
-- Melhorias na interface e em animações de transição.
-
 ---
 
 
