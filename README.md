@@ -187,4 +187,4 @@ TELA DE INVESTIMENTO (BRL - REAL):
 
 ![Logo](https://raw.githubusercontent.com/Rodri92p/Sistema-bancario-em-Java-V2/master/assets/INVESTIMENTOBR.png)
 
-![Logo](https://raw.githubusercontent.com/Rodri92p/Sistema-bancario-em-Java-V2/master/assets/INVESTIMENTOBR.git)
+![Logo](https://raw.githubusercontent.com/Rodri92p/Sistema-bancario-em-Java-V2/master/assets/INVESTIMENTOBR.gif)
