@@ -204,3 +204,12 @@ TELA DE INVESTIMENTO (USD - DOLAR):
 ![Logo](https://raw.githubusercontent.com/Rodri92p/Sistema-bancario-em-Java-V2/master/assets/INVESTIMENTOUS.png)
 
 ![Logo](https://raw.githubusercontent.com/Rodri92p/Sistema-bancario-em-Java-V2/master/assets/INVESTIMENTOUS.gif)
+
+
+
+TELA DE RESGATE (USD - DOLAR):
+
+![Logo](https://raw.githubusercontent.com/Rodri92p/Sistema-bancario-em-Java-V2/master/assets/RESGATEUS.png)
+
+![Logo](https://raw.githubusercontent.com/Rodri92p/Sistema-bancario-em-Java-V2/master/assets/RESGATEUS.gif)
+
