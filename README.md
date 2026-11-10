@@ -196,3 +196,11 @@ TELA DE RESGATE (BRL - REAL):
 ![Logo](https://raw.githubusercontent.com/Rodri92p/Sistema-bancario-em-Java-V2/master/assets/RESGATEBR.png)
 
 ![Logo](https://raw.githubusercontent.com/Rodri92p/Sistema-bancario-em-Java-V2/master/assets/RESGATEBR.gif)
+
+
+
+TELA DE INVESTIMENTO (USD - DOLAR):
+
+![Logo](https://raw.githubusercontent.com/Rodri92p/Sistema-bancario-em-Java-V2/master/assets/INVESTIMENTOUS.png)
+
+![Logo](https://raw.githubusercontent.com/Rodri92p/Sistema-bancario-em-Java-V2/master/assets/INVESTIMENTOUS.gif)
